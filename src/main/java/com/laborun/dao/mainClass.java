@@ -5,10 +5,14 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.Group;
 import com.laborun.entity.User;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -19,13 +23,17 @@ import org.hibernate.cfg.Configuration;
  */
 public class mainClass {
     public static void main(String[] args) {
-        LoginDaoImp LDI = new LoginDaoImp();
-      
-       
+       /* LoginDaoImp LDI = new LoginDaoImp();
+        GroupDaoImp GDI = new GroupDaoImp();
+       List<Group> g;
               
         User user = new User();
-        
-        LDI.getUserInfo(user);
-        LDI.getUserType(user);
+        user.setEmail("dina");
+        g = GDI.getGroups(user);
+        Iterator it = g.iterator();
+        while (it.hasNext()) {
+          System.out.println(((Group) it.next()).getGroupName());
+        }
+     */   
     }
 }

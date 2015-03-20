@@ -5,14 +5,15 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.Group;
 import com.laborun.entity.User;
+import java.util.List;
 
 /**
  *
  * @author dina
  */
-public interface LoginDaoInt {
- 
-    public User getUserType(User user); // this method will return object from user that contains all user's data
-    public User getUserInfo(User user); // this method will check role and    
+public interface GroupDaoInt {
+    public List<Group> getGroups(User user);   // this method will get all groups assigned to a user
+    // this user can be staff member or trainee
 }

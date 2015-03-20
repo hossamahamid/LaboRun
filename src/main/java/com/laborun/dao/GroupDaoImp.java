@@ -5,11 +5,12 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.Group;
 import com.laborun.entity.User;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -17,30 +18,18 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author dina
  */
-public class LoginDaoImp implements LoginDaoInt {
-
-    public User getUserType(User user) {
+public class GroupDaoImp implements GroupDaoInt{
+     public List<Group> getGroups(User user){
         Session session = Connection.getConnection();
-        
-        User user_data = null;
+        List<Group> groups = null;
         Criteria cr = session.createCriteria(User.class);
-        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("password", user.getPassword()));
+        cr.add(Restrictions.eq("email", user.getEmail()));
         List results = cr.list();
         Iterator it = results.iterator();
         while (it.hasNext()) {
-            user_data = (User) it.next();
-           
-
+            groups = new ArrayList<Group>(((User) it.next()).getGroups());
         }
 
-        return user_data;
-
-    }
-
-    public User getUserInfo(User user) {
-        Session session = Connection.getConnection();
-        System.out.println("inside getUserData");
-        return null;
-    }
-
+        return groups;
+     }
 }
