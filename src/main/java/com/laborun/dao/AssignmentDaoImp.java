@@ -5,10 +5,45 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.AssignmentFiles;
+import com.laborun.entity.Course;
+import com.laborun.entity.Group;
+import com.laborun.entity.Lab;
+import com.laborun.entity.User;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
 /**
  *
  * @author dina
  */
-public class AssignmentDaoImp {
+public class AssignmentDaoImp implements AssignmentDaoInt{
+
+    public void uploadAssignment(AssignmentFiles assignmentFiles) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public AssignmentFiles DownloadAssignment(AssignmentFiles assignmentFiles) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<AssignmentFiles> getAssignments(Lab lab) {
+        Session session = Connection.getConnection();
+        List<AssignmentFiles> assignmentFiles = null;
+        Criteria cr = session.createCriteria(Lab.class);
+        cr.add(Restrictions.eq("labName", lab.getAssignmentFileses()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        
+        while (it.hasNext()) {
+            assignmentFiles = new ArrayList<AssignmentFiles>(((Lab) it.next()).getAssignmentFileses());
+        }
+
+        return assignmentFiles;
+    }
     
 }

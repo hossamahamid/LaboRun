@@ -5,10 +5,19 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.AssignmentFiles;
+import com.laborun.entity.Lab;
+import com.laborun.entity.User;
+import java.util.List;
+
 /**
  *
  * @author dina
  */
 public interface AssignmentDaoInt {
+    
+    public void uploadAssignment(AssignmentFiles assignmentFiles);
+    public AssignmentFiles DownloadAssignment(AssignmentFiles assignmentFiles);
+    public List<AssignmentFiles> getAssignments(Lab lab);
     
 }
