@@ -11,11 +11,11 @@ import com.laborun.entity.User;
 public class UserFactory {
 
     public static User getUser(String userType) {
-        if (userType.equals("Trainee"))
+        if (userType.equals("trainee"))
             return new Trainee();
-        else if (userType.equals("Staff"))
+        else if (userType.equals("staff"))
             return new Staff();
-        else if (userType.equals("Admin"))
+        else if (userType.equals("admin"))
             return new Admin();
 
         return null;

@@ -16,8 +16,8 @@ public class LoginImp implements loginInt {
     public User signIn(User user) {
         user = getUserType(user);
         if (user != null){
-            User known = UserFactory.getUser(user.getRole());
-            return getUserInfo(known);
+//            User known = UserFactory.getUser(user.getRole());
+            return getUserInfo(user);
         }
         return null;
     }
@@ -33,11 +33,11 @@ public class LoginImp implements loginInt {
         LoginDaoInt loginDao = new LoginDaoImp();
 
         if (user instanceof Trainee)
-            ;
+            return loginDao.getTraineeInfo(user);
         else if (user instanceof Staff)
-            ;
+            return loginDao.getStaffInfo(user);
         else if (user instanceof Admin)
-            ;
+            return loginDao.getAdminInfo(user);
 
         return null;
     }

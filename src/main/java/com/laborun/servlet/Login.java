@@ -1,4 +1,4 @@
-package com.laborun.view;
+package com.laborun.servlet;
 
 import com.laborun.controller.LoginImp;
 import com.laborun.controller.loginInt;
@@ -29,21 +29,21 @@ public class Login extends HttpServlet {
 
         //Check the login info, if valid return the user info
         loginInt loginController = new LoginImp();
-        loginController.signIn(user);
-
+        user = loginController.signIn(user);
         //Saves the session and redirect to the correct role pages
-        if (user == null)
+        if (user == null ){
             response.sendRedirect("login.html");
+        }
         else {
             HttpSession session = request.getSession(true);
             session.setAttribute("user", user);
 
             if (user instanceof Trainee)
-                response.sendRedirect("index.html");
+                response.sendRedirect("index.html?Trainee");
             else if (user instanceof Staff)
-                response.sendRedirect("index.html");
+                response.sendRedirect("index.html?Staff");
             else if (user instanceof Admin)
-                response.sendRedirect("index.html");
+                response.sendRedirect("index.html?Admin");
         }
     }
 

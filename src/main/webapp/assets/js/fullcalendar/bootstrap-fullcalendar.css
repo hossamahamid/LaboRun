@@ -114,7 +114,7 @@ html .fc,
   }
   
 .fc-view {
-  width: 100%; /* needed for view switching (when view is absolute) */
+  width: 100%; /* needed for servlet switching (when servlet is absolute) */
   overflow: hidden;
   }
   

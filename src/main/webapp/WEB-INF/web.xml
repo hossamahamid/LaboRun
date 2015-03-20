@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>com.laborun.view.Login</servlet-class>
+        <servlet-class>com.laborun.servlet.Login</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>

@@ -7,7 +7,9 @@ package com.laborun.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 /**
  *
@@ -25,8 +27,17 @@ public class Connection {
     public static Session getConnection(){
 		if (connection == null) {
                     
-                SessionFactory  sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-                connection = sessionFactory.openSession();
+//                SessionFactory  sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+            Configuration configuration = new Configuration().configure();
+
+            StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder();
+
+            serviceRegistryBuilder.applySettings(configuration.getProperties());
+
+            ServiceRegistry serviceRegistry = serviceRegistryBuilder.build();
+            SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+
+            connection = sessionFactory.openSession();
 		}
 		return connection;
 	}

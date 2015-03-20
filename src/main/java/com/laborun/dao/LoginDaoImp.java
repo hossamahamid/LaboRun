@@ -84,7 +84,6 @@ public class LoginDaoImp implements LoginDaoInt {
             adminData = (Admin) it.next();
            
         }
-        
         return adminData;
     }
 
