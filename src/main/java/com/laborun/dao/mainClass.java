@@ -21,8 +21,8 @@ public class mainClass {
     public static void main(String[] args) {
         LoginDaoImp LDI = new LoginDaoImp();
       
-        SessionFactory  sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-        Session session = sessionFactory.openSession();        
+       
+              
         User user = new User();
         
         LDI.getUserInfo(user);

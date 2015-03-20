@@ -8,6 +8,7 @@ package com.laborun.dao;
 import com.laborun.entity.User;
 import java.util.List;
 import org.hibernate.Query;
+import org.hibernate.Session;
 
 /**
  *
@@ -16,13 +17,12 @@ import org.hibernate.Query;
 public class LoginDaoImp implements LoginDaoInt{
 
     public User getUserType(User user) {
-       /* String hql = "From User where ";
+       Session session = Connection.getConnection();
+        
+        String hql = "From User where";
         Query query = session.createQuery(hql);
         List results = query.list();
         
-        System.out.println("");
-        System.out.println("first req");
-       System.out.println("------------------");
         for (int i=0; i<results.size(); i++){
         Object row = (Object) results.get(i);
 
@@ -31,11 +31,13 @@ public class LoginDaoImp implements LoginDaoInt{
    
    
    
-}*/
+}
+       System.out.print("ssss");
         return null;
     }
 
     public User getUserInfo(User user) {
+         Session session = Connection.getConnection();
          System.out.println("inside getUserData");
           return null;
     }
