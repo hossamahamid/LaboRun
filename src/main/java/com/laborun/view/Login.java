@@ -1,7 +1,7 @@
 package com.laborun.view;
 
 import com.laborun.controller.LoginImp;
-import com.laborun.controller.LoginInt;
+import com.laborun.controller.loginInt;
 import com.laborun.entity.Admin;
 import com.laborun.entity.Staff;
 import com.laborun.entity.Trainee;
@@ -28,7 +28,7 @@ public class Login extends HttpServlet {
         user.setPassword(password);
 
         //Check the login info, if valid return the user info
-        LoginInt loginController = new LoginImp();
+        loginInt loginController = new LoginImp();
         loginController.signIn(user);
 
         //Saves the session and redirect to the correct role pages
