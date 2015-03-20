@@ -1,5 +1,7 @@
 package com.laborun.controller;
 
+import com.laborun.entity.Queue;
+
 /**
  * Created by Rainfall on 3/19/2015.
  */

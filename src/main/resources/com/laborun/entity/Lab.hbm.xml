@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.laborun.entity.Lab" table="lab" catalog="mydb" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="course" class="com.laborun.entity.Course" fetch="select">
+            <column name="course_id" not-null="true" />
+        </many-to-one>
+        <property name="labName" type="string">
+            <column name="lab_name" length="45" />
+        </property>
+        <set name="staffs" table="staff_has_lab" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="lab_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.laborun.entity.Staff">
+                <column name="staff_id" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="assignmentFileses" table="assignment_files" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="lab_id" />
+            </key>
+            <one-to-many class="com.laborun.entity.AssignmentFiles" />
+        </set>
+        <set name="queues" table="queue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="lab_id" />
+            </key>
+            <one-to-many class="com.laborun.entity.Queue" />
+        </set>
+    </class>
+</hibernate-mapping>

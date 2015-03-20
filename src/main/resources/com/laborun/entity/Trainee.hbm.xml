@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.laborun.entity.Trainee" table="trainee" catalog="mydb" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="foreign">
+                <param name="property">user</param>
+            </generator>
+        </id>
+        <many-to-one name="intake" class="com.laborun.entity.Intake" fetch="select">
+            <column name="intake_id" not-null="true" />
+        </many-to-one>
+        <one-to-one name="user" class="com.laborun.entity.User" constrained="true"></one-to-one>
+        <set name="assignmentFileses" table="assignment_files" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="trainee_id" />
+            </key>
+            <one-to-many class="com.laborun.entity.AssignmentFiles" />
+        </set>
+        <set name="traineeInQueues" table="trainee_in_queue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="trainee_id" not-null="true" />
+            </key>
+            <one-to-many class="com.laborun.entity.TraineeInQueue" />
+        </set>
+    </class>
+</hibernate-mapping>

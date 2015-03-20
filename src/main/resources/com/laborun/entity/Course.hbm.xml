@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.laborun.entity.Course" table="course" catalog="mydb" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="courseName" type="string">
+            <column name="course_name" length="45" not-null="true" />
+        </property>
+        <property name="courseStartDate" type="date">
+            <column name="course_start_date" length="10" />
+        </property>
+        <property name="courseEndDate" type="date">
+            <column name="course_end_date" length="10" />
+        </property>
+        <set name="departments" table="course_has_department" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="course_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.laborun.entity.Department">
+                <column name="department_id" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="labs" table="lab" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="course_id" not-null="true" />
+            </key>
+            <one-to-many class="com.laborun.entity.Lab" />
+        </set>
+        <set name="staffs" table="staff_has_course" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="course_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.laborun.entity.Staff">
+                <column name="staff_id" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="groups" table="group_has_course" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="course_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.laborun.entity.Group">
+                <column name="group_id" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
