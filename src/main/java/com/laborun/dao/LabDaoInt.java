@@ -6,14 +6,13 @@
 package com.laborun.dao;
 
 import com.laborun.entity.Course;
-import com.laborun.entity.Group;
+import com.laborun.entity.Lab;
 import java.util.List;
 
 /**
  *
  * @author dina
  */
-public interface CourseDaoInt {
-    
-    public List<Course> getCourses(Group group); // get all courses assigned to certain group
+public interface LabDaoInt {
+     public List<Lab> getLabs(Course course); // get all labs assigned to certain course
 }

@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.laborun.dao;
+package com.laborun.controller;
 
 import com.laborun.entity.Course;
-import com.laborun.entity.Group;
+import com.laborun.entity.Lab;
 import java.util.List;
 
 /**
  *
  * @author dina
  */
-public interface CourseDaoInt {
-    
-    public List<Course> getCourses(Group group); // get all courses assigned to certain group
+public interface LabInt {
+    public List<Lab> getLabs(Course course); // get all labs assigned to certain course
 }

@@ -5,7 +5,9 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.Course;
 import com.laborun.entity.Group;
+import com.laborun.entity.Lab;
 import com.laborun.entity.User;
 import java.io.File;
 import java.io.FileInputStream;
@@ -35,5 +37,31 @@ public class mainClass {
           System.out.println(((Group) it.next()).getGroupName());
         }
      */   
+        /*
+     CourseDaoImp CDI = new CourseDaoImp();
+       List<Course> c;
+              
+        User user = new User();
+        user.setEmail("dina");
+        Group g = new Group();
+        g.setGroupName("first");
+        c = CDI.getCourses(g);
+        Iterator it = c.iterator();
+        while (it.hasNext()) {
+          System.out.println(((Course) it.next()).getCourseName());
+        } */
+        
+     LabDaoImp LDI = new LabDaoImp();
+       List<Lab> l;
+              
+        User user = new User();
+        user.setEmail("dina");
+        Course course = new Course();
+        course.setCourseName("java");
+        l = LDI.getLabs(course);
+        Iterator it = l.iterator();
+        while (it.hasNext()) {
+          System.out.println(((Lab)it.next()).getLabName());
+        }    
     }
 }

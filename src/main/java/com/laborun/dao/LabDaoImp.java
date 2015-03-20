@@ -7,7 +7,7 @@ package com.laborun.dao;
 
 import com.laborun.entity.Course;
 import com.laborun.entity.Group;
-import com.laborun.entity.User;
+import com.laborun.entity.Lab;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -19,21 +19,21 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author dina
  */
-public class CourseDaoImp implements CourseDaoInt{
+public class LabDaoImp implements LabDaoInt{
 
-    public List<Course> getCourses(Group group) {
+    public List<Lab> getLabs(Course course) {
         Session session = Connection.getConnection();
-        List<Course> courses = null;
-        Criteria cr = session.createCriteria(Group.class);
-        cr.add(Restrictions.eq("groupName", group.getGroupName()));
+        List<Lab> labs = null;
+        Criteria cr = session.createCriteria(Course.class);
+        cr.add(Restrictions.eq("courseName", course.getCourseName()));
         List results = cr.list();
         Iterator it = results.iterator();
         
         while (it.hasNext()) {
-            courses = new ArrayList<Course>(((Group) it.next()).getCourses());
+            labs = new ArrayList<Lab>(((Course) it.next()).getLabs());
         }
 
-        return courses;
+        return labs;
     }
     
 }
