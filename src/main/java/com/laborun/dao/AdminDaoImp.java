@@ -15,6 +15,7 @@ import org.hibernate.Session;
 public class AdminDaoImp implements AdminDaoInt{
 
     public void insertAdminData(Admin admin) {
+        admin.setRole("admin");
         Session session = Connection.getConnection();
         session.beginTransaction();
         session.persist(admin);

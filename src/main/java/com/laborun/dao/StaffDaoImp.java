@@ -15,6 +15,7 @@ import org.hibernate.Session;
 public class StaffDaoImp implements StaffDaoInt{
 
     public void insertStaffData(Staff staff) {
+        staff.setRole("staff");
          Session session = Connection.getConnection();
         session.beginTransaction();
         session.persist(staff);
