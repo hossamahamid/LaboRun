@@ -14,7 +14,16 @@ public class Intake  implements java.io.Serializable {
      private int id;
      private int intakeNum;
      private Set trainees = new HashSet(0);
+     private Set Groups = new HashSet();
 
+    public Set getGroups() {
+        return Groups;
+    }
+
+    public void setGroups(Set Groups) {
+        this.Groups = Groups;
+    }
+     
     public Intake() {
     }
 

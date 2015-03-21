@@ -15,7 +15,16 @@ public class Group  implements java.io.Serializable {
      private String groupName;
      private Set users = new HashSet(0);
      private Set courses = new HashSet(0);
+     private Intake intake;
 
+    public Intake getIntake() {
+        return intake;
+    }
+
+    public void setIntake(Intake intake) {
+        this.intake = intake;
+    }
+     
     public Group() {
     }
 

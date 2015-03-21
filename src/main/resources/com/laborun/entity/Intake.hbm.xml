@@ -6,7 +6,7 @@
     <class name="com.laborun.entity.Intake" table="intake" catalog="mydb" optimistic-lock="version">
         <id name="id" type="int">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <property name="intakeNum" type="int">
             <column name="intake_num"  />
@@ -16,6 +16,12 @@
                 <column name="intake_id" not-null="true" />
             </key>
             <one-to-many class="com.laborun.entity.Trainee" />
+        </set>
+        <set name="groups" table="group" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="intake_id" not-null="true" />
+            </key>
+            <one-to-many class="com.laborun.entity.Group" />
         </set>
     </class>
 </hibernate-mapping>
