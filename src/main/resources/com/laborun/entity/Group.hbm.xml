@@ -28,6 +28,7 @@
             </many-to-many>
         </set>
         <many-to-one name="intake" class="com.laborun.entity.Intake" fetch="select">
+            
             <column name="intake_id" />
         </many-to-one>
     </class>

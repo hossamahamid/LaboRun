@@ -49,10 +49,14 @@ public class GroupDaoImp implements GroupDaoInt{
     }
 
     public void insertGroup(Intake intake, Group group) {
-        group.setIntake(intake);
+       
+        
+        
         Session session = Connection.getConnection();
+       group.setIntake(intake);
+        session.save(intake);
         session.beginTransaction();
-        session.persist(intake);
+        session.persist(group);
         session.getTransaction().commit();
         System.out.println("data inserted"); 
     }

@@ -135,13 +135,20 @@ public class mainClass {
         Intake intake1 = new Intake();
         intake1.setIntakeNum(20);
         IntakeDaoImp IDI = new IntakeDaoImp();
-        IDI.insertIntake(intake1);*/
+        IDI.insertIntake(intake1);*//*
         IntakeDaoImp IDI = new IntakeDaoImp();
         List<Intake> intakes = IDI.getIntakes();
        
         Iterator it = intakes.iterator();
         while (it.hasNext()) {
           System.out.println(((Intake)it.next()).getIntakeNum());
-        }
+        }*/
+        GroupDaoImp GDI = new GroupDaoImp();
+        Intake intake = new Intake();
+        intake.setIntakeNum(10);
+        Group group = new Group();
+        group.setGroupName("group1");
+        
+        GDI.insertGroup(intake,group);
     }
 }
