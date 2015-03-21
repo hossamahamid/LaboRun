@@ -6,8 +6,8 @@
 package com.laborun.dao;
 
 import com.laborun.entity.Lab;
-import com.laborun.entity.Queue;
-import com.laborun.entity.User;
+import com.laborun.entity.QueueD;
+import com.laborun.entity.UserD;
 import java.util.List;
 
 /**
@@ -15,7 +15,7 @@ import java.util.List;
  * @author dina
  */
 public interface QueueDaoInt {
-    public void addNewRequest(User user,String queueType,Queue queue); // add new request 
-    public void removeFromQueue(User user,String queueType); // remove sent request
-    public List<User> getTraineeInQueue(Queue queue); // get all trainees in the course
+    public void addNewRequest(UserD user,String queueType,QueueD queue); // add new request 
+    public void removeFromQueue(UserD user,String queueType); // remove sent request
+    public List<UserD> getTraineeInQueue(QueueD queue); // get all trainees in the course
 }

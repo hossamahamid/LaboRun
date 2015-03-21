@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration SYSTEM
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mydb?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">1234</property>
-    
-    <mapping resource="com/laborun/entity/Group.hbm.xml"/>
-    <mapping resource="com/laborun/entity/User.hbm.xml"/>
-   <!-- <mapping resource="com/laborun/entity/Admin.hbm.xml"/>-->
+    <mapping resource="com/laborun/entity/QueueD.hbm.xml"/>
+    <mapping resource="com/laborun/entity/GroupD.hbm.xml"/>
+    <!--<mapping resource="com/laborun/entity/Admin.hbm.xml"/>-->
     <mapping resource="com/laborun/entity/Course.hbm.xml"/>
-    <mapping resource="com/laborun/entity/Queue.hbm.xml"/>
     <mapping resource="com/laborun/entity/AssignmentFiles.hbm.xml"/>
-  <!--  <mapping resource="com/laborun/entity/Trainee.hbm.xml"/>
+    <!--<mapping resource="com/laborun/entity/Trainee.hbm.xml"/>
     <mapping resource="com/laborun/entity/Staff.hbm.xml"/> -->
     <mapping resource="com/laborun/entity/Intake.hbm.xml"/>
     <mapping resource="com/laborun/entity/TraineeInQueue.hbm.xml"/>
     <mapping resource="com/laborun/entity/Department.hbm.xml"/>
+    <mapping resource="com/laborun/entity/UserD.hbm.xml"/>
     <mapping resource="com/laborun/entity/Lab.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

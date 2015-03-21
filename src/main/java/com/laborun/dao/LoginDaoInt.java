@@ -8,7 +8,7 @@ package com.laborun.dao;
 import com.laborun.entity.Admin;
 import com.laborun.entity.Staff;
 import com.laborun.entity.Trainee;
-import com.laborun.entity.User;
+import com.laborun.entity.UserD;
 
 /**
  *
@@ -16,8 +16,8 @@ import com.laborun.entity.User;
  */
 public interface LoginDaoInt {
  
-    public User getUserType(User user); // this method will return object from user that contains all user's data
-    public Trainee getTraineeInfo(User user);   
-    public Staff getStaffInfo(User user);  
-    public Admin getAdminInfo(User user);  
+    public UserD getUserType(UserD user); // this method will return object from user that contains all user's data
+    public Trainee getTraineeInfo(UserD user);   
+    public Staff getStaffInfo(UserD user);  
+    public Admin getAdminInfo(UserD user);  
 }

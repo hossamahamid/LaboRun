@@ -8,7 +8,7 @@ package com.laborun.dao;
 import com.laborun.entity.Admin;
 import com.laborun.entity.Staff;
 import com.laborun.entity.Trainee;
-import com.laborun.entity.User;
+import com.laborun.entity.UserD;
 import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -22,16 +22,16 @@ import org.hibernate.criterion.Restrictions;
  */
 public class LoginDaoImp implements LoginDaoInt {
 
-    public User getUserType(User user) {
+    public UserD getUserType(UserD user) {
         Session session = Connection.getConnection();
         
-        User user_data = null;
-        Criteria cr = session.createCriteria(User.class);
-        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("password", user.getPassword()));
+        UserD user_data = null;
+        Criteria cr = session.createCriteria(UserD.class);
+        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("userPassword", user.getUserPassword()));
         List results = cr.list();
         Iterator it = results.iterator();
         while (it.hasNext()) {
-            user_data = (User) it.next();
+            user_data = (UserD) it.next();
            
 
         }
@@ -40,11 +40,11 @@ public class LoginDaoImp implements LoginDaoInt {
 
     }
 
-    public Trainee getTraineeInfo(User user) {
+    public Trainee getTraineeInfo(UserD user) {
         Session session = Connection.getConnection();
         Trainee traineeData = null;
         Criteria cr = session.createCriteria(Trainee.class);
-        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("password", user.getPassword()));
+        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("userPassword", user.getUserPassword()));
         List results = cr.list();
         Iterator it = results.iterator();
         while (it.hasNext()) {
@@ -56,11 +56,11 @@ public class LoginDaoImp implements LoginDaoInt {
         return traineeData;
     }
 
-    public Staff getStaffInfo(User user) {
+    public Staff getStaffInfo(UserD user) {
        Session session = Connection.getConnection();
         Staff staffData = null;
         Criteria cr = session.createCriteria(Staff.class);
-        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("password", user.getPassword()));
+        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("userPassword", user.getUserPassword()));
         List results = cr.list();
         Iterator it = results.iterator();
         while (it.hasNext()) {
@@ -73,11 +73,11 @@ public class LoginDaoImp implements LoginDaoInt {
       
     }
 
-    public Admin getAdminInfo(User user) {
+    public Admin getAdminInfo(UserD user) {
         Session session = Connection.getConnection();
         Admin adminData = null;
         Criteria cr = session.createCriteria(Admin.class);
-        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("password", user.getPassword()));
+        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("userPassword", user.getUserPassword()));
         List results = cr.list();
         Iterator it = results.iterator();
         while (it.hasNext()) {

@@ -1,5 +1,5 @@
 package com.laborun.entity;
-// Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1
+// Generated Mar 21, 2015 3:25:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -16,7 +16,7 @@ public class Lab  implements java.io.Serializable {
      private String labName;
      private Set staffs = new HashSet(0);
      private Set assignmentFileses = new HashSet(0);
-     private Set queues = new HashSet(0);
+     private Set queueDs = new HashSet(0);
 
     public Lab() {
     }
@@ -26,13 +26,13 @@ public class Lab  implements java.io.Serializable {
         this.id = id;
         this.course = course;
     }
-    public Lab(int id, Course course, String labName, Set staffs, Set assignmentFileses, Set queues) {
+    public Lab(int id, Course course, String labName, Set staffs, Set assignmentFileses, Set queueDs) {
        this.id = id;
        this.course = course;
        this.labName = labName;
        this.staffs = staffs;
        this.assignmentFileses = assignmentFileses;
-       this.queues = queues;
+       this.queueDs = queueDs;
     }
    
     public int getId() {
@@ -70,12 +70,12 @@ public class Lab  implements java.io.Serializable {
     public void setAssignmentFileses(Set assignmentFileses) {
         this.assignmentFileses = assignmentFileses;
     }
-    public Set getQueues() {
-        return this.queues;
+    public Set getQueueDs() {
+        return this.queueDs;
     }
     
-    public void setQueues(Set queues) {
-        this.queues = queues;
+    public void setQueueDs(Set queueDs) {
+        this.queueDs = queueDs;
     }
 
 

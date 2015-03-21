@@ -1,21 +1,25 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Mar 21, 2015 3:25:43 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="com.laborun.entity.Group" table="group" catalog="mydb" optimistic-lock="version">
+    <class name="com.laborun.entity.GroupD" table="group_d" catalog="mydb" optimistic-lock="version">
+       
         <id name="id" type="int">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
+        <many-to-one name="intake" class="com.laborun.entity.Intake" update="false" insert="false" fetch="select">
+            <column name="intake_id" />
+        </many-to-one>
         <property name="groupName" type="string">
             <column name="group_name" length="45" not-null="true" />
         </property>
-        <set name="users" table="user_has_group" inverse="false" lazy="true" fetch="select">
+        <set name="userDs" table="user_has_group" inverse="false" lazy="true" fetch="select">
             <key>
                 <column name="group_id" not-null="true" />
             </key>
-            <many-to-many entity-name="com.laborun.entity.User">
+            <many-to-many entity-name="com.laborun.entity.UserD">
                 <column name="user_id" not-null="true" />
             </many-to-many>
         </set>
@@ -27,9 +31,5 @@
                 <column name="course_id" not-null="true" />
             </many-to-many>
         </set>
-        <many-to-one name="intake" class="com.laborun.entity.Intake" fetch="select">
-            
-            <column name="intake_id" />
-        </many-to-one>
     </class>
 </hibernate-mapping>

@@ -1,5 +1,5 @@
 package com.laborun.entity;
-// Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1
+// Generated Mar 21, 2015 3:25:42 PM by Hibernate Tools 4.3.1
 
 
 

@@ -1,5 +1,5 @@
 package com.laborun.entity;
-// Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1
+// Generated Mar 21, 2015 3:25:42 PM by Hibernate Tools 4.3.1
 
 
 
@@ -10,18 +10,18 @@ public class TraineeInQueue  implements java.io.Serializable {
 
 
      private TraineeInQueueId id;
-     private Queue queue;
+     private QueueD queueD;
      private Trainee trainee;
-     private int order;
+     private int orderNum;
 
     public TraineeInQueue() {
     }
 
-    public TraineeInQueue(TraineeInQueueId id, Queue queue, Trainee trainee, int order) {
+    public TraineeInQueue(TraineeInQueueId id, QueueD queueD, Trainee trainee, int orderNum) {
        this.id = id;
-       this.queue = queue;
+       this.queueD = queueD;
        this.trainee = trainee;
-       this.order = order;
+       this.orderNum = orderNum;
     }
    
     public TraineeInQueueId getId() {
@@ -31,12 +31,12 @@ public class TraineeInQueue  implements java.io.Serializable {
     public void setId(TraineeInQueueId id) {
         this.id = id;
     }
-    public Queue getQueue() {
-        return this.queue;
+    public QueueD getQueueD() {
+        return this.queueD;
     }
     
-    public void setQueue(Queue queue) {
-        this.queue = queue;
+    public void setQueueD(QueueD queueD) {
+        this.queueD = queueD;
     }
     public Trainee getTrainee() {
         return this.trainee;
@@ -45,12 +45,12 @@ public class TraineeInQueue  implements java.io.Serializable {
     public void setTrainee(Trainee trainee) {
         this.trainee = trainee;
     }
-    public int getOrder() {
-        return this.order;
+    public int getOrderNum() {
+        return this.orderNum;
     }
     
-    public void setOrder(int order) {
-        this.order = order;
+    public void setOrderNum(int orderNum) {
+        this.orderNum = orderNum;
     }
 
 

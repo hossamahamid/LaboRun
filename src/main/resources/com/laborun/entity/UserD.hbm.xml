@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Mar 21, 2015 3:25:43 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="com.laborun.entity.User" table="user" catalog="mydb" optimistic-lock="version">
-        <id name="id" type="int">
+    <class name="com.laborun.entity.UserD" table="user_d" catalog="mydb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="increment" />
         </id>
@@ -20,8 +20,8 @@
         <property name="email" type="string">
             <column name="email" length="45" not-null="true" />
         </property>
-        <property name="password" type="string">
-            <column name="password" length="45" not-null="true" />
+        <property name="userPassword" type="string">
+            <column name="user_password" length="45" not-null="true" />
         </property>
         <property name="age" type="java.lang.Integer">
             <column name="age" />
@@ -35,21 +35,19 @@
         <property name="role" type="string">
             <column name="role" length="45" />
         </property>
-      
-       
-      
-        <set name="groups" table="user_has_group" inverse="false" lazy="true" fetch="select">
+        <set name="groupDs" table="user_has_group" inverse="false" lazy="true" fetch="select">
             <key>
                 <column name="user_id" not-null="true" />
             </key>
-            <many-to-many entity-name="com.laborun.entity.Group">
+            <many-to-many entity-name="com.laborun.entity.GroupD">
                 <column name="group_id" not-null="true" />
             </many-to-many>
         </set>
+        
         <joined-subclass name="com.laborun.entity.Trainee" table="trainee">
           <key column="id"></key>
-          <many-to-one name="intake" class="com.laborun.entity.Intake" fetch="select">
-            <column name="intake_id" />
+           <many-to-one name="intake" class="com.laborun.entity.Intake" fetch="select">
+            <column name="intake_id"  />
         </many-to-one>
         <set name="assignmentFileses" table="assignment_files" inverse="true" lazy="true" fetch="select">
             <key>
@@ -64,6 +62,12 @@
             <one-to-many class="com.laborun.entity.TraineeInQueue" />
         </set>
       </joined-subclass>
+      
+      <joined-subclass name="com.laborun.entity.Admin" table="admin">
+          <key column="id"></key>
+          
+      </joined-subclass>
+      
       <joined-subclass name="com.laborun.entity.Staff" table="staff">
           <key column="id"></key>
           <set name="courses" table="staff_has_course" inverse="false" lazy="true" fetch="select">
@@ -82,10 +86,6 @@
                 <column name="lab_id" not-null="true" />
             </many-to-many>
         </set>
-      </joined-subclass>
-      
-      <joined-subclass name="com.laborun.entity.Admin" table="admin">
-          <key column="id"></key>
       </joined-subclass>
     </class>
 </hibernate-mapping>

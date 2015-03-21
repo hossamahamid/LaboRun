@@ -5,7 +5,7 @@ import com.laborun.dao.LoginDaoInt;
 import com.laborun.entity.Admin;
 import com.laborun.entity.Staff;
 import com.laborun.entity.Trainee;
-import com.laborun.entity.User;
+import com.laborun.entity.UserD;
 
 /**
  * Created by Rainfall on 3/20/2015.
@@ -13,7 +13,7 @@ import com.laborun.entity.User;
 public class LoginImp implements loginInt {
 
     @Override
-    public User signIn(User user) {
+    public UserD signIn(UserD user) {
         user = getUserType(user);
         if (user != null){
 //            User known = UserFactory.getUser(user.getRole());
@@ -23,13 +23,13 @@ public class LoginImp implements loginInt {
     }
 
     @Override
-    public User getUserType(User user) {
+    public UserD getUserType(UserD user) {
         LoginDaoInt loginDao = new LoginDaoImp();
         return loginDao.getUserType(user);
     }
 
     @Override
-    public User getUserInfo(User user) {
+    public UserD getUserInfo(UserD user) {
         LoginDaoInt loginDao = new LoginDaoImp();
 
         if (user instanceof Trainee)

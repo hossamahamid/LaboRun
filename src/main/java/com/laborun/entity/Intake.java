@@ -1,5 +1,5 @@
 package com.laborun.entity;
-// Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1
+// Generated Mar 21, 2015 3:25:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,38 +11,29 @@ import java.util.Set;
 public class Intake  implements java.io.Serializable {
 
 
-     private int id;
+     private Integer id;
      private int intakeNum;
+     private Set groupDs = new HashSet(0);
      private Set trainees = new HashSet(0);
-     private Set Groups = new HashSet();
 
-    public Set getGroups() {
-        return Groups;
-    }
-
-    public void setGroups(Set Groups) {
-        this.Groups = Groups;
-    }
-     
     public Intake() {
     }
 
 	
-    public Intake(int id, int intakeNum) {
-        this.id = id;
+    public Intake(int intakeNum) {
         this.intakeNum = intakeNum;
     }
-    public Intake(int id, int intakeNum, Set trainees) {
-       this.id = id;
+    public Intake(int intakeNum, Set groupDs, Set trainees) {
        this.intakeNum = intakeNum;
+       this.groupDs = groupDs;
        this.trainees = trainees;
     }
    
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
     
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public int getIntakeNum() {
@@ -51,6 +42,13 @@ public class Intake  implements java.io.Serializable {
     
     public void setIntakeNum(int intakeNum) {
         this.intakeNum = intakeNum;
+    }
+    public Set getGroupDs() {
+        return this.groupDs;
+    }
+    
+    public void setGroupDs(Set groupDs) {
+        this.groupDs = groupDs;
     }
     public Set getTrainees() {
         return this.trainees;
