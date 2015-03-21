@@ -6,6 +6,7 @@
 package com.laborun.dao;
 
 import com.laborun.entity.Group;
+import com.laborun.entity.Intake;
 import com.laborun.entity.User;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,4 +33,27 @@ public class GroupDaoImp implements GroupDaoInt{
 
         return groups;
      }
+
+    public List<Group> getAllGroups(Intake intake) {
+        Session session = Connection.getConnection();
+        List<Group> groups = null;
+        Criteria cr = session.createCriteria(Intake.class);
+        cr.add(Restrictions.eq("intakeNum", intake.getIntakeNum()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        while (it.hasNext()) {
+            groups = new ArrayList<Group>(((Intake) it.next()).getGroups());
+        }
+
+        return groups;
+    }
+
+    public void insertGroup(Intake intake, Group group) {
+        group.setIntake(intake);
+        Session session = Connection.getConnection();
+        session.beginTransaction();
+        session.persist(intake);
+        session.getTransaction().commit();
+        System.out.println("data inserted"); 
+    }
 }

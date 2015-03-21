@@ -119,7 +119,7 @@ public class mainClass {
         s.setEmail("ahmed2");
         s.setPassword("1234");
         s.setPhoneNumber("222222");
-       */ Admin a = new Admin();
+       *//* Admin a = new Admin();
         a.setName("ahmed3");
         a.setEmail("ahmed3");
         a.setPassword("1234");
@@ -128,7 +128,20 @@ public class mainClass {
         TDI.insertTraineeData(t);
         StaffDaoImp SDI = new StaffDaoImp();
         SDI.insertStaffData(s);
-        */AdminDaoImp ADI = new AdminDaoImp();
-        ADI.insertAdminData(a);
+        */
+      /*  AdminDaoImp ADI = new AdminDaoImp();
+        ADI.insertAdminData(a);*/
+        /*
+        Intake intake1 = new Intake();
+        intake1.setIntakeNum(20);
+        IntakeDaoImp IDI = new IntakeDaoImp();
+        IDI.insertIntake(intake1);*/
+        IntakeDaoImp IDI = new IntakeDaoImp();
+        List<Intake> intakes = IDI.getIntakes();
+       
+        Iterator it = intakes.iterator();
+        while (it.hasNext()) {
+          System.out.println(((Intake)it.next()).getIntakeNum());
+        }
     }
 }
