@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
-
-
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>com.laborun.servlet.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewStaff</servlet-name>
+        <servlet-class>com.laborun.servlet.NewStaff</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewTrainee</servlet-name>
+        <servlet-class>com.laborun.servlet.NewTrainee</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewCourse</servlet-name>
+        <servlet-class>com.laborun.servlet.NewCourse</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewGroup</servlet-name>
+        <servlet-class>com.laborun.servlet.NewGroup</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewIntake</servlet-name>
+        <servlet-class>com.laborun.servlet.NewIntake</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewStaff</servlet-name>
+        <url-pattern>/NewStaff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewTrainee</servlet-name>
+        <url-pattern>/NewTrainee</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewCourse</servlet-name>
+        <url-pattern>/NewCourse</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewGroup</servlet-name>
+        <url-pattern>/NewGroup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewIntake</servlet-name>
+        <url-pattern>/NewIntake</url-pattern>
     </servlet-mapping>
 </web-app>
