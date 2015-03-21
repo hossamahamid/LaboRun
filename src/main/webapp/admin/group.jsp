@@ -50,13 +50,6 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <label>group ID: </label>
-                                                <input type="text" value="group 1"class=" form-control" id="gId" disabled=""/>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
 
                                                 <label>group Name: </label>
                                                 <input type="text" value="group 1" class="form-control" id="gName" disabled=""/>
@@ -80,7 +73,7 @@
                                         </tr>
 
 
-                                 
+
                                         <tr><td><h2>group Courses: </h2>></td></tr>
                                         <tr>
                                             <td>
@@ -93,7 +86,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                              <a href="course.jsp?name=advancedJsp"/>  Advanced JSP & SERVLET
+                                                <a href="course.jsp?name=advancedJsp"/>  Advanced JSP & SERVLET
                                             </td>
                                             <td><a href="#" class="editButton1" hidden="">remove</a></td>
                                         </tr>
