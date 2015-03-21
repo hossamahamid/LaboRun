@@ -5,6 +5,7 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.AssignmentFiles;
 import com.laborun.entity.Course;
 import com.laborun.entity.Group;
 import com.laborun.entity.Lab;
@@ -12,6 +13,7 @@ import com.laborun.entity.User;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -50,7 +52,7 @@ public class mainClass {
         while (it.hasNext()) {
           System.out.println(((Course) it.next()).getCourseName());
         } */
-        
+        /*
      LabDaoImp LDI = new LabDaoImp();
        List<Lab> l;
               
@@ -62,6 +64,23 @@ public class mainClass {
         Iterator it = l.iterator();
         while (it.hasNext()) {
           System.out.println(((Lab)it.next()).getLabName());
-        }    
+        } */
+        
+        AssignmentDaoImp ADI = new AssignmentDaoImp();
+        AssignmentFiles AF = new AssignmentFiles();
+      
+        File file = new File("D:\\pictures\\New folder (2)\\1.JPG");
+        byte[] bFile = new byte[(int) file.length()];
+ 
+        try {
+	     FileInputStream fileInputStream = new FileInputStream(file);
+	     //convert file into array of bytes
+	     fileInputStream.read(bFile);
+	     fileInputStream.close();
+        } catch (Exception e) {
+	     e.printStackTrace();
+        }
+        AF.setUploadFile(bFile);
+        ADI.uploadAssignment(AF);
     }
 }

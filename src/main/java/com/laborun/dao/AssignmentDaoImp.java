@@ -24,12 +24,13 @@ import org.hibernate.criterion.Restrictions;
 public class AssignmentDaoImp implements AssignmentDaoInt{
 
     public void uploadAssignment(AssignmentFiles assignmentFiles) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Session session = Connection.getConnection();
+        session.beginTransaction();
+        session.persist(assignmentFiles);
+        session.getTransaction().commit();
+        System.out.println("data inserted"); 
     }
 
-    public AssignmentFiles DownloadAssignment(AssignmentFiles assignmentFiles) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public List<AssignmentFiles> getAssignments(Lab lab) {
         Session session = Connection.getConnection();

@@ -17,7 +17,6 @@ import java.util.List;
 public interface AssignmentDaoInt {
     
     public void uploadAssignment(AssignmentFiles assignmentFiles);
-    public AssignmentFiles DownloadAssignment(AssignmentFiles assignmentFiles);
     public List<AssignmentFiles> getAssignments(Lab lab);
     
 }
