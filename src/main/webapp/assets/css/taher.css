@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 20, 2015, 6:39:12 PM
+    Author     : taher
+*/
+
+#active-grp{
+    margin-left: 8px;
+    background-color: #2E2E2E;
+}
+
+#cancel{
+    position: absolute;
+    left: 250px;
+}
+#groups_list{
+    background-color:white;
+    color: graytext;
+}
+
+.editButton1{
+        position: absolute;
+        left: 200px;
+
+}
+
+
+#active-grp{
+    position: absolute;
+    left: 250px;
+}
+#Courses{
+    position:relative;
+}
+#labs{
+    position: relative;
+}
