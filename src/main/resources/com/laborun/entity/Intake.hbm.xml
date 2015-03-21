@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Mar 21, 2015 3:25:43 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.laborun.entity.Intake" table="intake" catalog="mydb" optimistic-lock="version">
-        <id name="id" type="int">
+        <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="increment" />
         </id>
         <property name="intakeNum" type="int">
-            <column name="intake_num"  />
+            <column name="intake_num" not-null="true" />
         </property>
+        <set name="groupDs" table="group_d" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="intake_id" />
+            </key>
+            <one-to-many class="com.laborun.entity.GroupD" />
+        </set>
         <set name="trainees" table="trainee" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="intake_id" not-null="true" />
+                <column name="intake_id"  />
             </key>
             <one-to-many class="com.laborun.entity.Trainee" />
-        </set>
-        <set name="groups" table="group" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="intake_id" not-null="true" />
-            </key>
-            <one-to-many class="com.laborun.entity.Group" />
         </set>
     </class>
 </hibernate-mapping>

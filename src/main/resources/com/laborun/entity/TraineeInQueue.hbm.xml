@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Mar 21, 2015 3:25:43 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.laborun.entity.TraineeInQueue" table="trainee_in_queue" catalog="mydb" optimistic-lock="version">
         <composite-id name="id" class="com.laborun.entity.TraineeInQueueId">
@@ -12,14 +12,14 @@
                 <column name="queue_id" />
             </key-property>
         </composite-id>
-        <many-to-one name="queue" class="com.laborun.entity.Queue" update="false" insert="false" fetch="select">
+        <many-to-one name="queueD" class="com.laborun.entity.QueueD" update="false" insert="false" fetch="select">
             <column name="queue_id" not-null="true" />
         </many-to-one>
         <many-to-one name="trainee" class="com.laborun.entity.Trainee" update="false" insert="false" fetch="select">
             <column name="trainee_id" not-null="true" />
         </many-to-one>
-        <property name="order" type="int">
-            <column name="order" not-null="true" />
+        <property name="orderNum" type="int">
+            <column name="order_num" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

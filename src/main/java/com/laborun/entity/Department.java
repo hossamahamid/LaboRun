@@ -1,5 +1,5 @@
 package com.laborun.entity;
-// Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1
+// Generated Mar 21, 2015 3:25:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,30 +11,25 @@ import java.util.Set;
 public class Department  implements java.io.Serializable {
 
 
-     private int id;
+     private Integer id;
      private String departmentName;
-     private Set users = new HashSet(0);
+     private Set userDs = new HashSet(0);
      private Set courses = new HashSet(0);
 
     public Department() {
     }
 
-	
-    public Department(int id) {
-        this.id = id;
-    }
-    public Department(int id, String departmentName, Set users, Set courses) {
-       this.id = id;
+    public Department(String departmentName, Set userDs, Set courses) {
        this.departmentName = departmentName;
-       this.users = users;
+       this.userDs = userDs;
        this.courses = courses;
     }
    
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
     
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getDepartmentName() {
@@ -44,12 +39,12 @@ public class Department  implements java.io.Serializable {
     public void setDepartmentName(String departmentName) {
         this.departmentName = departmentName;
     }
-    public Set getUsers() {
-        return this.users;
+    public Set getUserDs() {
+        return this.userDs;
     }
     
-    public void setUsers(Set users) {
-        this.users = users;
+    public void setUserDs(Set userDs) {
+        this.userDs = userDs;
     }
     public Set getCourses() {
         return this.courses;

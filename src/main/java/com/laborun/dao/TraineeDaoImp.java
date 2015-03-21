@@ -16,6 +16,7 @@ public class TraineeDaoImp implements TraineeDaoInt{
 
     public void insertTraineeData(Trainee trainee) {
         trainee.setRole("trainee");
+       
          Session session = Connection.getConnection();
         session.beginTransaction();
         session.persist(trainee);

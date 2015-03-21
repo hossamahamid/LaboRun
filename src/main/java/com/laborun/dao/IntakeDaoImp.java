@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -26,12 +27,27 @@ public class IntakeDaoImp implements IntakeDaoInt{
         return intakes;
     }
 
-    public void insertIntake(Intake intake) {
+    public boolean insertIntake(Intake intake) {
+        boolean flag = true;
         Session session = Connection.getConnection();
+        Criteria cr = session.createCriteria(Intake.class);
+        cr.add(Restrictions.eq("intakeNum",intake.getIntakeNum()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        while (it.hasNext()) {
+            
+           flag = false;
+           System.out.println("intake already exists");
+           break;
+
+        }
+        if(flag == true){
         session.beginTransaction();
         session.persist(intake);
         session.getTransaction().commit();
-        System.out.println("data inserted"); 
+        System.out.println("data inserted");
+        }
+        return flag;
     }
     
 }

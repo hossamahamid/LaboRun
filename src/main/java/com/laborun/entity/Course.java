@@ -1,5 +1,5 @@
 package com.laborun.entity;
-// Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1
+// Generated Mar 21, 2015 3:25:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -19,7 +19,7 @@ public class Course  implements java.io.Serializable {
      private Set departments = new HashSet(0);
      private Set labs = new HashSet(0);
      private Set staffs = new HashSet(0);
-     private Set groups = new HashSet(0);
+     private Set groupDs = new HashSet(0);
 
     public Course() {
     }
@@ -29,7 +29,7 @@ public class Course  implements java.io.Serializable {
         this.id = id;
         this.courseName = courseName;
     }
-    public Course(int id, String courseName, Date courseStartDate, Date courseEndDate, Set departments, Set labs, Set staffs, Set groups) {
+    public Course(int id, String courseName, Date courseStartDate, Date courseEndDate, Set departments, Set labs, Set staffs, Set groupDs) {
        this.id = id;
        this.courseName = courseName;
        this.courseStartDate = courseStartDate;
@@ -37,7 +37,7 @@ public class Course  implements java.io.Serializable {
        this.departments = departments;
        this.labs = labs;
        this.staffs = staffs;
-       this.groups = groups;
+       this.groupDs = groupDs;
     }
    
     public int getId() {
@@ -89,12 +89,12 @@ public class Course  implements java.io.Serializable {
     public void setStaffs(Set staffs) {
         this.staffs = staffs;
     }
-    public Set getGroups() {
-        return this.groups;
+    public Set getGroupDs() {
+        return this.groupDs;
     }
     
-    public void setGroups(Set groups) {
-        this.groups = groups;
+    public void setGroupDs(Set groupDs) {
+        this.groupDs = groupDs;
     }
 
 

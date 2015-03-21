@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 19, 2015 10:40:45 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Mar 21, 2015 3:25:43 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="com.laborun.entity.Queue" table="queue" catalog="mydb" optimistic-lock="version">
+    <class name="com.laborun.entity.QueueD" table="queue_d" catalog="mydb" optimistic-lock="version">
         <id name="id" type="int">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <many-to-one name="lab" class="com.laborun.entity.Lab" fetch="select">
             <column name="lab_id" />
         </many-to-one>
         <property name="queueType" type="string">
-            <column name="`queue type`" length="45" />
+            <column name="queue_type" length="45" />
         </property>
         <set name="traineeInQueues" table="trainee_in_queue" inverse="true" lazy="true" fetch="select">
             <key>

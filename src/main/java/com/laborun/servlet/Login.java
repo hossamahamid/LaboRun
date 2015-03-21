@@ -5,7 +5,7 @@ import com.laborun.controller.loginInt;
 import com.laborun.entity.Admin;
 import com.laborun.entity.Staff;
 import com.laborun.entity.Trainee;
-import com.laborun.entity.User;
+import com.laborun.entity.UserD;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,10 +23,10 @@ public class Login extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        User user = new User();
+        UserD user = new UserD();
         user.setEmail(email);
-        user.setPassword(password);
-
+       
+        user.setUserPassword(password);
         //Check the login info, if valid return the user info
         loginInt loginController = new LoginImp();
         user = loginController.signIn(user);

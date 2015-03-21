@@ -6,7 +6,7 @@
 package com.laborun.dao;
 
 import com.laborun.entity.Course;
-import com.laborun.entity.Group;
+import com.laborun.entity.GroupD;
 import com.laborun.entity.Lab;
 import java.util.ArrayList;
 import java.util.Iterator;
