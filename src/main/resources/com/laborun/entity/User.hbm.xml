@@ -6,7 +6,7 @@
     <class name="com.laborun.entity.User" table="user" catalog="mydb" optimistic-lock="version">
         <id name="id" type="int">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <many-to-one name="department" class="com.laborun.entity.Department" fetch="select">
             <column name="department_id" />
@@ -35,9 +35,9 @@
         <property name="role" type="string">
             <column name="role" length="45" />
         </property>
-        <one-to-one name="staff" class="com.laborun.entity.Staff"></one-to-one>
-        <one-to-one name="admin" class="com.laborun.entity.Admin"></one-to-one>
-        <one-to-one name="trainee" class="com.laborun.entity.Trainee"></one-to-one>
+      
+       
+      
         <set name="groups" table="user_has_group" inverse="false" lazy="true" fetch="select">
             <key>
                 <column name="user_id" not-null="true" />
@@ -46,5 +46,46 @@
                 <column name="group_id" not-null="true" />
             </many-to-many>
         </set>
+        <joined-subclass name="com.laborun.entity.Trainee" table="trainee">
+          <key column="id"></key>
+          <many-to-one name="intake" class="com.laborun.entity.Intake" fetch="select">
+            <column name="intake_id" />
+        </many-to-one>
+        <set name="assignmentFileses" table="assignment_files" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="trainee_id" />
+            </key>
+            <one-to-many class="com.laborun.entity.AssignmentFiles" />
+        </set>
+        <set name="traineeInQueues" table="trainee_in_queue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="trainee_id" not-null="true" />
+            </key>
+            <one-to-many class="com.laborun.entity.TraineeInQueue" />
+        </set>
+      </joined-subclass>
+      <joined-subclass name="com.laborun.entity.Staff" table="staff">
+          <key column="id"></key>
+          <set name="courses" table="staff_has_course" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="staff_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.laborun.entity.Course">
+                <column name="course_id" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="labs" table="staff_has_lab" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="staff_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.laborun.entity.Lab">
+                <column name="lab_id" not-null="true" />
+            </many-to-many>
+        </set>
+      </joined-subclass>
+      
+      <joined-subclass name="com.laborun.entity.Admin" table="admin">
+          <key column="id"></key>
+      </joined-subclass>
     </class>
 </hibernate-mapping>

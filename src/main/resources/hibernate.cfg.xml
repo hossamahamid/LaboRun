@@ -10,12 +10,12 @@
     
     <mapping resource="com/laborun/entity/Group.hbm.xml"/>
     <mapping resource="com/laborun/entity/User.hbm.xml"/>
-    <mapping resource="com/laborun/entity/Admin.hbm.xml"/>
+   <!-- <mapping resource="com/laborun/entity/Admin.hbm.xml"/>-->
     <mapping resource="com/laborun/entity/Course.hbm.xml"/>
     <mapping resource="com/laborun/entity/Queue.hbm.xml"/>
     <mapping resource="com/laborun/entity/AssignmentFiles.hbm.xml"/>
-    <mapping resource="com/laborun/entity/Trainee.hbm.xml"/>
-    <mapping resource="com/laborun/entity/Staff.hbm.xml"/>
+  <!--  <mapping resource="com/laborun/entity/Trainee.hbm.xml"/>
+    <mapping resource="com/laborun/entity/Staff.hbm.xml"/> -->
     <mapping resource="com/laborun/entity/Intake.hbm.xml"/>
     <mapping resource="com/laborun/entity/TraineeInQueue.hbm.xml"/>
     <mapping resource="com/laborun/entity/Department.hbm.xml"/>

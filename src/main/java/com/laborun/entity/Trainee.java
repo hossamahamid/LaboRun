@@ -13,7 +13,7 @@ public class Trainee extends User implements java.io.Serializable {
 
      private int id;
      private Intake intake;
-     private User user;
+   
      private Set assignmentFileses = new HashSet(0);
      private Set traineeInQueues = new HashSet(0);
 
@@ -21,13 +21,11 @@ public class Trainee extends User implements java.io.Serializable {
     }
 
 	
-    public Trainee(Intake intake, User user) {
+    public Trainee(Intake intake) {
         this.intake = intake;
-        this.user = user;
     }
-    public Trainee(Intake intake, User user, Set assignmentFileses, Set traineeInQueues) {
+    public Trainee(Intake intake, Set assignmentFileses, Set traineeInQueues) {
        this.intake = intake;
-       this.user = user;
        this.assignmentFileses = assignmentFileses;
        this.traineeInQueues = traineeInQueues;
     }
@@ -46,13 +44,7 @@ public class Trainee extends User implements java.io.Serializable {
     public void setIntake(Intake intake) {
         this.intake = intake;
     }
-    public User getUser() {
-        return this.user;
-    }
     
-    public void setUser(User user) {
-        this.user = user;
-    }
     public Set getAssignmentFileses() {
         return this.assignmentFileses;
     }

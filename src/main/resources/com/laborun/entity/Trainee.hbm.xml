@@ -13,7 +13,6 @@
         <many-to-one name="intake" class="com.laborun.entity.Intake" fetch="select">
             <column name="intake_id" not-null="true" />
         </many-to-one>
-        <one-to-one name="user" class="com.laborun.entity.User" constrained="true"></one-to-one>
         <set name="assignmentFileses" table="assignment_files" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="trainee_id" />

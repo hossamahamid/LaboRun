@@ -5,6 +5,9 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.Admin;
+import com.laborun.entity.Staff;
+import com.laborun.entity.Trainee;
 import com.laborun.entity.User;
 import java.util.Iterator;
 import java.util.List;
@@ -37,10 +40,55 @@ public class LoginDaoImp implements LoginDaoInt {
 
     }
 
-    public User getUserInfo(User user) {
+    public Trainee getTraineeInfo(User user) {
         Session session = Connection.getConnection();
-        System.out.println("inside getUserData");
-        return null;
+        Trainee traineeData = null;
+        Criteria cr = session.createCriteria(Trainee.class);
+        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("password", user.getPassword()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        while (it.hasNext()) {
+            traineeData = (Trainee) it.next();
+           
+
+        }
+        
+        return traineeData;
     }
+
+    public Staff getStaffInfo(User user) {
+       Session session = Connection.getConnection();
+        Staff staffData = null;
+        Criteria cr = session.createCriteria(Staff.class);
+        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("password", user.getPassword()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        while (it.hasNext()) {
+            staffData = (Staff) it.next();
+           
+
+        }
+        
+        return staffData;
+      
+    }
+
+    public Admin getAdminInfo(User user) {
+        Session session = Connection.getConnection();
+        Admin adminData = null;
+        Criteria cr = session.createCriteria(Admin.class);
+        cr.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("password", user.getPassword()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        while (it.hasNext()) {
+            adminData = (Admin) it.next();
+           
+        }
+        
+        return adminData;
+    }
+
+    
+    
 
 }

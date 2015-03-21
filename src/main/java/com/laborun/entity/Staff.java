@@ -12,19 +12,13 @@ public class Staff  extends User implements java.io.Serializable  {
 
 
      private int id;
-     private User user;
      private Set courses = new HashSet(0);
      private Set labs = new HashSet(0);
 
     public Staff() {
     }
 
-	
-    public Staff(User user) {
-        this.user = user;
-    }
-    public Staff(User user, Set courses, Set labs) {
-       this.user = user;
+    public Staff(Set courses, Set labs) {
        this.courses = courses;
        this.labs = labs;
     }
@@ -35,13 +29,6 @@ public class Staff  extends User implements java.io.Serializable  {
     
     public void setId(int id) {
         this.id = id;
-    }
-    public User getUser() {
-        return this.user;
-    }
-    
-    public void setUser(User user) {
-        this.user = user;
     }
     public Set getCourses() {
         return this.courses;

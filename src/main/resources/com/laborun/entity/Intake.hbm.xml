@@ -9,7 +9,7 @@
             <generator class="assigned" />
         </id>
         <property name="intakeNum" type="int">
-            <column name="intake_num" not-null="true" />
+            <column name="intake_num"  />
         </property>
         <set name="trainees" table="trainee" inverse="true" lazy="true" fetch="select">
             <key>

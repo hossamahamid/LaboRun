@@ -10,13 +10,8 @@ public class Admin extends User implements java.io.Serializable {
 
 
      private int id;
-     private User user;
 
     public Admin() {
-    }
-
-    public Admin(User user) {
-       this.user = user;
     }
    
     public int getId() {
@@ -26,15 +21,6 @@ public class Admin extends User implements java.io.Serializable {
     public void setId(int id) {
         this.id = id;
     }
-    public User getUser() {
-        return this.user;
-    }
-    
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-
 
 
 }

@@ -5,10 +5,14 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.Admin;
 import com.laborun.entity.AssignmentFiles;
 import com.laborun.entity.Course;
 import com.laborun.entity.Group;
+import com.laborun.entity.Intake;
 import com.laborun.entity.Lab;
+import com.laborun.entity.Staff;
+import com.laborun.entity.Trainee;
 import com.laborun.entity.User;
 import java.io.File;
 import java.io.FileInputStream;
@@ -65,7 +69,7 @@ public class mainClass {
         while (it.hasNext()) {
           System.out.println(((Lab)it.next()).getLabName());
         } */
-        
+        /*
         AssignmentDaoImp ADI = new AssignmentDaoImp();
         AssignmentFiles AF = new AssignmentFiles();
       
@@ -81,6 +85,50 @@ public class mainClass {
 	     e.printStackTrace();
         }
         AF.setUploadFile(bFile);
-        ADI.uploadAssignment(AF);
+        ADI.uploadAssignment(AF);*/
+        /*
+        LoginDaoImp LDI = new LoginDaoImp();
+        User user = new User();
+        user.setEmail("dina");
+        user.setPassword("1234");
+        
+        User user2 = new User();
+        user2.setEmail("dalia");
+        user2.setPassword("1234");
+        
+        User user3 = new User();
+        user3.setEmail("enas");
+        user3.setPassword("1234");
+        Trainee t =LDI.getTraineeInfo(user2);
+        Staff s = LDI.getStaffInfo(user3);
+        Admin a= LDI.getAdminInfo(user);
+        System.out.println(t.getName());
+        System.out.println(s.getName());
+        System.out.println(a.getName());*/
+          
+        /*
+        Trainee t = new Trainee();
+        t.setName("ahmed");
+        t.setEmail("ahmed");
+        t.setPassword("1234");
+        t.setPhoneNumber("11111");
+       */
+       /*
+        Staff s = new Staff();
+        s.setName("ahmed2");
+        s.setEmail("ahmed2");
+        s.setPassword("1234");
+        s.setPhoneNumber("222222");
+       */ Admin a = new Admin();
+        a.setName("ahmed3");
+        a.setEmail("ahmed3");
+        a.setPassword("1234");
+        a.setPhoneNumber("55555");
+        /*TraineeDaoImp TDI = new  TraineeDaoImp();
+        TDI.insertTraineeData(t);
+        StaffDaoImp SDI = new StaffDaoImp();
+        SDI.insertStaffData(s);
+        */AdminDaoImp ADI = new AdminDaoImp();
+        ADI.insertAdminData(a);
     }
 }
