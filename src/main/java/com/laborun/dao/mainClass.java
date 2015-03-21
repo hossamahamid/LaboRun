@@ -106,29 +106,32 @@ public class mainClass {
         System.out.println(s.getName());
         System.out.println(a.getName());*/
           
-        /*
+
         Trainee t = new Trainee();
         t.setName("ahmed");
         t.setEmail("ahmed");
         t.setPassword("1234");
         t.setPhoneNumber("11111");
-       */
-       /*
+
+
         Staff s = new Staff();
         s.setName("ahmed2");
         s.setEmail("ahmed2");
         s.setPassword("1234");
         s.setPhoneNumber("222222");
-       */ Admin a = new Admin();
+
+        /*Admin a = new Admin();
         a.setName("ahmed3");
         a.setEmail("ahmed3");
         a.setPassword("1234");
         a.setPhoneNumber("55555");
-        /*TraineeDaoImp TDI = new  TraineeDaoImp();
+        */
+        TraineeDaoImp TDI = new  TraineeDaoImp();
         TDI.insertTraineeData(t);
         StaffDaoImp SDI = new StaffDaoImp();
         SDI.insertStaffData(s);
-        */AdminDaoImp ADI = new AdminDaoImp();
-        ADI.insertAdminData(a);
+
+//        AdminDaoImp ADI = new AdminDaoImp();
+//        ADI.insertAdminData(a);
     }
 }

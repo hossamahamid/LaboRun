@@ -30,6 +30,7 @@ public class Login extends HttpServlet {
         //Check the login info, if valid return the user info
         loginInt loginController = new LoginImp();
         user = loginController.signIn(user);
+
         //Saves the session and redirect to the correct role pages
         if (user == null ){
             response.sendRedirect("login.html");
