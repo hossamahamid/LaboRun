@@ -49,16 +49,33 @@ public class GroupDaoImp implements GroupDaoInt {
         return groups;
     }
 
-    public void insertGroup(Intake intake, GroupD group) {
+    public boolean insertGroup(Intake intake, GroupD group) {
 
-        Session session = Connection.getConnection();
-        session.save(intake);
         
-        group.setIntake(intake);
+        boolean flag = true;
+        Session session = Connection.getConnection();
+        Criteria cr = session.createCriteria(GroupD.class);
+        cr.add(Restrictions.eq("groupName",group.getGroupName()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        while (it.hasNext()) {
+            
+           flag = false;
+           System.out.println("group already exists");
+           break;
+
+        }
+        if(flag == true){
         session.beginTransaction();
-       
+        session.save(intake);
+         group.setIntake(intake);
         session.persist(group);
         session.getTransaction().commit();
         System.out.println("data inserted");
+        }
+        return flag;
+        
+        
+       
     }
 }

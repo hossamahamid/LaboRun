@@ -19,6 +19,6 @@ public interface GroupDaoInt {
     // this user can be staff member or trainee
     
     public List<GroupD> getAllGroups(Intake intake); // this method will get all groups assigned to certain intake 
-    public void insertGroup(Intake intake,GroupD group); // insert new group into certain intake
+    public boolean insertGroup(Intake intake,GroupD group); // insert new group into certain intake
     
 }
