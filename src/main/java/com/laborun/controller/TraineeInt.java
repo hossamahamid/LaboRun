@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.laborun.dao;
+package com.laborun.controller;
 
 import com.laborun.entity.Trainee;
 
@@ -11,6 +11,6 @@ import com.laborun.entity.Trainee;
  *
  * @author dina
  */
-public interface TraineeDaoInt {
+public interface TraineeInt {
     public boolean insertTraineeData(Trainee trainee);
 }

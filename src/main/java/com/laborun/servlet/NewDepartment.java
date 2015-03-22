@@ -5,9 +5,11 @@
  */
 package com.laborun.servlet;
 
-import com.laborun.controller.TraineeImp;
+import com.laborun.controller.DepartmentImp;
+import com.laborun.entity.Department;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author dina
  */
-public class NewTrainee extends HttpServlet {
+public class NewDepartment extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +34,20 @@ public class NewTrainee extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-       
+  //     try {
+            /* TODO output your page here. You may use following sample code. */
+    /*        out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet NewDepartment</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet NewDepartment at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        } finally {
+            out.close();
+        }*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -60,9 +75,25 @@ public class NewTrainee extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-       TraineeImp TI = new TraineeImp();
+            throws ServletException, IOException {  
+        PrintWriter out = response.getWriter();
+      /*out.println("data");*/
+        DepartmentImp DI = new DepartmentImp();
+        Department d = new Department();
+        
+        d.setDepartmentName(request.getParameter("departmentName"));
+        //out.println(DI.insertDepartment(d));
+        if(DI.insertDepartment(d))
+        {
+             request.setAttribute("error","<font color=green size=4px>new department inserted</font>"); 
+        }
+        else{
+             request.setAttribute("error","<font color=red size=4px>department name already exists</font>"); 
+        }
+       RequestDispatcher rd=request.getRequestDispatcher("admin/addDepartment.jsp");
        
+       rd.include(request, response);
+          
     }
 
     /**

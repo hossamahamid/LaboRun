@@ -35,5 +35,28 @@ public class CourseDaoImp implements CourseDaoInt{
 
         return courses;
     }
+
+    public boolean insertCourse(Course course) {
+           boolean flag = true;
+        Session session = Connection.getConnection();
+        Criteria cr = session.createCriteria(Course.class);
+        cr.add(Restrictions.eq("courseName",course.getCourseName()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        while (it.hasNext()) {
+            
+           flag = false;
+           System.out.println("course already exists");
+           break;
+
+        }
+        if(flag == true){
+        session.beginTransaction();
+        session.persist(course);
+        session.getTransaction().commit();
+        System.out.println("data inserted");
+        }
+        return flag;
+    }
     
 }

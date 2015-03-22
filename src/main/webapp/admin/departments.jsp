@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:include page="/getDepartments"/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,14 +34,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><a href="department.jsp?name=Ewd">EWD</a></td>
-                                        <td>DeptId1</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="department.jsp?name=mad">MAD</a></td>
-                                        <td>DeptId2</td>
-                                    </tr>                                </tbody>
+                                    
+                                        
+                                         <c:forEach var="vehicle" items="${departments}">
+                <tr>
+                   
+                    <td>
+                         <c:out value="${vehicle}" /> 
+                       <!-- <a href="department.jsp?name=Ewd">EWD</a> -->
+                    </td>
+                    <td>DeptId1</td>
+                </tr>
+                </c:forEach> 
+                                        
+                                   
+                                </tbody>
                             </table>
                             <jsp:include page="adminFooter.html"/>
 

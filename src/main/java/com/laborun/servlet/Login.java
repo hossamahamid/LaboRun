@@ -40,11 +40,11 @@ public class Login extends HttpServlet {
             session.setAttribute("user", user);
 
             if (user instanceof Trainee)
-                response.sendRedirect("index.html?Trainee");
+                response.sendRedirect("index.jsp?Trainee");
             else if (user instanceof Staff)
                 response.sendRedirect("index.html?Staff");
             else if (user instanceof Admin)
-                response.sendRedirect("index.html?Admin");
+                response.sendRedirect("index.jsp?Admin");
         }
     }
 
