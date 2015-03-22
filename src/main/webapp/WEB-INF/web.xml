@@ -32,6 +32,10 @@
         <servlet-name>getDepartments</servlet-name>
         <servlet-class>com.laborun.servlet.getDepartments</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GroupsView</servlet-name>
+        <servlet-class>com.laborun.servlet.GroupsView</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -63,5 +67,9 @@
     <servlet-mapping>
         <servlet-name>getDepartments</servlet-name>
         <url-pattern>/getDepartments</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GroupsView</servlet-name>
+        <url-pattern>/staff/groups</url-pattern>
     </servlet-mapping>
 </web-app>
