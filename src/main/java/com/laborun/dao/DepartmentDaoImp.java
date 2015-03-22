@@ -41,5 +41,14 @@ public class DepartmentDaoImp implements DepartmentDaoInt{
         return flag;
         
     }
+
+    public List<Department> getDepartments() {
+        Session session = Connection.getConnection();
+        List<Department> departments = null;
+        Criteria cr = session.createCriteria(Department.class);
+        departments = cr.list();
+       
+        return departments;
+    }
     
 }

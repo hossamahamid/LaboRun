@@ -7,6 +7,7 @@ package com.laborun.controller;
 
 import com.laborun.dao.DepartmentDaoImp;
 import com.laborun.entity.Department;
+import java.util.List;
 
 /**
  *
@@ -17,6 +18,11 @@ public class DepartmentImp implements DepartmentInt{
     public boolean insertDepartment(Department department) {
         DepartmentDaoImp DDI = new DepartmentDaoImp();
        return DDI.insertDepartment(department);
+    }
+
+    public List<Department> getDepartments() {
+        DepartmentDaoImp DDI = new DepartmentDaoImp();
+      return DDI.getDepartments();
     }
     
 }

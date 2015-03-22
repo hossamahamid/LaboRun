@@ -6,6 +6,7 @@
 package com.laborun.dao;
 
 import com.laborun.entity.Department;
+import java.util.List;
 
 /**
  *
@@ -13,4 +14,5 @@ import com.laborun.entity.Department;
  */
 public interface DepartmentDaoInt {
     public boolean insertDepartment(Department department);
+    public List<Department> getDepartments();
 }
