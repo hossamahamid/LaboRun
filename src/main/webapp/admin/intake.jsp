@@ -44,14 +44,31 @@
                     <div class="col-md-12">
                         <div id="groups_list">
                             <div class="panel-heading">
-                                <input type="button" value="Edit Course" id="editButton" onclick="showSaveButton()"/>
+                                <input type="button" value="Edit Intake" id="editButton" onclick="showSaveButton()"/>
                                 <input type="submit" value="Save" class="editButton1" id="saveButton"  hidden="true"/>
                                 <input type="reset" value="cancel" class="editButton1" id="cancel" hidden="true"/>
                             </div>
                             <div class="custom-check goleft mt">
                                 <table id="todo" class="table table-hover custom-check">
                                     <tbody>
-                                        
+                                 
+                                               <tr><td><h2>List of Groups : </h2>></td></tr>
+                                        <tr>
+                                            <td>
+                                                <a href="group.jsp?name=group1"/>group 1
+                                            </td>
+                                            <td>
+                                                <a href="#" class="editButton1" hidden="">remove</a>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="group.jsp?name=group2"/>group 2
+                                            </td>
+                                            <td><a href="#" class="editButton1" hidden="">remove</a></td>
+                                        </tr>
+
                                         <tr><td><h2>List of Trainees : </h2>></td></tr>
                                         <tr>
                                             <td>

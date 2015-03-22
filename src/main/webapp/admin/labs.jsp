@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LABORUN</title>
+        <title>LABORUN</title>
     </head>
     <body>
         <jsp:include page="adminHeader.html"/>
@@ -18,17 +18,22 @@
                 <h3><i class="fa fa-angle-right"></i> Trainees</h3>
                 <div class="row mt">
                     <div class="col-lg-12">
+                        <div class="panel-heading">
+
+                            <h4 align="right"><a href="addLab.jsp"><i class="fa fa-angle-right"></i>Add Lab</a></h4>
+
+                        </div>
+
                         <div class="content-panel">
                             <table class="table table-bordered table-striped table-condensed">
                                 <thead>
                                     <tr>
+                                        <th>Lab ID</th>
                                         <th>Lab Name</th>
-                                        <th>Course Name</th>
-                                        <th>Department</th>
-                                        
+                                        <th>Course Name</th
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
-       </body>
-</html>
+
+                                    </body>
+                                    </html>

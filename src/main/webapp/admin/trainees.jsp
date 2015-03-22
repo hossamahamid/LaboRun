@@ -18,6 +18,11 @@
                 <h3><i class="fa fa-angle-right"></i> Trainees</h3>
                 <div class="row mt">
                     <div class="col-lg-12">
+                        <div class="panel-heading">
+
+                            <h4 align="right"><a href="addTrianee.jsp"><i class="fa fa-angle-right"></i>Add Trainee</a></h4>
+
+                        </div>
                         <div class="content-panel">
                             <table class="table table-bordered table-striped table-condensed">
                                 <thead>

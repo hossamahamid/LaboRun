@@ -12,12 +12,17 @@
         <title>LABORUN</title>
     </head>
     <body>
-                <jsp:include page="adminHeader.html"/>
+        <jsp:include page="adminHeader.html"/>
         <section id="main-content">
             <section class="wrapper">
                 <h3><i class="fa fa-angle-right"></i> Departments: </h3>
                 <div class="row mt">
                     <div class="col-lg-12">
+                        <div class="panel-heading">
+
+                            <h4 align="right"><a href="addDepartment.jsp"><i class="fa fa-angle-right"></i>Add Department</a></h4>
+
+                        </div>
                         <div class="content-panel">
                             <table class="table table-bordered table-striped table-condensed">
                                 <thead>
@@ -38,5 +43,5 @@
                             </table>
                             <jsp:include page="adminFooter.html"/>
 
-    </body>
-</html>
+                            </body>
+                            </html>
