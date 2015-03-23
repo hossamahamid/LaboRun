@@ -5,6 +5,9 @@
  */
 package com.laborun.servlet;
 
+import com.laborun.controller.IntakeImp;
+import com.laborun.controller.IntakeInt;
+import com.laborun.entity.Intake;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,16 +35,18 @@ public class NewIntake extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewIntake</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewIntake at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String intId = request.getParameter("iNum");
+            int id = Integer.parseInt(intId);
+            Intake intake = new Intake(id);
+
+            IntakeInt control = new IntakeImp();
+            if (control.insertIntake(intake)) {
+                out.println("new Intake inserted");
+            } else {
+                out.println("intake exists ya 3am  enta");
+//                RequestDispatcher rd = request.getRequestDispatcher("admin/addIntake.jsp");
+//                response.sendRedirect("admin/addIntake.jsp");
+            }
         } finally {
             out.close();
         }
