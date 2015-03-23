@@ -8,12 +8,12 @@ package com.laborun.dao;
 import com.laborun.entity.Admin;
 import com.laborun.entity.AssignmentFiles;
 import com.laborun.entity.Course;
-import com.laborun.entity.Group;
+import com.laborun.entity.GroupD;
 import com.laborun.entity.Intake;
 import com.laborun.entity.Lab;
 import com.laborun.entity.Staff;
 import com.laborun.entity.Trainee;
-import com.laborun.entity.User;
+import com.laborun.entity.UserD;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
@@ -107,18 +107,18 @@ public class mainClass {
         System.out.println(a.getName());*/
           
 
-        Trainee t = new Trainee();
-        t.setName("ahmed");
-        t.setEmail("ahmed");
-        t.setPassword("1234");
-        t.setPhoneNumber("11111");
+//        Trainee t = new Trainee();
+//        t.setName("ahmed");
+//        t.setEmail("ahmed");
+//        t.setPassword("1234");
+//        t.setPhoneNumber("11111");
 
 
-        Staff s = new Staff();
-        s.setName("ahmed2");
-        s.setEmail("ahmed2");
-        s.setPassword("1234");
-        s.setPhoneNumber("222222");
+//        Staff s = new Staff();
+//        s.setName("ahmed2");
+//        s.setEmail("ahmed2");
+//        s.setPassword("1234");
+//        s.setPhoneNumber("222222");
 
         /*Admin a = new Admin();
         a.setName("ahmed3");
@@ -126,10 +126,10 @@ public class mainClass {
         a.setPassword("1234");
         a.setPhoneNumber("55555");
         */
-        TraineeDaoImp TDI = new  TraineeDaoImp();
-        TDI.insertTraineeData(t);
-        StaffDaoImp SDI = new StaffDaoImp();
-        SDI.insertStaffData(s);
+//        TraineeDaoImp TDI = new  TraineeDaoImp();
+//        TDI.insertTraineeData(t);
+//        StaffDaoImp SDI = new StaffDaoImp();
+//        SDI.insertStaffData(s);
 
         
       /*  AdminDaoImp ADI = new AdminDaoImp();
@@ -146,13 +146,13 @@ public class mainClass {
         while (it.hasNext()) {
           System.out.println(((Intake)it.next()).getIntakeNum());
         }*/
-        GroupDaoImp GDI = new GroupDaoImp();
-        Intake intake = new Intake();
-        intake.setIntakeNum(10);
-        Group group = new Group();
-        group.setGroupName("group1");
-        
-        GDI.insertGroup(intake,group);
+//        GroupDaoImp GDI = new GroupDaoImp();
+//        Intake intake = new Intake();
+//        intake.setIntakeNum(10);
+//        Group group = new Group();
+//        group.setGroupName("group1");
+//        
+//        GDI.insertGroup(intake,group);
 
 
 //        AdminDaoImp ADI = new AdminDaoImp();

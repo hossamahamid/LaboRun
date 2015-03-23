@@ -12,18 +12,18 @@ import org.hibernate.Session;
  *
  * @author dina
  */
-public class TraineeDaoImp implements TraineeDaoInt{
+public class TraineeDaoImp implements TraineeDaoInt {
 
     public boolean insertTraineeData(Trainee trainee) {
         trainee.setRole("trainee");
-       
-         Session session = Connection.getConnection();
+
+        Session session = Connection.getConnection();
         session.beginTransaction();
         session.persist(trainee);
         session.getTransaction().commit();
-        
-        System.out.println("data inserted"); 
+
+        System.out.println("data inserted");
         return true;
     }
-    
+
 }

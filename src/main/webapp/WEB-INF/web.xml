@@ -32,6 +32,14 @@
         <servlet-name>getDepartments</servlet-name>
         <servlet-class>com.laborun.servlet.getDepartments</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadFile</servlet-name>
+        <servlet-class>com.laborun.servlet.UploadFile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetAssignmentFiles</servlet-name>
+        <servlet-class>com.laborun.servlet.GetAssignmentFiles</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -63,5 +71,13 @@
     <servlet-mapping>
         <servlet-name>getDepartments</servlet-name>
         <url-pattern>/getDepartments</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadFile</servlet-name>
+        <url-pattern>/UploadFile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetAssignmentFiles</servlet-name>
+        <url-pattern>/GetAssignmentFiles</url-pattern>
     </servlet-mapping>
 </web-app>
