@@ -103,11 +103,11 @@
 
                                                     <label>department</label>
                                                 <br>
-                                                    <select>
+                                                    <select name="selectedDepartment">
                                                         
                                                       <c:forEach items="${sessionScope.dList}" var="row">
                                                       
-                                                            <option>   <c:out value="${row.departmentName}" />
+                                                            <option value="${row.id}">   <c:out value="${row.departmentName}" />
                                                                 </option> 
                                                         </c:forEach>
                                                     </select>
@@ -120,10 +120,10 @@
 
                                                     <label>intake</label>
                                                   <br>
-                                                    <select>
+                                                    <select name="selectedIntake">
                                                          <c:forEach items="${sessionScope.iList}" var="row">
                                                       
-                                                            <option>   <c:out value="${row.intakeNum}" />  </option> 
+                                                            <option value="${row.id}">   <c:out value="${row.intakeNum}" />  </option> 
                                                                  
                                                                
                                                         </c:forEach>

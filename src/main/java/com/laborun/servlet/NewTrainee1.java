@@ -80,12 +80,21 @@ public class NewTrainee1 extends HttpServlet {
             throws ServletException, IOException {
     TraineeImp TI = new TraineeImp();
        Trainee t = new Trainee();
+       Department d = new Department();
+     
+               
+       d.setId(Integer.parseInt(request.getParameter("selectedDepartment")) );
+       Intake i = new Intake();
+       i.setId(Integer.parseInt(request.getParameter("selectedIntake")) );
+      // System.out.println(request.getParameter("selectedDepartment"));
+       t.setDepartment(d);
+       t.setIntake(i);
        t.setName(request.getParameter("Name"));
        t.setPhoneNumber(request.getParameter("phoneNumber"));
        t.setEmail(request.getParameter("email"));
        t.setUserPassword(request.getParameter("password"));
        t.setAddress(request.getParameter("address"));
-     //  t.setAge((request.getParameter("age")));
+       t.setAge(Integer.parseInt(request.getParameter("age")));
        t.setActive(1);
        System.out.print( TI.insertTraineeData(t));
     }

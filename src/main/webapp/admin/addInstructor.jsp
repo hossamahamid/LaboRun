@@ -17,13 +17,13 @@
         <section id="main-content">
             <section class="wrapper">
 
-                <h3><i class="fa fa-angle-right"></i> Add new Department : </h3>
+                <h3><i class="fa fa-angle-right"></i> Add new instructor : </h3>
 
                 <!-- SIMPLE TO DO LIST -->
                 <div class="row mt">
                     <div class="col-md-12">
                         <div id="groups_list">
-                            <form method ="post" action="">
+                            <form method ="post" action="/LaboRun/NewStaff">
 
                                 <div class="panel-heading">
                                     <input type="submit" value="Save" class="editButton1" id="saveButton" />
@@ -33,35 +33,93 @@
                                     <table id="todo" class="table table-hover custom-check">
                                         <tbody>
                                             <tr>
-                                                <td>
+                                                <td width="200px">
 
-                                                    <label>Department Name: </label>
-                                                    <input type="text" value="group 1" class="form-control" id="gName" />
+                                                    <label>name :</label>
+                                                    <input type="text" name="Name" value=""  placeholder="Instructor name" class="form-control" id="InstructorName" />
+
+                                                    <br>
+
+                                                </td>
+                                            </tr> 
+
+                                            <tr>
+                                                <td width="200px">
+
+                                                    <label>phone number :</label>
+                                                    <input type="text" name="phoneNumber" value=""  placeholder="phone number" class="form-control" id="InstructorPhone" />
+
+                                                    <br>
+
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td width="200px">
+
+                                                    <label>email</label>
+                                                    <input type="text" name="email" value=""  placeholder="Email :" class="form-control" id="InstructorEmail" />
+
+                                                    <br>
+
+                                                </td>
+                                            </tr> 
+
+                                            <tr>
+                                                <td width="200px">
+
+                                                    <label>password</label>
+                                                    <input type="password" name="password" value=""  placeholder="password" class="form-control" id="Instructorpassword" />
+
+                                                    <br>
+
+                                                </td>
+                                            </tr> 
+
+                                            <tr>
+                                                <td width="200px">
+
+                                                    <label>age</label>
+                                                    <input type="text" name="age" value=""  placeholder="age" class="form-control" id="age" />
+
+                                                    <br>
+
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td width="200px">
+
+                                                    <label>address</label>
+                                                    <input type="text" name="address" value=""  placeholder="address" class="form-control" id="Instructoraddress" />
+
+                                                    <br>
+
+                                                </td>
+</tr><tr>
+                                                <td width="200px">
+
+                                                    <label>department</label>
+                                                <br>
+                                                    <select name="selectedDepartment">
+                                                        
+                                                      <c:forEach items="${sessionScope.dList}" var="row">
+                                                      
+                                                            <option value="${row.id}">   <c:out value="${row.departmentName}" />
+                                                                </option> 
+                                                        </c:forEach>
+                                                    </select>
+
+                                                    <br>
+
+                                                </td>
+</tr>
+
                                                 </td>
                                             </tr>
                                             
 
-                                            <tr><td><h2>involved Users : </h2>></td></tr>
-
-                                            <tr><td>
-                                                    <input type="checkbox" name="users" value="user1">user 1<br>
-                                                    <input type="checkbox" name="users" value="user2">user 2<br>
-                                                    <input type="checkbox" name="users" value="user3">user 3<br>
-
-
-                                                </td>
-
-                                            </tr>
-
-                                            <tr><td><h2>add courses : </h2>></td></tr>
-
-                                            <tr>
-                                                <td>
-                                                    <input type="checkbox" name="courses" value="course1">course1<br>
-                                                    <input type="checkbox" name="courses" value="course2">course2<br>
-                                                    <input type="checkbox" name="courses" value="course3">course3<br>
-                                                </td>
-                                            </tr>
+                                            
 
                                               
                                         </tbody>

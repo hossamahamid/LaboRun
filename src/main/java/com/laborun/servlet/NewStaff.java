@@ -5,12 +5,19 @@
  */
 package com.laborun.servlet;
 
+import com.laborun.controller.DepartmentImp;
+import com.laborun.controller.StaffImp;
+import com.laborun.controller.StaffInt;
+import com.laborun.entity.Department;
+import com.laborun.entity.Staff;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,21 +37,7 @@ public class NewStaff extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewStaff</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewStaff at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {
-            out.close();
-        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -59,7 +52,11 @@ public class NewStaff extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        DepartmentImp DI = new DepartmentImp();
+        List<Department> d = DI.getDepartments();
+        HttpSession session = request.getSession(true);
+        session.setAttribute("dList",d);
+       response.sendRedirect("/LaboRun/admin/addInstructor.jsp");
     }
 
     /**
@@ -73,7 +70,23 @@ public class NewStaff extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        StaffInt SI = new StaffImp();
+        Staff s = new Staff();
+      
+       Department d = new Department();
+     
+               
+      // d.setId(Integer.parseInt(request.getParameter("selectedDepartment")) );
+       
+       //s.setDepartment(d);
+       s.setName(request.getParameter("Name"));
+       s.setPhoneNumber(request.getParameter("phoneNumber"));
+       s.setEmail(request.getParameter("email"));
+       s.setUserPassword(request.getParameter("password"));
+       s.setAddress(request.getParameter("address"));
+       s.setAge(Integer.parseInt(request.getParameter("age")));
+       s.setActive(1);
+       SI.insertStaffData(s);
     }
 
     /**
