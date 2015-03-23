@@ -48,7 +48,7 @@
                                                 <td width="200px">
 
                                                     <label>phone number :</label>
-                                                    <input type="text" name="Name" value=""  placeholder="phone number" class="form-control" id="TraineePhone" />
+                                                    <input type="text" name="phoneNumber" value=""  placeholder="phone number" class="form-control" id="TraineePhone" />
                                               
                                                     <br>
                                                     

@@ -6,6 +6,7 @@
 package com.laborun.servlet;
 
 import com.laborun.controller.TraineeImp;
+import com.laborun.entity.Trainee;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -62,7 +63,14 @@ public class NewTrainee extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        TraineeImp TI = new TraineeImp();
-       
+       Trainee t = new Trainee();
+       t.setName(request.getParameter("Name"));
+       t.setPhoneNumber(request.getParameter("phoneNumber"));
+       t.setEmail(request.getParameter("email"));
+       t.setUserPassword(request.getParameter("password"));
+       t.setAddress(request.getParameter("address"));
+     //  t.setAge((request.getParameter("age")));
+       TI.insertTraineeData(t);
     }
 
     /**
