@@ -5,20 +5,27 @@
  */
 package com.laborun.servlet;
 
+import com.laborun.controller.DepartmentImp;
+import com.laborun.controller.IntakeImp;
 import com.laborun.controller.TraineeImp;
+import com.laborun.entity.Department;
+import com.laborun.entity.Intake;
 import com.laborun.entity.Trainee;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author dina
  */
-public class NewTrainee extends HttpServlet {
+public class NewTrainee1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,9 +38,7 @@ public class NewTrainee extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-       
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -48,7 +53,18 @@ public class NewTrainee extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+      
+        DepartmentImp DI = new DepartmentImp();
+         IntakeImp II = new IntakeImp();
+        List<Department> d = DI.getDepartments();
+        HttpSession session = request.getSession(true);
+            session.setAttribute("dList",d);
+       // request.setAttribute("dList", d);
+        List<Intake> i = II.getIntakes();
+        session.setAttribute("iList",i);
+          response.sendRedirect("/LaboRun/admin/addTrainee.jsp");
+       
     }
 
     /**
@@ -62,7 +78,7 @@ public class NewTrainee extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       TraineeImp TI = new TraineeImp();
+    TraineeImp TI = new TraineeImp();
        Trainee t = new Trainee();
        t.setName(request.getParameter("Name"));
        t.setPhoneNumber(request.getParameter("phoneNumber"));
@@ -70,7 +86,8 @@ public class NewTrainee extends HttpServlet {
        t.setUserPassword(request.getParameter("password"));
        t.setAddress(request.getParameter("address"));
      //  t.setAge((request.getParameter("age")));
-       TI.insertTraineeData(t);
+       t.setActive(1);
+       System.out.print( TI.insertTraineeData(t));
     }
 
     /**

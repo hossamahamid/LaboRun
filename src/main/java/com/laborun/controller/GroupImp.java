@@ -6,9 +6,11 @@
 package com.laborun.controller;
 
 import com.laborun.dao.GroupDaoImp;
+import com.laborun.dao.GroupDaoInt;
 import com.laborun.entity.GroupD;
 import com.laborun.entity.Intake;
 import com.laborun.entity.UserD;
+
 import java.util.List;
 
 /**
@@ -18,7 +20,8 @@ import java.util.List;
 public class GroupImp implements GroupInt{
 
     public List<GroupD> getGroups(UserD user) {
-        throw new UnsupportedOperationException("Not supported yet."); //change body of generated methods, choose Tools | Templates.
+        GroupDaoInt groupDao = new GroupDaoImp();
+        return (groupDao.getGroups(user));
     }
 
     public boolean insertNewGroup(Intake intake, GroupD group) {

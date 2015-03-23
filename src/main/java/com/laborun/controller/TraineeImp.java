@@ -5,6 +5,7 @@
  */
 package com.laborun.controller;
 
+import com.laborun.dao.TraineeDaoImp;
 import com.laborun.entity.Trainee;
 
 /**
@@ -13,6 +14,8 @@ import com.laborun.entity.Trainee;
  */
 public class TraineeImp implements TraineeInt{
     public boolean insertTraineeData(Trainee trainee){
-        return true;
+        TraineeDaoImp TDI = new TraineeDaoImp();
+       return TDI.insertTraineeData(trainee);
+       
     }
 }
