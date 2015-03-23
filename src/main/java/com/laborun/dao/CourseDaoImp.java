@@ -25,7 +25,7 @@ public class CourseDaoImp implements CourseDaoInt{
         Session session = Connection.getConnection();
         List<Course> courses = null;
         Criteria cr = session.createCriteria(GroupD.class);
-        cr.add(Restrictions.eq("groupName", group.getGroupName()));
+        cr.add(Restrictions.eq("id", group.getId()));
         List results = cr.list();
         Iterator it = results.iterator();
         
