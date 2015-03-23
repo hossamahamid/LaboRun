@@ -16,7 +16,7 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author dina
  */
-public class TraineeDaoImp implements TraineeDaoInt{
+public class TraineeDaoImp implements TraineeDaoInt {
 
     public boolean insertTraineeData(Trainee trainee) {
        
@@ -46,5 +46,5 @@ public class TraineeDaoImp implements TraineeDaoInt{
         }
         return flag;
     }
-    
+
 }
