@@ -6,7 +6,9 @@
 package com.laborun.controller;
 
 import com.laborun.dao.TraineeDaoImp;
+import com.laborun.entity.Intake;
 import com.laborun.entity.Trainee;
+import java.util.List;
 
 /**
  *
@@ -17,5 +19,10 @@ public class TraineeImp implements TraineeInt{
         TraineeDaoImp TDI = new TraineeDaoImp();
        return TDI.insertTraineeData(trainee);
        
+    }
+
+    public List<Trainee> getTrainees(Intake intake) {
+       TraineeDaoImp TDI = new TraineeDaoImp();
+       return TDI.getTrainees(intake);
     }
 }

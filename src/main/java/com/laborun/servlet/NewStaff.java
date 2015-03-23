@@ -12,6 +12,7 @@ import com.laborun.entity.Department;
 import com.laborun.entity.Staff;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -54,6 +55,10 @@ public class NewStaff extends HttpServlet {
             throws ServletException, IOException {
         DepartmentImp DI = new DepartmentImp();
         List<Department> d = DI.getDepartments();
+       Iterator i = d.iterator();
+        while (i.hasNext()) {
+          System.out.println(((Department) i.next()).getDepartmentName());
+        }
         HttpSession session = request.getSession(true);
         session.setAttribute("dList",d);
        response.sendRedirect("/LaboRun/admin/addInstructor.jsp");

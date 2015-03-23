@@ -5,7 +5,9 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.Intake;
 import com.laborun.entity.Trainee;
+import java.util.List;
 
 /**
  *
@@ -13,4 +15,5 @@ import com.laborun.entity.Trainee;
  */
 public interface TraineeDaoInt {
     public boolean insertTraineeData(Trainee trainee);
+    public List<Trainee> getTrainees(Intake intake);
 }

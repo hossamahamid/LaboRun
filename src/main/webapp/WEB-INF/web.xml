@@ -40,7 +40,8 @@
 <servlet>
         <servlet-name>GroupsView</servlet-name>
         <servlet-class>com.laborun.servlet.GroupsView</servlet-class>
-
+</servlet>
+<servlet>
         <servlet-name>UploadFile</servlet-name>
         <servlet-class>com.laborun.servlet.UploadFile</servlet-class>
     </servlet>

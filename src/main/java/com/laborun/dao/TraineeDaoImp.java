@@ -5,6 +5,7 @@
  */
 package com.laborun.dao;
 
+import com.laborun.entity.Intake;
 import com.laborun.entity.Trainee;
 import java.util.Iterator;
 import java.util.List;
@@ -45,6 +46,15 @@ public class TraineeDaoImp implements TraineeDaoInt {
         System.out.println("data inserted");
         }
         return flag;
+    }
+
+    public List<Trainee> getTrainees(Intake intake) {
+        Session session = Connection.getConnection();
+        List<Trainee> trainee = null;
+        Criteria cr = session.createCriteria(Trainee.class);
+        trainee = cr.list();
+       
+        return trainee;
     }
 
 }
