@@ -20,7 +20,7 @@
                     <div class="col-lg-12">
                         <div class="panel-heading">
 
-                            <h4 align="right"><a href="addTrianee.jsp"><i class="fa fa-angle-right"></i>Add Trainee</a></h4>
+                            <h4 align="right"><a href="addTrainee.jsp"><i class="fa fa-angle-right"></i>Add Trainee</a></h4>
 
                         </div>
                         <div class="content-panel">

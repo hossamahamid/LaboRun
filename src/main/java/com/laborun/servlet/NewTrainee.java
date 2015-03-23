@@ -70,7 +70,8 @@ public class NewTrainee extends HttpServlet {
        t.setUserPassword(request.getParameter("password"));
        t.setAddress(request.getParameter("address"));
      //  t.setAge((request.getParameter("age")));
-       TI.insertTraineeData(t);
+       t.setActive(1);
+       System.out.print( TI.insertTraineeData(t));
     }
 
     /**

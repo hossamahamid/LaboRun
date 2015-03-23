@@ -6,7 +6,11 @@
 package com.laborun.dao;
 
 import com.laborun.entity.Trainee;
+import java.util.Iterator;
+import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -15,15 +19,32 @@ import org.hibernate.Session;
 public class TraineeDaoImp implements TraineeDaoInt{
 
     public boolean insertTraineeData(Trainee trainee) {
+       
+        boolean flag = true;
+        Session session = Connection.getConnection();
+        Criteria cr = session.createCriteria(Trainee.class);
+        cr.add(Restrictions.eq("email",trainee.getEmail()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        while (it.hasNext()) {
+            
+           flag = false;
+           System.out.println("trainee already exists");
+           break;
+
+        }
+        
+        
         trainee.setRole("trainee");
        
-         Session session = Connection.getConnection();
+        if(flag == true){
         session.beginTransaction();
         session.persist(trainee);
         session.getTransaction().commit();
         
-        System.out.println("data inserted"); 
-        return true;
+        System.out.println("data inserted");
+        }
+        return flag;
     }
     
 }

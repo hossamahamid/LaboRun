@@ -44,7 +44,7 @@ public class Login extends HttpServlet {
             else if (user instanceof Staff)
                 response.sendRedirect("index.html?Staff");
             else if (user instanceof Admin)
-                response.sendRedirect("index.jsp?Admin");
+                response.sendRedirect("/LaboRun/admin/adminMainPage.jsp");
         }
     }
 
