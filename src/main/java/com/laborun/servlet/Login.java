@@ -37,12 +37,13 @@ public class Login extends HttpServlet {
         }
         else {
             HttpSession session = request.getSession(true);
-            session.setAttribute("user", user);
+            session.setAttribute("userId", user.getId());
+            session.setAttribute("userName", user.getName());
 
             if (user instanceof Trainee)
                 response.sendRedirect("index.jsp?Trainee");
             else if (user instanceof Staff)
-                response.sendRedirect("index.html?Staff");
+                response.sendRedirect("staff");
             else if (user instanceof Admin)
                 response.sendRedirect("/LaboRun/admin/adminMainPage.jsp");
         }
