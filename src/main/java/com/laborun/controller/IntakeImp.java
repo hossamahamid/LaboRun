@@ -7,6 +7,7 @@ package com.laborun.controller;
 
 import com.laborun.dao.IntakeDaoImp;
 import com.laborun.entity.Intake;
+import java.util.List;
 
 /**
  *
@@ -17,6 +18,11 @@ public class IntakeImp implements IntakeInt{
     public boolean insertIntake(Intake intake) {
      IntakeDaoImp IDI = new IntakeDaoImp();
     return IDI.insertIntake(intake);
+    }
+
+    public List<Intake> getIntakes() {
+       IntakeDaoImp IDI = new IntakeDaoImp();
+    return IDI.getIntakes();
     }
     
 }

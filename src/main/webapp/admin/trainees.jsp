@@ -20,8 +20,10 @@
                     <div class="col-lg-12">
                         <div class="panel-heading">
 
-                            <h4 align="right"><a href="addTrainee.jsp"><i class="fa fa-angle-right"></i>Add Trainee</a></h4>
-
+                     <!--       <h4 align="right"><a href="addTrainee.jsp"><i class="fa fa-angle-right"></i>Add Trainee</a></h4>-->
+                     <form method="get" action="/LaboRun/NewTrainee1">
+                         <input type="submit" value="add new Trainee"/>
+                     </form>
                         </div>
                         <div class="content-panel">
                             <table class="table table-bordered table-striped table-condensed">

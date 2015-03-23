@@ -6,6 +6,7 @@
 package com.laborun.controller;
 
 import com.laborun.entity.Intake;
+import java.util.List;
 
 /**
  *
@@ -13,4 +14,5 @@ import com.laborun.entity.Intake;
  */
 public interface IntakeInt {
     public boolean insertIntake(Intake intake);
+    public List<Intake> getIntakes();
 }
