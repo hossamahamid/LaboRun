@@ -134,6 +134,8 @@
     <servlet-mapping>
         <servlet-name>LabView</servlet-name>
         <url-pattern>/trainee/lab</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
         <servlet-name>viewIntake</servlet-name>
         <url-pattern>/viewIntake</url-pattern>
     </servlet-mapping>
