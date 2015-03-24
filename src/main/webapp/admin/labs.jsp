@@ -15,12 +15,12 @@
         <jsp:include page="adminHeader.html"/>
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Trainees</h3>
+                <h3><i class="fa fa-angle-right"></i>Labs</h3>
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="panel-heading">
 
-                            <h4 align="right"><a href="addLab.jsp"><i class="fa fa-angle-right"></i>Add Lab</a></h4>
+                            <h4 align="right"><a href="/LaboRun/NewLab"><i class="fa fa-angle-right"></i>Add Lab</a></h4>
 
                         </div>
 

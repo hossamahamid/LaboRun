@@ -35,5 +35,14 @@ public class LabDaoImp implements LabDaoInt{
 
         return labs;
     }
+
+    public void insertLab(Lab lab) {
+       
+         Session session = Connection.getConnection();
+        session.beginTransaction();
+        session.persist(lab);
+        session.getTransaction().commit();
+        System.out.println("data inserted"); 
+    }
     
 }

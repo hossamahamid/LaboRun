@@ -15,4 +15,5 @@ import java.util.List;
  */
 public interface LabInt {
     public List<Lab> getLabs(Course course); // get all labs assigned to certain course
+    public void insertLab(Lab lab);
 }
