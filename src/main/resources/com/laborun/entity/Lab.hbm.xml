@@ -14,6 +14,21 @@
         <property name="labName" type="string">
             <column name="lab_name" length="45" />
         </property>
+        
+        <property name="startTime" type="date">
+            <column name="start_time" length="10" />
+        </property>
+        <property name="endTime" type="date">
+            <column name="end_time" length="10" />
+        </property>
+        <property name="assignmentDeadLine" type="date">
+            <column name="assignment_deadLine" length="10" />
+        </property>
+        
+        <property name="labActive" type="integer">
+            <column name="lab_active" length="19" />
+        </property>
+        
         <set name="staffs" table="staff_has_lab" inverse="false" lazy="true" fetch="select">
             <key>
                 <column name="lab_id" not-null="true" />

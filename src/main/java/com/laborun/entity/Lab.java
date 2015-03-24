@@ -2,6 +2,7 @@ package com.laborun.entity;
 // Generated Mar 21, 2015 3:25:42 PM by Hibernate Tools 4.3.1
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +18,43 @@ public class Lab  implements java.io.Serializable {
      private Set staffs = new HashSet(0);
      private Set assignmentFileses = new HashSet(0);
      private Set queueDs = new HashSet(0);
+     private Date startTime;
+     private Date endTime;
+     private Date assignmentDeadLine;
+     private int labActive;
 
+    public int getLabActive() {
+        return labActive;
+    }
+
+    public void setLabActive(int labActive) {
+        this.labActive = labActive;
+    }
+     
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public Date getAssignmentDeadLine() {
+        return assignmentDeadLine;
+    }
+
+    public void setAssignmentDeadLine(Date assignmentDeadLine) {
+        this.assignmentDeadLine = assignmentDeadLine;
+    }
+     
     public Lab() {
     }
 
