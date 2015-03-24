@@ -17,7 +17,9 @@ import java.util.List;
 public class QueueImp implements QueueInt{
 
     public boolean requestQueue(QueueD queue) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        QueueDaoImp QDI = new QueueDaoImp();
+        QDI.addNewRequest(queue);
+        return true;
     }
 
     public boolean removeFromQueue(QueueD queue) {

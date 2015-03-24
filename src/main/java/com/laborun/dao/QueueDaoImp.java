@@ -9,6 +9,7 @@ import com.laborun.entity.Course;
 import com.laborun.entity.GroupD;
 import com.laborun.entity.Lab;
 import com.laborun.entity.QueueD;
+import com.laborun.entity.Trainee;
 import com.laborun.entity.UserD;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -43,16 +44,13 @@ public class QueueDaoImp implements QueueDaoInt {
         return Trainees;
     }
 
-    public void addNewRequest(UserD user, String queueType, QueueD queue) {
-       /* Session session = Connection.getConnection();
-        Queue queue = new Queue();
-        queue.setLab(lab);
-        queue.setQueueType(queueType);
-        
+
+    public void addNewRequest(QueueD queue) {
+         Session session = Connection.getConnection();
         session.beginTransaction();
-        session.save(user);
+        session.persist(queue);
         session.getTransaction().commit();
-        System.out.println("data inserted");*/
+        System.out.println("data inserted"); 
     }
 
 }
