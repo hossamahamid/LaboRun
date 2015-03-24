@@ -33,21 +33,24 @@
         <servlet-class>com.laborun.servlet.getDepartments</servlet-class>
     </servlet>
     <servlet>
-
         <servlet-name>NewTrainee1</servlet-name>
         <servlet-class>com.laborun.servlet.NewTrainee1</servlet-class>
-        </servlet>
-<servlet>
+    </servlet>
+    <servlet>
         <servlet-name>GroupsView</servlet-name>
         <servlet-class>com.laborun.servlet.GroupsView</servlet-class>
-</servlet>
-<servlet>
+    </servlet>
+    <servlet>
         <servlet-name>UploadFile</servlet-name>
         <servlet-class>com.laborun.servlet.UploadFile</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GetAssignmentFiles</servlet-name>
         <servlet-class>com.laborun.servlet.GetAssignmentFiles</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NotificationsServ</servlet-name>
+        <servlet-class>com.laborun.servlet.NotificationsServ</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -82,13 +85,15 @@
         <url-pattern>/getDepartments</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-
         <servlet-name>NewTrainee1</servlet-name>
         <url-pattern>/NewTrainee1</url-pattern>
-</servlet-mapping>
-<servlet-mapping>
-<servlet-name>GroupsView</servlet-name>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GroupsView</servlet-name>
         <url-pattern>/staff/groups</url-pattern>
-
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NotificationsServ</servlet-name>
+        <url-pattern>/NotificationsServ</url-pattern>
     </servlet-mapping>
 </web-app>
