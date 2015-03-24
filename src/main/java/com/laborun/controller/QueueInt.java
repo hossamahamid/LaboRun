@@ -1,6 +1,8 @@
 package com.laborun.controller;
 
 import com.laborun.entity.QueueD;
+import com.laborun.entity.UserD;
+import java.util.List;
 
 /**
  * Created by Rainfall on 3/19/2015.
@@ -12,4 +14,6 @@ public interface QueueInt {
     // if the trainee is already on the queue it will return false
     public boolean removeFromQueue(QueueD queue);
     // trainee will choose to remove his request from the queue
+    
+      public List<UserD> getTraineeInQueue(QueueD queue);
 }

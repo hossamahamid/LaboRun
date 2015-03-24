@@ -23,4 +23,9 @@ public class CourseImp implements CourseInt{
         return courseDao.getCourses(group);
     }
 
+    public void createCourse(Course course) {
+        CourseDaoImp CDI = new CourseDaoImp();
+        CDI.insertCourse(course);
+    }
+
 }

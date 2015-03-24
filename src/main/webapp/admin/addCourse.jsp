@@ -36,14 +36,14 @@
                                                 <td>
 
                                                     <label>Course Name: </label>
-                                                    <input type="text" value="group 1" class="form-control" id="gName" />
+                                                    <input type="text" value="" class="form-control" id="gName" name="courseName" />
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
 
                                                     <label>Start Date : </label>
-                                                    <input type="date" id="startDate"/>
+                                                    <input type="date" id="startDate" name="startDate"/>
                                                 </td>
                                             </tr>
 
@@ -51,9 +51,9 @@
                                                 <td>
 
                                                     <label>End Date : </label>
-                                                    <input type="date" id="endDate"/>
+                                                    <input type="date" id="endDate" name="endDate"/>
                                                 </td>
-                                            </tr>
+                                            </tr><!--
                                             <tr><td><h2>involved Departments : </h2>></td></tr>
 
                                             <tr><td>
@@ -96,7 +96,7 @@
                                                     <input type="checkbox" name="groups" value="grp2">grp2<br>
                                                     <input type="checkbox" name="groups" value="grp3">grp3<br>
                                                 </td>
-                                            </tr>
+                                            </tr> -->
                                         </tbody>
                                     </table>
                                 </div><!-- /table-responsive -->
