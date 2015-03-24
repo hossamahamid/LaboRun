@@ -15,5 +15,6 @@ import java.util.List;
  */
 public interface LabDaoInt {
      public List<Lab> getLabs(Course course); // get all labs assigned to certain course
+    public Lab getLab(Lab lab); //get specific lab
      public void insertLab(Lab lab);
 }
