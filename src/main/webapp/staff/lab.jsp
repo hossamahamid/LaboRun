@@ -64,14 +64,14 @@
                         <h5 class="centered"><c:out value='${user.getName()}'/></h5>
 
                         <li class="mt">
-                            <a class="active" href="index.html">
+                            <a class="active" href="profile.jsp">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Profile</span>
                             </a>
                         </li>
 
                         <li class="mt">
-                            <a class="active" href="panels.html">
+                            <a class="active" href="groups">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Groups</span>
                             </a>
@@ -87,10 +87,11 @@
             <!--main content start-->
             <section id="main-content">
                 <section class="wrapper">
+                    <h3><i class="fa fa-angle-right"></i> <c:out value="${requestScope.lab.course.courseName}"/> -<i class="fa fa-angle-right"></i> <c:out value="${requestScope.lab.labName}"/></h3>
                     <div class="row mt">
                         <div class="col-lg-6 col-md-6 col-sm-12">
 
-
+                            <h3><c:out value="${requestScope.message}"/></h3>
                             <section class="task-panel tasks-widget">
                                 <div class="panel-heading">
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Assistance queue</h5></div>
@@ -108,7 +109,7 @@
                                             <c:forEach items="${requestScope.assistanceQueue.traineeInQueues}" var="traineeInQueue">
                                                 <tr>
                                                     <td>
-                                                        <span><a href="?<c:out value='${traineeInQueue.trainee.id}'/>"><c:out value="${traineeInQueue.trainee.name}"/></a></span>
+                                                        <a href="?<c:out value='${traineeInQueue.trainee.id}'/>"><c:out value="${traineeInQueue.trainee.name}"/></a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>
@@ -133,7 +134,7 @@
                                         <c:forEach items="${requestScope.deliveryQueue.traineeInQueues}" var="traineeInQueue">
                                             <tr>
                                                 <td>
-                                                    <span><a href="?<c:out value='${traineeInQueue.trainee.id}'/>"><c:out value="${traineeInQueue.trainee.name}"/></a></span>
+                                                    <a href="?<c:out value='${traineeInQueue.trainee.id}'/>"><c:out value="${traineeInQueue.trainee.name}"/></a>
                                                 </td>
                                             </tr>
                                         </c:forEach>
@@ -184,8 +185,10 @@
                                                 Are you sure you want to close this lab queues?
                                             </div>
                                             <div class="modal-footer">
+                                                <%--<form action="closeQueue?lid=<c:out value='${requestScope.lab.id}'/>&lname=<c:out value='${requestScope.lab.labName}'/>" method="get">--%>
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                <button type="button" class="btn btn-primary">Yes</button>
+                                                <a href="closeQueue?lid=<c:out value='${requestScope.lab.id}'/>&lname=<c:out value='${requestScope.lab.labName}'/>"><button type="button" class="btn btn-primary">Yes</button></a>
+                                                <%--</form>--%>
                                             </div>
                                         </div>
                                     </div>

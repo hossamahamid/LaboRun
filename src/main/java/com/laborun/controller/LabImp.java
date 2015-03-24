@@ -26,4 +26,10 @@ public class LabImp implements LabInt {
         LabDaoInt LDI = new LabDaoImp();
         LDI.insertLab(lab);
     }
+
+    @Override
+    public void updateLab(Lab lab) {
+        LabDaoInt labDao = new LabDaoImp();
+        labDao.updateLab(lab);
+    }
 }

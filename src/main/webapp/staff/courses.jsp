@@ -39,8 +39,8 @@
                                 <tr>
                                     <td style="width: 50%"><a href="lab?lid=<c:out value='${lab.id}'/>&lname=<c:out value='${lab.labName}'/>">
                                         <c:out value="${lab.labName}"/></a></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><c:out value="${lab.startTime}"/></td>
+                                    <td><c:out value="${lab.endTime}"/></td>
                                 </tr>
                             </c:forEach>
                         </table>

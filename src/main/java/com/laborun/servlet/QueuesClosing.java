@@ -2,7 +2,7 @@ package com.laborun.servlet;
 
 import com.laborun.controller.LabImp;
 import com.laborun.controller.LabInt;
-import com.laborun.entity.*;
+import com.laborun.entity.Lab;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,12 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Set;
 
 /**
  * Created by Rainfall on 3/24/2015.
  */
-public class LabView extends HttpServlet {
+public class QueuesClosing extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -30,27 +29,12 @@ public class LabView extends HttpServlet {
 
         LabInt labController = new LabImp();
         lab = labController.getLab(lab);
+        lab.setLabActive(0);
+        labController.updateLab(lab);
 
-        Set<QueueD> queues = lab.getQueueDs();
-
-        QueueD assistanceQueue = new QueueD();
-        QueueD deliveryQueue = new QueueD();
-
-        for(QueueD queue: queues){
-            if(queue.getQueueType().equals("assistance"))
-                assistanceQueue = queue;
-            else
-                deliveryQueue = queue;
-        }
-
-        request.setAttribute("lab", lab);
-        request.setAttribute("assistanceQueue", assistanceQueue);
-        request.setAttribute("deliveryQueue", deliveryQueue);
-
-        if(lab.getLabActive() == 0)
-            request.setAttribute("message", "Lab Queues Have Been Closed.");
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("lab.jsp");
-        dispatcher.forward(request, response);
+        /*request.setAttribute("message", "Lab Queues Have Been Closed.");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("lab?lid="+lab.getId()+"&lname="+lab.getLabName());
+        dispatcher.forward(request, response);*/
+        response.sendRedirect("lab?lid="+lab.getId()+"&lname="+lab.getLabName());
     }
 }
