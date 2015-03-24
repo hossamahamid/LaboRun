@@ -68,6 +68,10 @@
         <servlet-name>viewDepartment</servlet-name>
         <servlet-class>com.laborun.servlet.viewDepartment</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QueuesClosing</servlet-name>
+        <servlet-class>com.laborun.servlet.QueuesClosing</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -142,5 +146,9 @@
     <servlet-mapping>
         <servlet-name>viewDepartment</servlet-name>
         <url-pattern>/viewDepartment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QueuesClosing</servlet-name>
+        <url-pattern>/staff/closeQueue</url-pattern>
     </servlet-mapping>
 </web-app>
