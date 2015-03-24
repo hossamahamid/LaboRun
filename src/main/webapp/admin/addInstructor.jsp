@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -101,7 +102,7 @@
 
                                                     <label>department</label>
                                                 <br>
-                                                     ${empty sessionScope.dList2}
+                                                    
                                                     <select name="selectedDepartment">
                                                        
                                                         <c:forEach items="${sessionScope.dList2}" var="row2">

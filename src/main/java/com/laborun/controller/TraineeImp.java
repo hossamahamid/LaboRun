@@ -21,8 +21,8 @@ public class TraineeImp implements TraineeInt{
        
     }
 
-    public List<Trainee> getTrainees(Intake intake) {
+    public List<Trainee> getTrainees() {
        TraineeDaoImp TDI = new TraineeDaoImp();
-       return TDI.getTrainees(intake);
+       return TDI.getTrainees();
     }
 }

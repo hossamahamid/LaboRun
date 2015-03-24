@@ -6,6 +6,8 @@
 package com.laborun.dao;
 
 import com.laborun.entity.Staff;
+import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 
 /**
@@ -21,6 +23,15 @@ public class StaffDaoImp implements StaffDaoInt{
         session.persist(staff);
         session.getTransaction().commit();
         System.out.println("data inserted"); 
+    }
+
+    public List<Staff> getStaffMembers() {
+        Session session = Connection.getConnection();
+        List<Staff> staff = null;
+        Criteria cr = session.createCriteria(Staff.class);
+        staff = cr.list();
+       
+        return staff;
     }
     
 }

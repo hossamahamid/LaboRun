@@ -12,4 +12,5 @@ import java.util.List;
 public interface CourseInt {
     public List<Course> getCourses(GroupD group);
     public void createCourse(Course course);
+      public List<Course> getCourses() ;
 }

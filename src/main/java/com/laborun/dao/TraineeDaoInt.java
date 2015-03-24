@@ -15,5 +15,6 @@ import java.util.List;
  */
 public interface TraineeDaoInt {
     public boolean insertTraineeData(Trainee trainee);
-    public List<Trainee> getTrainees(Intake intake);
+    public List<Trainee> getTrainees();
+   
 }

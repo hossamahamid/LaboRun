@@ -27,5 +27,10 @@ public class CourseImp implements CourseInt{
         CourseDaoImp CDI = new CourseDaoImp();
         CDI.insertCourse(course);
     }
+    
+      public List<Course> getCourses() {
+       CourseDaoImp CDI = new CourseDaoImp();
+       return CDI.getCourses();
+      }
 
 }

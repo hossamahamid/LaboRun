@@ -6,6 +6,7 @@
 package com.laborun.dao;
 
 import com.laborun.entity.Staff;
+import java.util.List;
 
 /**
  *
@@ -13,4 +14,5 @@ import com.laborun.entity.Staff;
  */
 public interface StaffDaoInt {
      public void insertStaffData(Staff staff);
+     public List<Staff> getStaffMembers();
 }

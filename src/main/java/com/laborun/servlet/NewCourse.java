@@ -5,8 +5,16 @@
  */
 package com.laborun.servlet;
 
+import com.laborun.controller.CourseImp;
+import com.laborun.entity.Course;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -58,7 +66,22 @@ public class NewCourse extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
+        try {
+            Course course = new Course();
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd"); 
+            java.util.Date startDate = df.parse(request.getParameter("startDate"));
+            course.setCourseName(request.getParameter("courseName"));
+            course.setCourseStartDate(startDate);
+            java.util.Date endDate = df.parse(request.getParameter("endDate"));
+            course.setCourseEndDate(endDate);
+            course.setCourseName(request.getParameter("courseName"));
+            
+            CourseImp c = new CourseImp();
+            c.createCourse(course);
+        } catch (ParseException ex) {
+            Logger.getLogger(NewCourse.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
     }
 
     /**

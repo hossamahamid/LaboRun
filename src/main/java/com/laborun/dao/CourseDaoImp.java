@@ -59,4 +59,13 @@ public class CourseDaoImp implements CourseDaoInt{
         return flag;
     }
     
+      public List<Course> getCourses() {
+        Session session = Connection.getConnection();
+        List<Course> courses = null;
+        Criteria cr = session.createCriteria(Course.class);
+        courses= cr.list();
+        
+
+        return courses;
+    }
 }

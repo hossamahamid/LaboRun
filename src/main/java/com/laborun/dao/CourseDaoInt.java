@@ -17,4 +17,5 @@ public interface CourseDaoInt {
     
     public List<Course> getCourses(GroupD group); // get all courses assigned to certain group
     public boolean insertCourse(Course course);
+      public List<Course> getCourses() ;
 }

@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,15 +43,15 @@
                                             <tr>
                                                 <td>
 
-                                                    <label>Intake Name: </label>
-                                                    <select>
-                                                        <option value="null">choose Intake</option>
+                                                    <label>Intake number: </label>
+                                                    <select name="intaken">
+                                                      
 
-                                                        <option value="intake1">intake1</option>
-                                                        <option value="intake2">intake2[</option>
-                                                        <option value="intake3">intake3</option>
-                                                        <option value="intake4">intake4</option>
-
+                                                     <c:forEach items="${sessionScope.iList}" var="row">
+                                                            <option value="${row.id}"><c:out value="${row.intakeNum}" /></option>
+                                                            
+                                                         
+                                                    </c:forEach>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -58,25 +59,46 @@
                                             <tr><td><h2>group Members: </h2>></td></tr>
 
                                             <tr><td>
-                                                    <input type="checkbox" name="trainees" value="hossam">hossam<br>
-                                                    <input type="checkbox" name="trainees" value="alia">alia<br>
-                                                    <input type="checkbox" name="trainees" value="radwa">radwa<br>
 
+                                                 
+                                        <c:forEach items="${sessionScope.tList}" var="row">
+                                            <input type="checkbox" name="traineen" value="${row.id}">
+                                            <c:out value="${row.name}" />
+                                            <br>
+                                        </c:forEach>
+                                                  
+                                        </td>
 
-                                                </td>
+                                        </tr>
 
-                                            </tr>
+                                        <tr><td><h2>group Courses: </h2>></td></tr>
 
-                                            <tr><td><h2>group Courses: </h2>></td></tr>
+                                        <tr>
+                                            <td>
+                                                
+                                              <c:forEach items="${sessionScope.cList}" var="row">
+                                            <input name="coursen" type="checkbox" value="${row.id}">
+                                            <c:out value="${row.courseName}" />
+                                            <br>
+                                             </c:forEach>
+                                                
+                                            </td>
+                                        </tr>
 
-                                            <tr>
-                                                <td>
-                                                    <input type="checkbox" name="courses" value="course1">course1<br>
-                                                    <input type="checkbox" name="courses" value="course2">course2<br>
-                                                    <input type="checkbox" name="courses" value="course3">course3<br>
-                                                </td>
-                                            </tr>
+                                        
+                                        <tr><td><h2>group staff members: </h2>></td></tr>
 
+                                        <tr>
+                                            <td>
+                                              
+                                                <c:forEach items="${sessionScope.sList}" var="row">
+                                            <input type="checkbox" name="staffn" value="${row.id}">
+                                            <c:out value="${row.name}" />
+                                            <br>
+                                        </c:forEach>
+                                               
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div><!-- /table-responsive -->

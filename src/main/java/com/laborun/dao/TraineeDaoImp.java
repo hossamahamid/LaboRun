@@ -48,7 +48,7 @@ public class TraineeDaoImp implements TraineeDaoInt {
         return flag;
     }
 
-    public List<Trainee> getTrainees(Intake intake) {
+    public List<Trainee> getTrainees() {
         Session session = Connection.getConnection();
         List<Trainee> trainee = null;
         Criteria cr = session.createCriteria(Trainee.class);
@@ -57,4 +57,5 @@ public class TraineeDaoImp implements TraineeDaoInt {
         return trainee;
     }
 
+    
 }

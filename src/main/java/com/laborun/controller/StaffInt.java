@@ -6,11 +6,13 @@
 package com.laborun.controller;
 
 import com.laborun.entity.Staff;
+import java.util.List;
 
 /**
  *
  * @author dina
  */
 public interface StaffInt {
- public void insertStaffData(Staff staff);   
+ public void insertStaffData(Staff staff);
+ public List<Staff> getStaff();
 }
