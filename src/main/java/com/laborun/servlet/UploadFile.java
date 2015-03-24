@@ -24,7 +24,7 @@
 //        if (ServletFileUpload.isMultipartContent(request)) {
 //
 //            MultipartRequest m = new MultipartRequest(request, "C:\\Users\\ZamZam\\Documents\\NetBeansProjects\\UploadFile\\web");
-//           
+//
 //            Path path = Paths.get("C:\\\\Users\\\\ZamZam\\\\Documents\\\\NetBeansProjects\\\\UploadFile\\\\web\"");
 //            byte[] array = Files.readAllBytes(path);
 //

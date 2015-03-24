@@ -25,7 +25,8 @@ public class GroupDaoImp implements GroupDaoInt {
         Session session = Connection.getConnection();
         List<GroupD> groups = null;
         Criteria cr = session.createCriteria(UserD.class);
-        cr.add(Restrictions.eq("email", user.getEmail()));
+//        cr.add(Restrictions.eq("email", user.getEmail()));
+        cr.add(Restrictions.eq("id", user.getId())); //Hossam's edit --> changed email to id and I think the criteria should be gotten by GroupD.class
         List results = cr.list();
         Iterator it = results.iterator();
         while (it.hasNext()) {

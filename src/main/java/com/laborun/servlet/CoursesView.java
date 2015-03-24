@@ -1,7 +1,10 @@
 package com.laborun.servlet;
 
+import com.laborun.controller.CourseImp;
+import com.laborun.controller.CourseInt;
 import com.laborun.controller.GroupImp;
 import com.laborun.controller.GroupInt;
+import com.laborun.entity.Course;
 import com.laborun.entity.GroupD;
 import com.laborun.entity.UserD;
 
@@ -14,9 +17,9 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by Rainfall on 3/22/2015.
+ * Created by Rainfall on 3/23/2015.
  */
-public class GroupsView extends HttpServlet {
+public class CoursesView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -25,14 +28,20 @@ public class GroupsView extends HttpServlet {
         UserD user = new UserD();
         user.setId((Integer) request.getSession().getAttribute("userId"));
 
-//        System.out.println("userID " + user.getId());
-        GroupInt groupController = new GroupImp();
-        List<GroupD> groups = groupController.getGroups(user);
-        request.setAttribute("groups", groups);
+        int gId = Integer.parseInt(request.getParameter("gid"));
+        String gName = request.getParameter("gname");
 
-//        for (GroupD my : groups)
-//            System.out.println(my.getGroupName());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("groups.jsp");
+        GroupD groupD = new GroupD();
+        groupD.setId(gId);
+        groupD.setGroupName(gName);
+
+        CourseInt courseController = new CourseImp();
+        List<Course> courses = courseController.getCourses(groupD);
+
+        request.setAttribute("group", groupD);
+        request.setAttribute("courses", courses);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("courses.jsp");
         dispatcher.forward(request, response);
     }
 }
