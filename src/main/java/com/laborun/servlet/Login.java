@@ -41,11 +41,11 @@ public class Login extends HttpServlet {
             session.setAttribute("userName", user.getName());
 
             if (user instanceof Trainee)
-                response.sendRedirect("trainee");
+                response.sendRedirect(request.getContextPath()+"/trainee/index.jsp");
             else if (user instanceof Staff)
-                response.sendRedirect("staff");
+                response.sendRedirect(request.getContextPath()+"/staff/index.jsp");
             else if (user instanceof Admin)
-                response.sendRedirect("admin/adminMainPage.jsp");
+                response.sendRedirect(request.getContextPath()+"/admin/adminMainPage.jsp");
         }
     }
 
