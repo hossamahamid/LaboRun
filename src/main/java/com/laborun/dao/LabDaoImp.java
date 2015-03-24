@@ -55,5 +55,12 @@ public class LabDaoImp implements LabDaoInt{
         session.getTransaction().commit();
         System.out.println("data inserted"); 
     }
-    
+
+    @Override
+    public void updateLab(Lab lab) {
+        Session session = Connection.getConnection();
+        session.beginTransaction();
+        session.update(lab);
+        session.getTransaction().commit();
+    }
 }

@@ -17,4 +17,5 @@ public interface LabInt {
     public List<Lab> getLabs(Course course); // get all labs assigned to certain course
     public Lab getLab(Lab lab); //get specific lab
     public void insertLab(Lab lab);
+    public void updateLab(Lab lab);
 }
