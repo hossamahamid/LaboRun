@@ -149,7 +149,7 @@
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Delivery queue</h5></div>
                                     <div class="pull-right hidden-phone">
                                         <button class="btn btn-danger btn-xs" onclick="func()">show</button>
-                                        <button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button>                                                 
+                                        <input type="button" class="btn btn-success btn-xs"><i class=" fa fa-check"></i></input>                                                 
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                     </div>
                                     <br>

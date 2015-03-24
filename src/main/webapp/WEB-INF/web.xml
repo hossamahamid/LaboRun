@@ -72,6 +72,10 @@
         <servlet-name>RequestAssistenceQueue</servlet-name>
         <servlet-class>com.laborun.servlet.RequestAssistenceQueue</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RequestAssQueue</servlet-name>
+        <servlet-class>com.laborun.servlet.RequestAssQueue</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -150,5 +154,9 @@
     <servlet-mapping>
         <servlet-name>RequestAssistenceQueue</servlet-name>
         <url-pattern>/RequestAssistenceQueue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RequestAssQueue</servlet-name>
+        <url-pattern>/RequestAssQueue</url-pattern>
     </servlet-mapping>
 </web-app>
