@@ -145,56 +145,84 @@
                         </div><! --/col-lg-6 -->
 
 
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
                             <!-- DROPDOWN BUTTONS -->
                             <div class="showback">
-                                <h4><a>Show Assignment Files</a></h4>
+                                <h4>Assignment Files</h4>
 
                                 <hr>
 
-                                <h4>Shift Queues</h4>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary" data-toggle="dropdown">
-                                        Select Lab <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <c:forEach items="${request.listOfFiles}" var="item">
-                                            <li><c:out value='${item}'/></li>
-                                        </c:forEach>
-                                    </ul>
-                                    <button type="button" class="btn btn-primary">Shift</button>
-                                </div>
-
-                                <hr>
-                                <h4> Close Queues</h4>
-                                <!-- Button trigger modal -->
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModalClose">
-                                    Close Queues
-                                </button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="myModalClose" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title" id="myModalLabel">Close Queues</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                Are you sure you want to close this lab queues?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                <button type="button" class="btn btn-primary">Yes</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
+                                <h4> Upload Assignment File</h4>
+                                <form enctype="multipart/form-data" method="post" action="go" >
+                                    <input class="btn btn-primary btn-block" type="file" name="datafile" ><br>
+                                    <input class="btn btn-primary" type="submit" value="send">
+                                </form>
 
                             </div><!-- /col-lg-6 -->
                         </div>
+
+                        <!--Notifications-->
+                        <div class="col-lg-3 ds">
+                            <h3>NOTIFICATIONS</h3>
+
+                            <!-- First Action -->
+                            <div class="desc">
+                                <div class="thumb">
+                                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                                </div>
+                                <div class="details">
+                                    <p><muted>2 Minutes Ago</muted><br/>
+                                        <a href="#">James Brown</a> subscribed to your newsletter.<br/>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Second Action -->
+                            <div class="desc">
+                                <div class="thumb">
+                                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                                </div>
+                                <div class="details">
+                                    <p><muted>3 Hours Ago</muted><br/>
+                                        <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Third Action -->
+                            <div class="desc">
+                                <div class="thumb">
+                                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                                </div>
+                                <div class="details">
+                                    <p><muted>7 Hours Ago</muted><br/>
+                                        <a href="#">Brandon Page</a> purchased a year subscription.<br/>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Fourth Action -->
+                            <div class="desc">
+                                <div class="thumb">
+                                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                                </div>
+                                <div class="details">
+                                    <p><muted>11 Hours Ago</muted><br/>
+                                        <a href="#">Mark Twain</a> commented your post.<br/>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Fifth Action -->
+                            <div class="desc">
+                                <div class="thumb">
+                                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                                </div>
+                                <div class="details">
+                                    <p><muted>18 Hours Ago</muted><br/>
+                                        <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div><!-- /col-lg-3 -->
+                        <!-- End of Notifications -->
 
                     </div><!--/ row -->
                 </section><! --/wrapper -->
