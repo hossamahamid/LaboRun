@@ -5,15 +5,13 @@
  */
 package com.laborun.dao;
 
-import com.laborun.entity.Course;
-import com.laborun.entity.GroupD;
-import com.laborun.entity.Lab;
-import com.laborun.entity.QueueD;
-import com.laborun.entity.Trainee;
-import com.laborun.entity.UserD;
+import com.laborun.entity.*;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -42,6 +40,25 @@ public class QueueDaoImp implements QueueDaoInt {
         }
 
         return Trainees;
+    }
+
+    @Override
+    public void setTraineeInQueue(QueueD queue, Set<TraineeInQueue> traineesInQueue) {
+        Session session = Connection.getConnection();
+        session.beginTransaction();
+
+        for (TraineeInQueue traineeInQueue: traineesInQueue){
+            TraineeInQueue traineeCopy = new TraineeInQueue();
+
+            traineeCopy.setId(new TraineeInQueueId(traineeInQueue.getTrainee().getId(), queue.getId()));
+            traineeCopy.setTrainee(traineeInQueue.getTrainee());
+            traineeCopy.setQueueD(queue);
+            traineeCopy.setOrderNum(traineeInQueue.getOrderNum());
+
+            session.persist(traineeCopy);
+        }
+
+        session.getTransaction().commit();
     }
 
 

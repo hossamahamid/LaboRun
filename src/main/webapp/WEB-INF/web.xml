@@ -72,6 +72,14 @@
         <servlet-name>RequestAssistenceQueue</servlet-name>
         <servlet-class>com.laborun.servlet.RequestAssistenceQueue</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QueuesClosing</servlet-name>
+        <servlet-class>com.laborun.servlet.QueuesClosing</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QueuesShift</servlet-name>
+        <servlet-class>com.laborun.servlet.QueuesShifting</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -150,5 +158,13 @@
     <servlet-mapping>
         <servlet-name>RequestAssistenceQueue</servlet-name>
         <url-pattern>/RequestAssistenceQueue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QueuesClosing</servlet-name>
+        <url-pattern>/staff/closeQueue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QueuesShift</servlet-name>
+        <url-pattern>/staff/shiftQueue</url-pattern>
     </servlet-mapping>
 </web-app>

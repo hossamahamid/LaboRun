@@ -154,19 +154,10 @@
                                 <hr>
 
                                 <h4>Shift Queues</h4>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary" data-toggle="dropdown">
-                                        Select Lab <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <c:forEach items="${request.listOfFiles}" var="item">
-                                            <li><c:out value='${item}'/></li>
-                                        </c:forEach>
-                                    </ul>
-                                    <button type="button" class="btn btn-primary">Shift</button>
-                                </div>
+                                <a href="shiftQueue?lid=<c:out value='${requestScope.lab.id}'/>&lname=<c:out value='${requestScope.lab.labName}'/>"> <button type="button" class="btn btn-primary">Shift</button> </a>
 
                                 <hr>
+
                                 <h4> Close Queues</h4>
                                 <!-- Button trigger modal -->
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#myModalClose">

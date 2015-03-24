@@ -1,8 +1,10 @@
 package com.laborun.controller;
 
 import com.laborun.entity.QueueD;
+import com.laborun.entity.TraineeInQueue;
 import com.laborun.entity.UserD;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Rainfall on 3/19/2015.
@@ -16,4 +18,6 @@ public interface QueueInt {
     // trainee will choose to remove his request from the queue
     
       public List<UserD> getTraineeInQueue(QueueD queue);
+
+    public void setTraineeInQueue(QueueD queue, Set<TraineeInQueue> traineesInQueue);
 }

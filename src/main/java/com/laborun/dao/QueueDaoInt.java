@@ -5,11 +5,10 @@
  */
 package com.laborun.dao;
 
-import com.laborun.entity.Lab;
-import com.laborun.entity.QueueD;
-import com.laborun.entity.Trainee;
-import com.laborun.entity.UserD;
+import com.laborun.entity.*;
+
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -19,4 +18,5 @@ public interface QueueDaoInt {
     public void addNewRequest(QueueD queue); // add new request 
     public void removeFromQueue(UserD user,String queueType); // remove sent request
     public List<UserD> getTraineeInQueue(QueueD queue); // get all trainees in the course
+    public void setTraineeInQueue(QueueD queue, Set<TraineeInQueue> traineesInQueues);
 }
