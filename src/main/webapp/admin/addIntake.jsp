@@ -73,25 +73,7 @@
                                                 </td>
                                             </tr>
 
-                                            <tr><td><h2>involved Trainees : </h2>></td></tr>
-
-                                            <tr><td>
-                                                    <input type="checkbox" name="trainees" value="trianee1">trainee 1<br>
-                                                    <input type="checkbox" name="trainees" value="trainee2">trainee 2<br>
-                                                    <input type="checkbox" name="trainees" value="trainee3">trainee 3<br>
-                                                </td>
-
-                                            </tr>
-
-                                            <tr><td><h2>add groups : </h2>></td></tr>
-
-                                            <tr>
-                                                <td>
-                                                    <input type="checkbox" name="groups" value="group1">group1<br>
-                                                    <input type="checkbox" name="groups" value="group2">group2<br>
-                                                    <input type="checkbox" name="groups" value="group3">group3<br>
-                                                </td>
-                                            </tr>
+                                           
 
 
                                         </tbody>

@@ -27,25 +27,24 @@
                         </div>
                         <div class="content-panel">
                             <table class="table table-bordered table-striped table-condensed">
-                                <thead>
-                                    <tr>
-                                        <th>Department ID</th>
-                                        <th>Department Name</th>
+                                <tr>
+                                <th> department id </th>
+                                 <th> department name </th>
                                     </tr>
-                                </thead>
                                 <tbody>
-                                    
-                                        
-                                         <c:forEach var="vehicle" items="${departments}">
-                <tr>
-                   
-                    <td>
-                         <c:out value="${vehicle}" /> 
-                       <!-- <a href="department.jsp?name=Ewd">EWD</a> -->
-                    </td>
-                    <td>DeptId1</td>
-                </tr>
-                </c:forEach> 
+                                             
+                                                            
+                                      <tr>
+                                <c:forEach items="${sessionScope.dList}" var="row"> 
+                                  
+                                                            
+                                      <tr>
+                                        <td> <c:out value="${row.id}" /></td>
+                                         <td> <c:out value="${row.departmentName}" /></td>
+                                    </tr>                   
+                                     </c:forEach>        
+                                    </tr>                   
+                                      
                                         
                                    
                                 </tbody>

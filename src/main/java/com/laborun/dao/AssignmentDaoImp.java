@@ -9,6 +9,7 @@ import com.laborun.entity.AssignmentFiles;
 import com.laborun.entity.Course;
 import com.laborun.entity.GroupD;
 import com.laborun.entity.Lab;
+import com.laborun.entity.Trainee;
 import com.laborun.entity.UserD;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -46,5 +47,23 @@ public class AssignmentDaoImp implements AssignmentDaoInt{
 
         return assignmentFiles;
     }
+
+    public List<AssignmentFiles> getAssignments(Lab lab, Trainee trainee) {
+         Session session = Connection.getConnection();
+        List<AssignmentFiles> assignmentFiles = null;
+        Criteria cr = session.createCriteria(Lab.class);
+        cr.add(Restrictions.eq("id", trainee.getId()));
+        cr.add(Restrictions.eq("labName", lab.getAssignmentFileses()));
+        List results = cr.list();
+        Iterator it = results.iterator();
+        
+        while (it.hasNext()) {
+            assignmentFiles = new ArrayList<AssignmentFiles>(((Lab) it.next()).getAssignmentFileses());
+        }
+
+        return assignmentFiles;
+    }
+    
+    
     
 }

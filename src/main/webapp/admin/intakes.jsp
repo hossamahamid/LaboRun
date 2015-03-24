@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,16 +29,18 @@
                             <table class="table table-bordered table-striped table-condensed">
                                 <thead>
                                     <tr>
-                                        <th>Department ID</th>
+                                        <th>Intake ID</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><a href="intake.jsp?name=in33">intake 33</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="intake.jsp?name=in35">intake 35</a></td>
-                                    </tr>                                
+                                    
+                                     <c:forEach items="${sessionScope.iList}" var="row">
+                                  
+                                                            
+                                      <tr>
+                                        <td>Intake <c:out value="${row.intakeNum}" /></td>
+                                    </tr>                   
+                                     </c:forEach>                             
                                 </tbody>
                             </table>
                             <jsp:include page="adminFooter.html"/>

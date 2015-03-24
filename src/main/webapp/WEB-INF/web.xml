@@ -56,6 +56,14 @@
         <servlet-name>NewLab</servlet-name>
         <servlet-class>com.laborun.servlet.NewLab</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>viewIntake</servlet-name>
+        <servlet-class>com.laborun.servlet.viewIntake</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewDepartment</servlet-name>
+        <servlet-class>com.laborun.servlet.viewDepartment</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -106,5 +114,13 @@
     <servlet-mapping>
         <servlet-name>NewLab</servlet-name>
         <url-pattern>/NewLab</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewIntake</servlet-name>
+        <url-pattern>/viewIntake</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewDepartment</servlet-name>
+        <url-pattern>/viewDepartment</url-pattern>
     </servlet-mapping>
 </web-app>

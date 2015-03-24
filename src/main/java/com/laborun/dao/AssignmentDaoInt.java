@@ -7,6 +7,7 @@ package com.laborun.dao;
 
 import com.laborun.entity.AssignmentFiles;
 import com.laborun.entity.Lab;
+import com.laborun.entity.Trainee;
 import com.laborun.entity.UserD;
 import java.util.List;
 
@@ -18,5 +19,5 @@ public interface AssignmentDaoInt {
     
     public void uploadAssignment(AssignmentFiles assignmentFiles);
     public List<AssignmentFiles> getAssignments(Lab lab);
-    
+    public List<AssignmentFiles> getAssignments(Lab lab , Trainee trainee);
 }
