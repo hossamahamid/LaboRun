@@ -6,7 +6,6 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mydb?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">aliaa22990</property>
     <property name="hibernate.connection.password">toto</property>
     <mapping resource="com/laborun/entity/QueueD.hbm.xml"/>
     <mapping resource="com/laborun/entity/GroupD.hbm.xml"/>
