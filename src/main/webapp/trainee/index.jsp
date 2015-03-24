@@ -77,12 +77,12 @@
                         </li>
 
                         <li class="mt">
-                            <a class="active" href="panels.jsp">
+                            <a class="active" href="groups">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Groups</span>
                             </a>
                         </li>
-
+                    </ul>
                 </div>
             </aside>
             <!--sidebar end-->
@@ -232,7 +232,7 @@
             },
             legend: [
             {type: "text", label: "Special event", badge: "00"},
-            {type: "block", label: "Regular event", }
+            {type: "block", label: "Regular event" }
             ]
             });
             });

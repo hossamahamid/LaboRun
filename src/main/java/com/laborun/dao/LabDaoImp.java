@@ -25,7 +25,7 @@ public class LabDaoImp implements LabDaoInt{
         Session session = Connection.getConnection();
         List<Lab> labs = null;
         Criteria cr = session.createCriteria(Course.class);
-        cr.add(Restrictions.eq("courseName", course.getCourseName()));
+        cr.add(Restrictions.eq("id", course.getId()));
         List results = cr.list();
         Iterator it = results.iterator();
         
@@ -35,6 +35,17 @@ public class LabDaoImp implements LabDaoInt{
 
         return labs;
     }
+
+    @Override
+    public Lab getLab(Lab lab) {
+        Session session = Connection.getConnection();
+        Criteria cr = session.createCriteria(Lab.class);
+        cr.add(Restrictions.eq("id", lab.getId()));
+        lab = (Lab) cr.uniqueResult();
+
+        return lab;
+    }
+
 
     public void insertLab(Lab lab) {
        

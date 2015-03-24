@@ -9,8 +9,8 @@
         <servlet-class>com.laborun.servlet.NewStaff</servlet-class>
     </servlet>
     <!--<servlet>-->
-    <!--<servlet-name>NewTrainee</servlet-name>-->
-    <!--<servlet-class>com.laborun.servlet.NewTrainee</servlet-class>-->
+        <!--<servlet-name>NewTrainee</servlet-name>-->
+        <!--<servlet-class>com.laborun.servlet.NewTrainee</servlet-class>-->
     <!--</servlet>-->
     <servlet>
         <servlet-name>NewCourse</servlet-name>
@@ -41,16 +41,20 @@
         <servlet-class>com.laborun.servlet.GroupsView</servlet-class>
     </servlet>
     <!--<servlet>-->
-    <!--<servlet-name>UploadFile</servlet-name>-->
-    <!--<servlet-class>com.laborun.servlet.UploadFile</servlet-class>-->
+        <!--<servlet-name>UploadFile</servlet-name>-->
+        <!--<servlet-class>com.laborun.servlet.UploadFile</servlet-class>-->
     <!--</servlet>-->
     <servlet>
         <servlet-name>CoursesView</servlet-name>
         <servlet-class>com.laborun.servlet.CoursesView</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LabView</servlet-name>
+        <servlet-class>com.laborun.servlet.LabView</servlet-class>
+    </servlet>
     <!--<servlet>-->
-    <!--<servlet-name>GetAssignmentFiles</servlet-name>-->
-    <!--<servlet-class>com.laborun.servlet.GetAssignmentFiles</servlet-class>-->
+        <!--<servlet-name>GetAssignmentFiles</servlet-name>-->
+        <!--<servlet-class>com.laborun.servlet.GetAssignmentFiles</servlet-class>-->
     <!--</servlet>-->
     <servlet>
         <servlet-name>NewLab</servlet-name>
@@ -73,8 +77,8 @@
         <url-pattern>/NewStaff</url-pattern>
     </servlet-mapping>
     <!--<servlet-mapping>-->
-    <!--<servlet-name>NewTrainee</servlet-name>-->
-    <!--<url-pattern>/NewTrainee</url-pattern>-->
+        <!--<servlet-name>NewTrainee</servlet-name>-->
+        <!--<url-pattern>/NewTrainee</url-pattern>-->
     <!--</servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>NewCourse</servlet-name>
@@ -108,14 +112,28 @@
         <servlet-name>CoursesView</servlet-name>
         <url-pattern>/staff/courses</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LabView</servlet-name>
+        <url-pattern>/staff/lab</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GroupsView</servlet-name>
+        <url-pattern>/trainee/groups</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CoursesView</servlet-name>
+        <url-pattern>/trainee/courses</url-pattern>
+    </servlet-mapping>
     <!--<welcome-file-list>-->
-    <!--<welcome-file>login.html</welcome-file>-->
+        <!--<welcome-file>login.html</welcome-file>-->
     <!--</welcome-file-list>-->
     <servlet-mapping>
         <servlet-name>NewLab</servlet-name>
         <url-pattern>/NewLab</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>LabView</servlet-name>
+        <url-pattern>/trainee/lab</url-pattern>
         <servlet-name>viewIntake</servlet-name>
         <url-pattern>/viewIntake</url-pattern>
     </servlet-mapping>
