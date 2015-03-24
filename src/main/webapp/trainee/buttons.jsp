@@ -215,7 +215,7 @@
                                     <button type="button" class="btn btn-primary btn-lg" data-toggle="dropdown" onclick="GetAssignmentFiles">
                                         view uploaded file <span class="caret"></span>
                                     </button>
-                                     <ul class="dropdown-menu" role="menu">
+                                   <ul class="dropdown-menu" role="menu">
                                      <c:forEach items="${request.listOfFiles}" var="item">         
                                         <li><c:out value='${item}'/></li>
                                      </c:forEach>

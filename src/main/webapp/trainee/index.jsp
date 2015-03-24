@@ -70,7 +70,7 @@
                         <h5 class="centered"><c:out value='${user.getName()}'/></h5>
 
                         <li class="mt">
-                            <a class="active" href="index.html">
+                            <a class="active" href="index.jsp">
                                 <i class="fa fa-dashboard"></i>
                                 <span name="radwa">Profile</span>
                             </a>
@@ -97,7 +97,8 @@
                     <div class="row">
                         <div class="col-lg-9 main-chart">
 
-                        </div><!-- /col-lg-9 END SECTION MIDDLE -->
+                        </div>
+                        <!-- /col-lg-9 END SECTION MIDDLE -->
 
 
                         <!-- **********************************************************************************************************************************************************
