@@ -24,9 +24,9 @@ public class GroupImp implements GroupInt{
         return (groupDao.getGroups(user));
     }
 
-    public boolean insertNewGroup(Intake intake, GroupD group) {
+    public boolean insertNewGroup(GroupD group) {
         GroupDaoImp GDI = new GroupDaoImp();
-       return GDI.insertGroup(intake, group);
+       return GDI.insertGroup(group);
     }
     
 }

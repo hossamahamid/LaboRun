@@ -23,7 +23,7 @@
                 <div class="row mt">
                     <div class="col-md-12">
                         <div id="groups_list">
-                            <form method ="post" action="">
+                            <form method ="post" action="/LaboRun/NewGroup">
 
                                 <div class="panel-heading">
                                     <input type="submit" value="Save" class="editButton1" id="saveButton" />
@@ -36,7 +36,7 @@
                                                 <td>
 
                                                     <label>group Name: </label>
-                                                    <input type="text" value="group 1" class="form-control" id="gName" />
+                                                    <input type="text" value="" class="form-control" id="gName" name="GroupName" />
                                                 </td>
                                             </tr>
                                             <tr>

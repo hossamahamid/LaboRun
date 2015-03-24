@@ -9,7 +9,7 @@
             <column name="id" />
             <generator class="increment" />
         </id>
-        <many-to-one name="intake" class="com.laborun.entity.Intake" update="false" insert="false" fetch="select">
+        <many-to-one name="intake" class="com.laborun.entity.Intake" update="false" fetch="select">
             <column name="intake_id" />
         </many-to-one>
         <property name="groupName" type="string">

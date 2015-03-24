@@ -60,8 +60,9 @@ public class NewStaff extends HttpServlet {
           System.out.println(((Department) i.next()).getDepartmentName());
         }
         HttpSession session = request.getSession(true);
-        session.setAttribute("dList",d);
-       response.sendRedirect("/LaboRun/admin/addInstructor.jsp");
+        session.setAttribute("dList2",d);
+       response.sendRedirect("admin/addInstructor.jsp");
+      
     }
 
     /**

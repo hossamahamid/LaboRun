@@ -5,6 +5,9 @@
  */
 package com.laborun.servlet;
 
+import com.laborun.controller.GroupImp;
+import com.laborun.entity.GroupD;
+import com.laborun.entity.Intake;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -29,22 +32,7 @@ public class NewGroup extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewGroup</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewGroup at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {
-            out.close();
-        }
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -59,7 +47,7 @@ public class NewGroup extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       
     }
 
     /**
@@ -73,7 +61,14 @@ public class NewGroup extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+      GroupImp gI = new GroupImp();
+      GroupD g = new GroupD();
+      Intake i = new Intake();
+      g.setGroupName(request.getParameter("GroupName"));
+      
+      i.setId(1);
+      g.setIntake(i);
+      gI.insertNewGroup(g);
     }
 
     /**

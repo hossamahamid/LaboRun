@@ -101,11 +101,12 @@
 
                                                     <label>department</label>
                                                 <br>
+                                                     ${empty sessionScope.dList2}
                                                     <select name="selectedDepartment">
-                                                        
-                                                      <c:forEach items="${sessionScope.dList}" var="row">
+                                                       
+                                                        <c:forEach items="${sessionScope.dList2}" var="row2">
                                                       
-                                                            <option value="${row.id}">   <c:out value="${row.departmentName}" />
+                                                            <option value="${row2.id}"><c:out value="${row2.departmentName}" /> 
                                                                 </option> 
                                                         </c:forEach>
                                                     </select>

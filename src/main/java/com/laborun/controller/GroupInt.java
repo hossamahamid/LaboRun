@@ -11,5 +11,5 @@ import java.util.List;
 public interface GroupInt {
     
     public List<GroupD> getGroups(UserD user);
-    public boolean insertNewGroup(Intake intake,GroupD group);
+    public boolean insertNewGroup(GroupD group);
 }

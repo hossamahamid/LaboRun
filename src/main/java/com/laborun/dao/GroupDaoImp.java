@@ -49,7 +49,7 @@ public class GroupDaoImp implements GroupDaoInt {
         return groups;
     }
 
-    public boolean insertGroup(Intake intake, GroupD group) {
+    public boolean insertGroup(GroupD group) {
 
         
         boolean flag = true;
@@ -67,8 +67,6 @@ public class GroupDaoImp implements GroupDaoInt {
         }
         if(flag == true){
         session.beginTransaction();
-        session.save(intake);
-         group.setIntake(intake);
         session.persist(group);
         session.getTransaction().commit();
         System.out.println("data inserted");
