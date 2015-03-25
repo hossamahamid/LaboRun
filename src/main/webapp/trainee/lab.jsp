@@ -31,9 +31,51 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script>
+            var request0;
+            function check() {
+                // var iNum = document.getElementById("iNum").value;
+                if (window.XMLHttpRequest) {
+                    request0 = new XMLHttpRequest();
+                }
+                else if (window.ActiveXObject) {
+                    request0 = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                request0.onreadystatechange = handleReq0;
+                request0.open("POST", "NotificationsServ?date=" + new Date(), true);
+                request0.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                request0.send();
+                setTimeout("check()", 500);
+            }
+            function handleReq0() {
+                if (request0.readyState === 4) {
+                    var result = request0.responseText;
+//                    //  document.getElementById("t1").innerHTML =result;
+//                    var bod = document.createTextNode("");
+//                 //   bod.innerHTML = 'h;
+//                    document.getElementById("list1").appendChild(document.createNode('<div class="desc"><div class=\"details\"><p><muted>' + result + '</muted><br/></p></div></div>'));
+//                    var x = document.createElement("div");                        // Create a <p> node
+//                    
+////var t = ;    // Create a text node
+//                    //x.appendChild(t);
+//                    alert(result+"   brefore if");
+                    console.log(result);
+                    if (result !== "") {
+                        var rDiv = document.createElement('div');
+                        document.getElementById("list1").appendChild(rDiv);
+                        rDiv.innerHTML = '<div class="desc"><div class=\"details\"><p><muted>' + result + '</muted><br/></p></div></div>';
+//                        alert(result+" in the if statement");
+                    }
+                    else {
+//                        alert(result + " in the else clause");
+                    }
+                }
+            }
+        </script>
 </head>
 
-<body>
+<body onload="check()">
 
 <section id="container" >
     <!-- **********************************************************************************************************************************************************
@@ -174,8 +216,12 @@
                             </div><!-- /col-lg-6 -->
                         </div>
 
-                        <!--Notifications-->
-                        <div class="col-lg-3 ds">
+                      <!-- **********************************************************************************************************************************************************
+                        RIGHT SIDEBAR CONTENT
+                        *********************************************************************************************************************************************************** -->                  
+
+                        <div class="col-lg-3 ds" id="list1">
+                            <!--COMPLETED ACTIONS DONUTS CHART-->
                             <h3>NOTIFICATIONS</h3>
 
                             <!-- First Action -->
@@ -184,55 +230,55 @@
                                     <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                                 </div>
                                 <div class="details">
-                                    <p><muted>2 Minutes Ago</muted><br/>
-                                        <a href="#">James Brown</a> subscribed to your newsletter.<br/>
+                                    <p><muted></muted><br/>
                                     </p>
                                 </div>
                             </div>
-                            <!-- Second Action -->
+<!--                             Second Action 
                             <div class="desc">
                                 <div class="thumb">
                                     <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                                 </div>
                                 <div class="details">
                                     <p><muted>3 Hours Ago</muted><br/>
-                                        <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
+                                    <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
                                     </p>
                                 </div>
                             </div>
-                            <!-- Third Action -->
+                             Third Action 
                             <div class="desc">
                                 <div class="thumb">
                                     <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                                 </div>
                                 <div class="details">
                                     <p><muted>7 Hours Ago</muted><br/>
-                                        <a href="#">Brandon Page</a> purchased a year subscription.<br/>
+                                    <a href="#">Brandon Page</a> purchased a year subscription.<br/>
                                     </p>
                                 </div>
                             </div>
-                            <!-- Fourth Action -->
+                             Fourth Action 
                             <div class="desc">
                                 <div class="thumb">
                                     <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                                 </div>
                                 <div class="details">
                                     <p><muted>11 Hours Ago</muted><br/>
-                                        <a href="#">Mark Twain</a> commented your post.<br/>
+                                    <a href="#">Mark Twain</a> commented your post.<br/>
                                     </p>
                                 </div>
                             </div>
-                            <!-- Fifth Action -->
+                             Fifth Action 
                             <div class="desc">
                                 <div class="thumb">
                                     <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                                 </div>
                                 <div class="details">
                                     <p><muted>18 Hours Ago</muted><br/>
-                                        <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
+                                    <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
                                     </p>
-                                </div>
+                                </div>-->
                             </div>
+
 
                         </div><!-- /col-lg-3 -->
                         <!-- End of Notifications -->
