@@ -53,21 +53,18 @@
         <servlet-class>com.laborun.servlet.GroupsView</servlet-class>
     </servlet>
     <!--<servlet>-->
-    <!--<servlet-name>UploadFile</servlet-name>-->
-    <!--<servlet-class>com.laborun.servlet.UploadFile</servlet-class>-->
+        <!--<servlet-name>UploadFile</servlet-name>-->
+        <!--<servlet-class>com.laborun.servlet.UploadFile</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet>-->
-    <!--<servlet-name>GetAssignmentFiles</servlet-name>-->
-    <!--<servlet-class>com.laborun.servlet.GetAssignmentFiles</servlet-class>-->
+        <!--<servlet-name>GetAssignmentFiles</servlet-name>-->
+        <!--<servlet-class>com.laborun.servlet.GetAssignmentFiles</servlet-class>-->
     <!--</servlet>-->
     <servlet>
         <servlet-name>NotificationsServ</servlet-name>
         <servlet-class>com.laborun.servlet.NotificationsServ</servlet-class>
     </servlet>
-    <!--<servlet>-->
-    <!--<servlet-name>UploadFile</servlet-name>-->
-    <!--<servlet-class>com.laborun.servlet.UploadFile</servlet-class>-->
-    <!--</servlet>-->
+
     <servlet>
         <servlet-name>CoursesView</servlet-name>
         <servlet-class>com.laborun.servlet.CoursesView</servlet-class>
@@ -124,6 +121,15 @@
         <servlet-name>deadline</servlet-name>
         <servlet-class>com.laborun.servlet.deadline</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DisplayUploadedFiles</servlet-name>
+        <servlet-class>com.laborun.servlet.DisplayUploadedFiles</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadMyFile</servlet-name>
+        <servlet-class>com.laborun.servlet.UploadMyFile</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -246,5 +252,15 @@
     <servlet-mapping>
         <servlet-name>deadline</servlet-name>
         <url-pattern>/staff/deadline</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DisplayUploadedFiles</servlet-name>
+        <url-pattern>/trainee/displayFiles</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UploadMyFile</servlet-name>
+        <url-pattern>/trainee/UploadMyFile</url-pattern>
     </servlet-mapping>
 </web-app>

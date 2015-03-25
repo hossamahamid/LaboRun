@@ -166,7 +166,7 @@
                                 <hr>
 
                                 <h4> Upload Assignment File</h4>
-                                <form enctype="multipart/form-data" method="post" action="go" >
+                                <form enctype="multipart/form-data" method="post" action="UploadMyFile" >
                                     <input class="btn btn-primary btn-block" type="file" name="datafile" ><br>
                                     <input class="btn btn-primary" type="submit" value="send" <c:if test="${lab.labActive == 0}"> disabled </c:if>>
                                 </form>
