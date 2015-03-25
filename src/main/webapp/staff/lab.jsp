@@ -101,7 +101,8 @@
                                 <div class="panel-heading">
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Assistance queue</h5></div>
                                     <div class="pull-right hidden-phone">
-                                        <button class="btn btn-danger btn-xs">show</button>
+                                        <%--<button class="btn btn-danger btn-xs">show</button>--%>
+                                        <a href="lab?lid=<c:out value='${lab.id}'/>&lname=<c:out value='${lab.labName}'/>"><button class="btn btn-danger btn-xs">Refresh</button></a>
                                         <button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button>                                                 
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                     </div>
@@ -114,7 +115,7 @@
                                             <c:forEach items="${requestScope.assistanceQueue.traineeInQueues}" var="traineeInQueue">
                                                 <tr>
                                                     <td>
-                                                        <a href="/LaboRun/NotificationsServ?traineeId=<c:out value='${traineeInQueue.trainee.id}'/>&note_type=assist"><c:out value="${traineeInQueue.trainee.name}"/></a>
+                                                        <a href="NotificationsServ?traineeId=<c:out value='${traineeInQueue.trainee.id}'/>&note_type=assist" <c:if test="${lab.labActive == 0}"> disabled </c:if>><c:out value="${traineeInQueue.trainee.name}"/></a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>
@@ -126,7 +127,8 @@
                                 <div class="panel-heading">
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Delivery queue</h5></div>
                                     <div class="pull-right hidden-phone">
-                                        <button class="btn btn-danger btn-xs" onclick="func()">show</button>
+                                        <%--<button class="btn btn-danger btn-xs" onclick="func()">show</button>--%>
+                                            <a href="lab?lid=<c:out value='${lab.id}'/>&lname=<c:out value='${lab.labName}'/>"><button class="btn btn-danger btn-xs">Refresh</button></a>
                                         <button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button>                                                 
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                     </div>
@@ -139,7 +141,7 @@
                                         <c:forEach items="${requestScope.deliveryQueue.traineeInQueues}" var="traineeInQueue">
                                             <tr>
                                                 <td>
-                                                    <a href="?<c:out value='${traineeInQueue.trainee.id}'/>"><c:out value="${traineeInQueue.trainee.name}"/></a>
+                                                    <a href="?<c:out value='${traineeInQueue.trainee.id}'/>" <c:if test="${lab.labActive == 0}"> disabled </c:if>><c:out value="${traineeInQueue.trainee.name}"/></a>
                                                 </td>
                                             </tr>
                                         </c:forEach>

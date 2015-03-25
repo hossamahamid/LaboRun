@@ -61,7 +61,7 @@ public class NewStaff extends HttpServlet {
         }
         HttpSession session = request.getSession(true);
         session.setAttribute("dList2",d);
-       response.sendRedirect("admin/addInstructor.jsp");
+       response.sendRedirect("addInstructor.jsp");
       
     }
 

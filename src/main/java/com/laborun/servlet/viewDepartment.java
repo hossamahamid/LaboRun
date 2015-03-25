@@ -51,7 +51,7 @@ public class viewDepartment extends HttpServlet {
           DepartmentInt I = new DepartmentImp();
           session.setAttribute("dList", I.getDepartments());
           
-          response.sendRedirect("/LaboRun/admin/departments.jsp");
+          response.sendRedirect("departments.jsp");
     }
 
     /**

@@ -21,7 +21,7 @@
                         <div class="panel-heading">
 
                      <!--       <h4 align="right"><a href="addTrainee.jsp"><i class="fa fa-angle-right"></i>Add Trainee</a></h4>-->
-                     <form method="get" action="/LaboRun/NewTrainee1">
+                     <form method="get" action="NewTrainee1">
                          <input type="submit" value="add new Trainee"/>
                      </form>
                         </div>

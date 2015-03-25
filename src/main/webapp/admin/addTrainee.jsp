@@ -24,7 +24,7 @@
                 <div class="row mt">
                     <div class="col-md-12">
                         <div id="groups_list">
-                            <form method ="post" action="/LaboRun/NewTrainee1">
+                            <form method ="post" action="NewTrainee1">
 
                                 <div class="panel-heading">
                                     <input type="submit" value="Save" class="editButton1" id="saveButton" />

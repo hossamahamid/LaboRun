@@ -78,6 +78,7 @@ public class NewCourse extends HttpServlet {
             
             CourseImp c = new CourseImp();
             c.createCourse(course);
+            response.sendRedirect("addCourse.jsp");
         } catch (ParseException ex) {
             Logger.getLogger(NewCourse.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -131,7 +131,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>NewStaff</servlet-name>
-        <url-pattern>/NewStaff</url-pattern>
+        <url-pattern>/admin/NewStaff</url-pattern>
     </servlet-mapping>
     <!--<servlet-mapping>-->
     <!--<servlet-name>NewTrainee</servlet-name>-->
@@ -139,19 +139,19 @@
     <!--</servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>NewCourse</servlet-name>
-        <url-pattern>/NewCourse</url-pattern>
+        <url-pattern>/admin/NewCourse</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>NewGroup</servlet-name>
-        <url-pattern>/NewGroup</url-pattern>
+        <url-pattern>/admin/NewGroup</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>NewIntake</servlet-name>
-        <url-pattern>/NewIntake</url-pattern>
+        <url-pattern>/admin/NewIntake</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>NewDepartment</servlet-name>
-        <url-pattern>/NewDepartment</url-pattern>
+        <url-pattern>/admin/NewDepartment</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>getDepartments</servlet-name>
@@ -159,7 +159,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>NewTrainee1</servlet-name>
-        <url-pattern>/NewTrainee1</url-pattern>
+        <url-pattern>/admin/NewTrainee1</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GroupsView</servlet-name>
@@ -186,7 +186,7 @@
     <!--</welcome-file-list>-->
     <servlet-mapping>
         <servlet-name>NewLab</servlet-name>
-        <url-pattern>/NewLab</url-pattern>
+        <url-pattern>/admin/NewLab</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LabView</servlet-name>
@@ -215,7 +215,12 @@
 
     <servlet-mapping>
         <servlet-name>NotificationsServ</servlet-name>
-        <url-pattern>/NotificationsServ</url-pattern>
+        <url-pattern>/staff/NotificationsServ</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>NotificationsServ</servlet-name>
+        <url-pattern>/trainee/NotificationsServ</url-pattern>
     </servlet-mapping>
 
 <servlet-mapping>
@@ -236,7 +241,12 @@
 
     <servlet-mapping>
         <servlet-name>ViewQueue</servlet-name>
-        <url-pattern>/ViewQueue</url-pattern>
+        <url-pattern>/trainee/ViewQueue</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ViewQueue</servlet-name>
+        <url-pattern>/staff/ViewQueue</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

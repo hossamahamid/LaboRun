@@ -51,7 +51,7 @@ public class viewIntake extends HttpServlet {
           IntakeInt I = new IntakeImp();
           session.setAttribute("iList", I.getIntakes());
           
-          response.sendRedirect("/LaboRun/admin/intakes.jsp");
+          response.sendRedirect("intakes.jsp");
     }
 
     /**

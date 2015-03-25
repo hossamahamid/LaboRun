@@ -63,7 +63,7 @@ public class NewTrainee1 extends HttpServlet {
        // request.setAttribute("dList", d);
         List<Intake> i = II.getIntakes();
         session.setAttribute("iList",i);
-          response.sendRedirect("/LaboRun/admin/addTrainee.jsp");
+          response.sendRedirect("addTrainee.jsp");
        
     }
 
@@ -96,6 +96,7 @@ public class NewTrainee1 extends HttpServlet {
        t.setAddress(request.getParameter("address"));
        t.setAge(Integer.parseInt(request.getParameter("age")));
        t.setActive(1);
+        response.sendRedirect("addTrainee.jsp");
        System.out.print( TI.insertTraineeData(t));
     }
 

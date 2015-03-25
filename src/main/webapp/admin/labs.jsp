@@ -20,7 +20,7 @@
                     <div class="col-lg-12">
                         <div class="panel-heading">
 
-                            <h4 align="right"><a href="/LaboRun/NewLab"><i class="fa fa-angle-right"></i>Add Lab</a></h4>
+                            <h4 align="right"><a href="NewLab"><i class="fa fa-angle-right"></i>Add Lab</a></h4>
 
                         </div>
 

@@ -21,7 +21,7 @@
                     request0 = new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 request0.onreadystatechange = handleReq0;
-                request0.open("POST", "/LaboRun/NewIntake?date=" + new Date(), true);
+                request0.open("POST", "NewIntake?date=" + new Date(), true);
                 request0.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 request0.send("iNum=" + iNum);
 
@@ -54,7 +54,7 @@
                 <div class="row mt">
                     <div class="col-md-12">
                         <div id="groups_list">
-                            <form method ="post" action="/LaboRun/NewIntake">
+                            <form method ="post" action="NewIntake">
 
                                 <div class="panel-heading">
                                     <input type="button" value="Save" class="editButton1" id="saveButton" onclick="check()"/>

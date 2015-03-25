@@ -72,7 +72,7 @@ public class NewGroup extends HttpServlet {
       session.setAttribute("cList",c);
       session.setAttribute("sList",s);
       session.setAttribute("iList",i);
-       response.sendRedirect("/LaboRun/admin/addGroup.jsp");
+       response.sendRedirect("addGroup.jsp");
     }
 
     /**

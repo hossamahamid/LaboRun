@@ -90,7 +90,7 @@ public class NewDepartment extends HttpServlet {
         else{
              request.setAttribute("error","<font color=red size=4px>department name already exists</font>"); 
         }
-       RequestDispatcher rd=request.getRequestDispatcher("admin/addDepartment.jsp");
+       RequestDispatcher rd=request.getRequestDispatcher("addDepartment.jsp");
        
        rd.include(request, response);
           

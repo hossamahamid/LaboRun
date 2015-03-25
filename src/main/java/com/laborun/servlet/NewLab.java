@@ -65,7 +65,7 @@ public class NewLab extends HttpServlet {
       List<Staff> s = SI.getStaff();
       session.setAttribute("cList",c);
       session.setAttribute("sList",s);
-       response.sendRedirect("/LaboRun/admin/addLab.jsp");   
+       response.sendRedirect("addLab.jsp");
     }
 
     /**

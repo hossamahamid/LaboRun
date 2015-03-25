@@ -107,7 +107,7 @@
                                 <div class="panel-heading">
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Assistance queue</h5></div>
                                     <div class="pull-right hidden-phone">
-                                        <button class="btn btn-danger btn-xs">show</button>
+                                        <a href="lab?lid=<c:out value='${lab.id}'/>&lname=<c:out value='${lab.labName}'/>"><button class="btn btn-danger btn-xs">Refresh</button></a>
                                         <a href="RequestAssistenceQueue?Assqueue=${sessionScope.assq.id}"><button class="btn btn-success btn-xs" <c:if test="${lab.labActive == 0}"> disabled </c:if>><i class=" fa fa-check"></i></button>   </a>
                                         <a href="RemoveFromAssistanceQueue?Assqueue=${sessionScope.assq.id}"> <button class="btn btn-danger btn-xs" <c:if test="${lab.labActive == 0}"> disabled </c:if>><i class="fa fa-trash-o "></i></button></a>
                                     </div>
@@ -132,7 +132,8 @@
                                 <div class="panel-heading">
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Delivery queue</h5></div>
                                     <div class="pull-right hidden-phone">
-                                        <button class="btn btn-danger btn-xs" onclick="func()">show</button>
+                                        <a href="lab?lid=<c:out value='${lab.id}'/>&lname=<c:out value='${lab.labName}'/>"><button class="btn btn-danger btn-xs">Refresh</button></a>
+                                        <%--<button class="btn btn-danger btn-xs" onclick="func()">show</button>--%>
                                          <a href="RequestDelQueue?Delqueue=${sessionScope.delv.id}"><button class="btn btn-success btn-xs" <c:if test="${lab.labActive == 0}"> disabled </c:if>><i class=" fa fa-check"></i></button>   </a>
                                          <a href="RemoveFromDeliveryQueue?Delqueue=${sessionScope.delv.id}">   <button class="btn btn-danger btn-xs" <c:if test="${lab.labActive == 0}"> disabled </c:if>><i class="fa fa-trash-o "></i></button> </a>
                                     </div>
@@ -288,7 +289,7 @@ else if(window.ActiveXObject)
   
 request3.onreadystatechange=hadlReq3;
 
-request3.open("GET","/LaboRun/ViewQueue?",true);
+request3.open("GET","ViewQueue?",true);
 request3.send(null);
 }
     function hadlReq3()
