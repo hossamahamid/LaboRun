@@ -217,23 +217,23 @@
         <url-pattern>/RemoveFromDeliveryQueue</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
+<!--    <servlet-mapping>
         <servlet-name>RequestDelQueue</servlet-name>
         <url-pattern>/RequestDelQueue</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
+    </servlet-mapping>-->
+<!--    <servlet-mapping>
         <servlet-name>NotificationsServ</servlet-name>
         <url-pattern>/NotificationsServ</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
+    </servlet-mapping>-->
+<!--    <servlet-mapping>
         <servlet-name>RemoveFromAssistanceQueue</servlet-name>
         <url-pattern>/RemoveFromAssistanceQueue</url-pattern>
     </servlet-mapping>
-  
+  -->
     
-    <servlet-mapping>
+<!--    <servlet-mapping>
         <servlet-name>RemoveFromDeliveryQueue</servlet-name>
         <url-pattern>/RemoveFromDeliveryQueue</url-pattern>
-    </servlet-mapping>    
+    </servlet-mapping>    -->
 
 </web-app>

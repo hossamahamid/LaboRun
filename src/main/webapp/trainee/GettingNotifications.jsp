@@ -43,8 +43,8 @@
                     request0 = new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 request0.onreadystatechange = handleReq0;
-                request0.open("GET", "/LaboRun/NotificationsServ?date=" + new Date(), true);
-                // request0.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                request0.open("POST", "/LaboRun/NotificationsServ?date=" + new Date(), true);
+                request0.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 request0.send();
                 setTimeout("check()", 500);
             }

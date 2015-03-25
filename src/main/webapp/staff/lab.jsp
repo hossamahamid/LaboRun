@@ -109,7 +109,7 @@
                                             <c:forEach items="${requestScope.assistanceQueue.traineeInQueues}" var="traineeInQueue">
                                                 <tr>
                                                     <td>
-                                                        <a href="?<c:out value='${traineeInQueue.trainee.id}'/>"><c:out value="${traineeInQueue.trainee.name}"/></a>
+                                                        <a href="/LaboRun/NotificationsServ?traineeId=<c:out value='${traineeInQueue.trainee.id}'/>&note_type=assist"><c:out value="${traineeInQueue.trainee.name}"/></a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>
