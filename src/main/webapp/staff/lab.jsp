@@ -10,7 +10,7 @@
         <meta name="author" content="Dashboard">
         <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-        <title>DASHGUM - Bootstrap Admin Template</title>
+        <title>LABORUN</title>
 
         <!-- Bootstrap core CSS -->
         <link href="../assets/css/bootstrap.css" rel="stylesheet">
@@ -40,7 +40,7 @@
                     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
                 </div>
                 <!--logo start-->
-                <a href="index.html" class="logo"><b>Home</b></a>
+                <a href="index.html" class="logo"><b>LABORUN</b></a>
                 <!--logo end-->
 
                 <div class="top-menu">
@@ -60,18 +60,23 @@
                     <!-- sidebar menu start-->
                     <ul class="sidebar-menu" id="nav-accordion">
 
-                        <p class="centered"><a href="profile.html"><img src="../assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-                        <h5 class="centered"><c:out value='${user.getName()}'/></h5>
+                        <p class="centered"><a href="index.jsp"><img src="../assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                        <h5 class="centered"><c:out value='${userName}'/></h5>
 
                         <li class="mt">
-                            <a class="active" href="profile.jsp">
+                            <a class="active" href="groups">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="mt">
+                            <a href="groups">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Profile</span>
                             </a>
                         </li>
-
                         <li class="mt">
-                            <a class="active" href="groups">
+                            <a href="groups">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Groups</span>
                             </a>
@@ -91,7 +96,7 @@
                     <div class="row mt">
                         <div class="col-lg-6 col-md-6 col-sm-12">
 
-                            <h3><c:out value="${requestScope.message}"/></h3>
+                            <h3 style="color: red"><c:out value="${requestScope.message}"/></h3>
                             <section class="task-panel tasks-widget">
                                 <div class="panel-heading">
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Assistance queue</h5></div>
@@ -149,19 +154,51 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <!-- DROPDOWN BUTTONS -->
                             <div class="showback">
-                                <h4><a>Show Assignment Files</a></h4>
+                                <h4>Lab Settings</h4>
+                                <hr>
+                                <form action="deadline" method="post">
+                                    <input type="hidden" name="lid" value="<c:out value='${requestScope.lab.id}'/>">
+                                    <input type="hidden" name="lname" value="<c:out value='${requestScope.lab.labName}'/>">
+                                    <input type="date" name="dateLine">
+                                    <input type="time" name="timeLine">
+                                    <button type="submit" class="btn btn-primary btn-lg">Set Deadline</button>
+                                </form>
+
+                                <hr>
+                                <button type="button" class="btn btn-primary btn-lg">View Assignment Files</button>
+
+                                <hr>
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalShift" <c:if test="${lab.labActive == 0}"> disabled </c:if>>
+                                    Shift Lab Queues
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModalShift" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel2">Shift Queues</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure you want to shift this lab queues?
+                                                Queues will be closed
+                                            </div>
+                                            <div class="modal-footer">
+                                                <%--<form action="closeQueue?lid=<c:out value='${requestScope.lab.id}'/>&lname=<c:out value='${requestScope.lab.labName}'/>" method="get">--%>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                <a href="shiftQueue?lid=<c:out value='${requestScope.lab.id}'/>&lname=<c:out value='${requestScope.lab.labName}'/>"><button type="button" class="btn btn-primary">Yes</button></a>
+                                                <%--</form>--%>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <hr>
 
-                                <h4>Shift Queues</h4>
-                                <a href="shiftQueue?lid=<c:out value='${requestScope.lab.id}'/>&lname=<c:out value='${requestScope.lab.labName}'/>"> <button type="button" class="btn btn-primary">Shift</button> </a>
-
-                                <hr>
-
-                                <h4> Close Queues</h4>
                                 <!-- Button trigger modal -->
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModalClose">
-                                    Close Queues
+                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalClose" <c:if test="${lab.labActive == 0}"> disabled </c:if>>
+                                    Close Lab Queues
                                 </button>
 
                                 <!-- Modal -->

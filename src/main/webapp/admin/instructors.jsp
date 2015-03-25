@@ -12,7 +12,7 @@
         <title>LABORUN</title>
     </head>
     <body>
-        <jsp:include page="adminHeader.html"/>
+        <jsp:include page="adminHeader.jsp"/>
         <section id="main-content">
             <section class="wrapper">
                 <h3><i class="fa fa-angle-right"></i> Instructors</h3>

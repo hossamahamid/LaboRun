@@ -31,7 +31,7 @@
         </script>
     </head>
     <body>
-       <jsp:include page="adminHeader.html"/>
+       <jsp:include page="adminHeader.jsp"/>
        <!--main content start-->
         <section id="main-content">
             <section class="wrapper">

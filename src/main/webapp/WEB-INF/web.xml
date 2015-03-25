@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!--<filter>-->
+        <!--<filter-name>LoginFilter</filter-name>-->
+        <!--<filter-class>com.laborun.servlet.LoginFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>LoginFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
     <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>com.laborun.servlet.Login</servlet-class>
@@ -40,14 +48,14 @@
         <servlet-name>GroupsView</servlet-name>
         <servlet-class>com.laborun.servlet.GroupsView</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>UploadFile</servlet-name>
-        <servlet-class>com.laborun.servlet.UploadFile</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetAssignmentFiles</servlet-name>
-        <servlet-class>com.laborun.servlet.GetAssignmentFiles</servlet-class>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>UploadFile</servlet-name>-->
+        <!--<servlet-class>com.laborun.servlet.UploadFile</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet>-->
+        <!--<servlet-name>GetAssignmentFiles</servlet-name>-->
+        <!--<servlet-class>com.laborun.servlet.GetAssignmentFiles</servlet-class>-->
+    <!--</servlet>-->
     <servlet>
         <servlet-name>NotificationsServ</servlet-name>
         <servlet-class>com.laborun.servlet.NotificationsServ</servlet-class>
@@ -112,6 +120,11 @@
         <servlet-name>ViewQueue</servlet-name>
         <servlet-class>com.laborun.servlet.ViewQueue</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>deadline</servlet-name>
+        <servlet-class>com.laborun.servlet.deadline</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -181,15 +194,15 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>viewIntake</servlet-name>
-        <url-pattern>/viewIntake</url-pattern>
+        <url-pattern>/admin/viewIntake</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>viewDepartment</servlet-name>
-        <url-pattern>/viewDepartment</url-pattern>
+        <url-pattern>/admin/viewDepartment</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RequestAssistenceQueue</servlet-name>
-        <url-pattern>/RequestAssistenceQueue</url-pattern>
+        <url-pattern>/trainee/RequestAssistenceQueue</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>QueuesClosing</servlet-name>
@@ -207,25 +220,27 @@
 
 <servlet-mapping>
         <servlet-name>RequestDelQueue</servlet-name>
-        <url-pattern>/RequestDelQueue</url-pattern>
+        <url-pattern>/trainee/RequestDelQueue</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>RemoveFromAssistanceQueue</servlet-name>
-        <url-pattern>/RemoveFromAssistanceQueue</url-pattern>
+        <url-pattern>/trainee/RemoveFromAssistanceQueue</url-pattern>
     </servlet-mapping>
   
     
     <servlet-mapping>
         <servlet-name>RemoveFromDeliveryQueue</servlet-name>
-        <url-pattern>/RemoveFromDeliveryQueue</url-pattern>
+        <url-pattern>/trainee/RemoveFromDeliveryQueue</url-pattern>
     </servlet-mapping>
-
 
     <servlet-mapping>
         <servlet-name>ViewQueue</servlet-name>
         <url-pattern>/ViewQueue</url-pattern>
     </servlet-mapping>
-    
 
-    </web-app>
+    <servlet-mapping>
+        <servlet-name>deadline</servlet-name>
+        <url-pattern>/staff/deadline</url-pattern>
+    </servlet-mapping>
+</web-app>

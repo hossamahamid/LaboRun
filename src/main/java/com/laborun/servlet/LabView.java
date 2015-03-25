@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  */
 public class LabView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,6 +54,9 @@ public class LabView extends HttpServlet {
 
         if(lab.getLabActive() == 0)
             request.setAttribute("message", "Lab Queues Have Been Closed.");
+
+        if(request.getParameter("msg") != null)
+            request.setAttribute("message", "There Are No Labs To Shift To !");
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("lab.jsp");
         dispatcher.forward(request, response);

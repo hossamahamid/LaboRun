@@ -112,30 +112,30 @@ public class LoginFilter implements Filter {
         if ((session == null) & (!req.getRequestURI().equals(loginURLA))&(flag==0)) {
 
             
-            System.out.println("req  " + req.getRequestURI());
-            System.out.println("da5al");
+//            System.out.println("req  " + req.getRequestURI());
+//            System.out.println("da5al");
             flag=1;
             res.sendRedirect(req.getContextPath() +"/login.html");
 
         }
        else if ((session == null) & (!req.getRequestURI().equals(loginURLT))&(flag==0)) {
-            System.out.println("2");
+//            System.out.println("2");
             flag=1;
            res.sendRedirect(req.getContextPath() +"/login.html");
 
         }
       else  if ((session == null) & (!req.getRequestURI().equals(loginURLS))&(flag==0)) {
-            System.out.println("3");
+//            System.out.println("3");
             flag=1;
             res.sendRedirect(req.getContextPath() +"/login.html");
 
         } else  if ((session == null) & (!req.getRequestURI().equals(loginURL))&(flag==0)) {
-            System.out.println("4"+ req.getContextPath() + "/login.html");
+//            System.out.println("4"+ req.getContextPath() + "/login.html");
             flag=1;
            chain.doFilter(request, response);
 
         }else {
-            System.out.println("else");
+//            System.out.println("else");
             flag=0;
             chain.doFilter(request, response);
         }

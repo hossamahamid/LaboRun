@@ -61,6 +61,6 @@ public class QueuesShifting extends javax.servlet.http.HttpServlet {
                 break;
             }
         }
-
+        response.sendRedirect("lab?lid="+lab.getId()+"&lname="+lab.getLabName()+"&msg=Shift");
     }
 }

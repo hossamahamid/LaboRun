@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-                <jsp:include page="header.html"/>--%>
+                <jsp:include page="header.jsp"/>--%>
                 <input type="button" value="send" name="send"/>
                 
                                 <jsp:include page="footer.html"/>

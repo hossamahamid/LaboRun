@@ -11,7 +11,7 @@
     <title>Laborun</title>
 </head>
 <body>
-    <jsp:include page= "header.html"/>
+    <jsp:include page= "header.jsp"/>
     <jsp:include page= "footer.html"/>
 </body>
 </html>

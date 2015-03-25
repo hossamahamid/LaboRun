@@ -3,82 +3,93 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="Dashboard">
-        <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-        <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>LABORUN</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="../assets/css/bootstrap.css" rel="stylesheet">
-        <!--external css-->
-        <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="../assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/lineicons/style.css">
 
-        <!-- Custom styles for this template -->
-        <link href="../assets/css/style.css" rel="stylesheet">
-        <link href="../assets/css/style-responsive.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style-responsive.css" rel="stylesheet">
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
+    <script src="../assets/js/chart-master/Chart.js"></script>
 
-    <body onload="setInterval('startRequest()',1000)">
-        <input type='hidden' name='uname' value='${sessionScope.assq.id}'/>
-        <section id="container" >
-            <!-- **********************************************************************************************************************************************************
-            TOP BAR CONTENT & NOTIFICATIONS
-            *********************************************************************************************************************************************************** -->
-            <!--header start-->
-            <header class="header black-bg">
-                <div class="sidebar-toggle-box">
-                    <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-                </div>
-                <!--logo start-->
-                <a href="index.html" class="logo"><b>Home</b></a>
-                <!--logo end-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-                <div class="top-menu">
-                    <ul class="nav pull-right top-menu">
-                        <li><a class="logout" href="login.html">Logout</a></li>
-                    </ul>
-                </div>
-            </header>
-            <!--header end-->
+<body>
 
-            <!-- **********************************************************************************************************************************************************
-            MAIN SIDEBAR MENU
-            *********************************************************************************************************************************************************** -->
-            <!--sidebar start-->
-            <aside>
-                <div id="sidebar"  class="nav-collapse ">
-                    <!-- sidebar menu start-->
-                    <ul class="sidebar-menu" id="nav-accordion">
+<section id="container" >
+    <!-- **********************************************************************************************************************************************************
+    TOP BAR CONTENT & NOTIFICATIONS
+    *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <header class="header black-bg">
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <!--logo start-->
+        <a href="index.jsp" class="logo"><b>LABORUN</b></a>
+        <!--logo end-->
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                <li><a class="logout" href="../login.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--header end-->
 
-                        <p class="centered"><a href="profile.html"><img src="../assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-                        <h5 class="centered"><c:out value='${user.getName()}'/></h5>
+    <!-- **********************************************************************************************************************************************************
+    MAIN SIDEBAR MENU
+    *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+        <div id="sidebar"  class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
 
-                        <li class="mt">
-                            <a class="active" href="index.html">
-                                <i class="fa fa-dashboard"></i>
-                                <span>Profile</span>
-                            </a>
-                        </li>
+                <p class="centered"><a href="profile.html"><img src="../assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                <h5 class="centered"><c:out value='${userName}'/></h5>
 
-                        <li class="mt">
-                            <a class="active" href="panels.html">
-                                <i class="fa fa-dashboard"></i>
-                                <span>Groups</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
+                <li class="mt">
+                    <a class="active" href="groups">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="mt">
+                    <a href="groups">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="mt">
+                    <a href="groups">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Groups</span>
+                    </a>
+                </li>
+
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
             <!--sidebar end-->
 
             <!-- **********************************************************************************************************************************************************
@@ -87,17 +98,18 @@
             <!--main content start-->
             <section id="main-content">
                 <section class="wrapper">
+                    <h3><i class="fa fa-angle-right"></i> <c:out value="${requestScope.lab.course.courseName}"/> -<i class="fa fa-angle-right"></i> <c:out value="${requestScope.lab.labName}"/></h3>
                     <div class="row mt">
                         <div class="col-lg-6 col-md-6 col-sm-12">
 
-
+                            <h3 style="color: red"><c:out value="${requestScope.message}"/></h3>
                             <section class="task-panel tasks-widget">
                                 <div class="panel-heading">
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Assistance queue</h5></div>
                                     <div class="pull-right hidden-phone">
                                         <button class="btn btn-danger btn-xs">show</button>
-                                        <a href="/LaboRun/RequestAssistenceQueue?Assqueue=${sessionScope.assq.id}"><button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button>   </a>                                            
-                                        <a href="/LaboRun/RemoveFromAssistanceQueue?Assqueue=${sessionScope.assq.id}"> <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
+                                        <a href="RequestAssistenceQueue?Assqueue=${sessionScope.assq.id}"><button class="btn btn-success btn-xs" <c:if test="${lab.labActive == 0}"> disabled </c:if>><i class=" fa fa-check"></i></button>   </a>
+                                        <a href="RemoveFromAssistanceQueue?Assqueue=${sessionScope.assq.id}"> <button class="btn btn-danger btn-xs" <c:if test="${lab.labActive == 0}"> disabled </c:if>><i class="fa fa-trash-o "></i></button></a>
                                     </div>
                                     <br>
                                 </div>
@@ -121,8 +133,8 @@
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Delivery queue</h5></div>
                                     <div class="pull-right hidden-phone">
                                         <button class="btn btn-danger btn-xs" onclick="func()">show</button>
-                                         <a href="/LaboRun/RequestDelQueue?Delqueue=${sessionScope.delv.id}"><button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button>   </a>                                                  
-                                         <a href="/LaboRun/RemoveFromDeliveryQueue?Delqueue=${sessionScope.delv.id}">   <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button> </a>
+                                         <a href="RequestDelQueue?Delqueue=${sessionScope.delv.id}"><button class="btn btn-success btn-xs" <c:if test="${lab.labActive == 0}"> disabled </c:if>><i class=" fa fa-check"></i></button>   </a>
+                                         <a href="RemoveFromDeliveryQueue?Delqueue=${sessionScope.delv.id}">   <button class="btn btn-danger btn-xs" <c:if test="${lab.labActive == 0}"> disabled </c:if>><i class="fa fa-trash-o "></i></button> </a>
                                     </div>
                                     <br>
                                 </div>
@@ -155,7 +167,7 @@
                                 <h4> Upload Assignment File</h4>
                                 <form enctype="multipart/form-data" method="post" action="go" >
                                     <input class="btn btn-primary btn-block" type="file" name="datafile" ><br>
-                                    <input class="btn btn-primary" type="submit" value="send">
+                                    <input class="btn btn-primary" type="submit" value="send" <c:if test="${lab.labActive == 0}"> disabled </c:if>>
                                 </form>
 
                             </div><!-- /col-lg-6 -->

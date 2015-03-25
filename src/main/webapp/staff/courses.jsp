@@ -13,7 +13,7 @@
 <body>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-<jsp:include page= "header.html"/>
+<jsp:include page= "header.jsp"/>
 
 <!--main content start-->
 <section id="main-content">
