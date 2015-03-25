@@ -96,7 +96,7 @@
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Assistance queue</h5></div>
                                     <div class="pull-right hidden-phone">
                                         <button class="btn btn-danger btn-xs">show</button>
-                                       <a href="/LaboRun/RequestAssistenceQueue"> <button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button></a>                                                 
+                                        <button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button>                                                 
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                     </div>
                                     <br>
@@ -149,7 +149,7 @@
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Delivery queue</h5></div>
                                     <div class="pull-right hidden-phone">
                                         <button class="btn btn-danger btn-xs" onclick="func()">show</button>
-                                        <input type="button" class="btn btn-success btn-xs"><i class=" fa fa-check"></i></input>                                                 
+                                        <button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button>                                                 
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                     </div>
                                     <br>
@@ -215,7 +215,7 @@
                                     <button type="button" class="btn btn-primary btn-lg" data-toggle="dropdown" onclick="GetAssignmentFiles">
                                         view uploaded file <span class="caret"></span>
                                     </button>
-                                     <ul class="dropdown-menu" role="menu">
+                                   <ul class="dropdown-menu" role="menu">
                                      <c:forEach items="${request.listOfFiles}" var="item">         
                                         <li><c:out value='${item}'/></li>
                                      </c:forEach>

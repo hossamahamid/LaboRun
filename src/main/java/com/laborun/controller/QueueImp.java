@@ -6,10 +6,13 @@
 package com.laborun.controller;
 
 import com.laborun.dao.QueueDaoImp;
+import com.laborun.dao.QueueDaoInt;
 import com.laborun.entity.QueueD;
 import com.laborun.entity.Trainee;
+import com.laborun.entity.TraineeInQueue;
 import com.laborun.entity.UserD;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -32,5 +35,12 @@ public class QueueImp implements QueueInt{
         QueueDaoImp q = new QueueDaoImp();
        return q.getTraineeInQueue(queue);
     }
-    
+
+    @Override
+    public void setTraineeInQueue(QueueD queue, Set<TraineeInQueue> traineesInQueue) {
+        QueueDaoInt queueDao = new QueueDaoImp();
+        queueDao.setTraineeInQueue(queue, traineesInQueue);
+    }
+
+
 }

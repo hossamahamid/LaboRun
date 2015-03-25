@@ -86,6 +86,15 @@
         <servlet-class>com.laborun.servlet.RequestAssistenceQueue</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>QueuesClosing</servlet-name>
+        <servlet-class>com.laborun.servlet.QueuesClosing</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QueuesShift</servlet-name>
+        <servlet-class>com.laborun.servlet.QueuesShifting</servlet-class>
+    </servlet>
+    
+    <servlet>
         <servlet-name>RequestDelQueue</servlet-name>
         <servlet-class>com.laborun.servlet.RequestDelQueue</servlet-class>
     </servlet>
@@ -97,6 +106,7 @@
         <servlet-name>RemoveFromDeliveryQueue</servlet-name>
         <servlet-class>com.laborun.servlet.RemoveFromDeliveryQueue</servlet-class>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -176,7 +186,37 @@
         <servlet-name>RequestAssistenceQueue</servlet-name>
         <url-pattern>/RequestAssistenceQueue</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QueuesClosing</servlet-name>
+        <url-pattern>/staff/closeQueue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QueuesShift</servlet-name>
+        <url-pattern>/staff/shiftQueue</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>      
+        <servlet-name>NotificationsServ</servlet-name>
+        <url-pattern>/NotificationsServ</url-pattern>
+    </servlet-mapping>
+
 <servlet-mapping>
+        <servlet-name>RequestDelQueue</servlet-name>
+        <url-pattern>/RequestDelQueue</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>RemoveFromAssistanceQueue</servlet-name>
+        <url-pattern>/RemoveFromAssistanceQueue</url-pattern>
+    </servlet-mapping>
+  
+    
+    <servlet-mapping>
+        <servlet-name>RemoveFromDeliveryQueue</servlet-name>
+        <url-pattern>/RemoveFromDeliveryQueue</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
         <servlet-name>RequestDelQueue</servlet-name>
         <url-pattern>/RequestDelQueue</url-pattern>
     </servlet-mapping>
@@ -193,5 +233,6 @@
     <servlet-mapping>
         <servlet-name>RemoveFromDeliveryQueue</servlet-name>
         <url-pattern>/RemoveFromDeliveryQueue</url-pattern>
-    </servlet-mapping>
-    </web-app>
+    </servlet-mapping>    
+
+</web-app>
