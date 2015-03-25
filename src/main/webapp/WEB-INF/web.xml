@@ -93,6 +93,14 @@
         <servlet-name>QueuesShift</servlet-name>
         <servlet-class>com.laborun.servlet.QueuesShifting</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QueuesClosing</servlet-name>
+        <servlet-class>com.laborun.servlet.QueuesClosing</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QueuesShift</servlet-name>
+        <servlet-class>com.laborun.servlet.QueuesShifting</servlet-class>
+    </servlet>
     
     <servlet>
         <servlet-name>RequestDelQueue</servlet-name>
