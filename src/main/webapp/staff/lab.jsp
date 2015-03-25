@@ -115,7 +115,7 @@
                                             <c:forEach items="${requestScope.assistanceQueue.traineeInQueues}" var="traineeInQueue">
                                                 <tr>
                                                     <td>
-                                                        <a href="NotificationsServ?traineeId=<c:out value='${traineeInQueue.trainee.id}'/>&note_type=assist" <c:if test="${lab.labActive == 0}"> disabled </c:if>><c:out value="${traineeInQueue.trainee.name}"/></a>
+                                                        <a href="NotificationsServ?traineeId=<c:out value='${traineeInQueue.trainee.id}'/>&note_type=assist&lid=<c:out value='${requestScope.lab.id}'/>&lname=<c:out value='${requestScope.lab.labName}'/>" <c:if test="${lab.labActive == 0}"> disabled </c:if>><c:out value="${traineeInQueue.trainee.name}"/></a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>
@@ -141,7 +141,7 @@
                                         <c:forEach items="${requestScope.deliveryQueue.traineeInQueues}" var="traineeInQueue">
                                             <tr>
                                                 <td>
-                                                    <a href="?<c:out value='${traineeInQueue.trainee.id}'/>" <c:if test="${lab.labActive == 0}"> disabled </c:if>><c:out value="${traineeInQueue.trainee.name}"/></a>
+                                                        <a href="NotificationsServ?traineeId=<c:out value='${traineeInQueue.trainee.id}'/>&note_type=delivery&lid=<c:out value='${requestScope.lab.id}'/>&lname=<c:out value='${requestScope.lab.labName}'/>" <c:if test="${lab.labActive == 0}"> disabled </c:if>><c:out value="${traineeInQueue.trainee.name}"/></a>
                                                 </td>
                                             </tr>
                                         </c:forEach>

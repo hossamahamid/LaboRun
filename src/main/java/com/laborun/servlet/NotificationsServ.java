@@ -86,6 +86,9 @@ public class NotificationsServ extends HttpServlet {
 //            out.print(test.get(0).getMsg());
 
         }
+        int labId = Integer.parseInt(request.getParameter("lid"));
+        String labName = request.getParameter("lname");
+        response.sendRedirect("lab?lid="+labId+"&lname="+labName);
 
     }
 

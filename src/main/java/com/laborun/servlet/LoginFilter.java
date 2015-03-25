@@ -103,39 +103,39 @@ public class LoginFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
-        String loginURLA = req.getContextPath() + "/admin/login.html";
-        String loginURLT = req.getContextPath() + "/trainee/login.html";
-        String loginURLS = req.getContextPath() + "/staff/login.html";
+        String loginURLA = req.getContextPath() + "/admin";
+        String loginURLT = req.getContextPath() + "/trainee";
+        String loginURLS = req.getContextPath() + "/staff";
         String loginURL = req.getContextPath() + "/login.html";
 
         HttpSession session = req.getSession(false);
         if ((session == null) & (!req.getRequestURI().equals(loginURLA))&(flag==0)) {
 
             
-//            System.out.println("req  " + req.getRequestURI());
-//            System.out.println("da5al");
+            System.out.println("req  " + req.getRequestURI());
+            System.out.println("A");
             flag=1;
             res.sendRedirect(req.getContextPath() +"/login.html");
 
         }
        else if ((session == null) & (!req.getRequestURI().equals(loginURLT))&(flag==0)) {
-//            System.out.println("2");
+            System.out.println("T");
             flag=1;
            res.sendRedirect(req.getContextPath() +"/login.html");
 
         }
       else  if ((session == null) & (!req.getRequestURI().equals(loginURLS))&(flag==0)) {
-//            System.out.println("3");
+            System.out.println("S");
             flag=1;
             res.sendRedirect(req.getContextPath() +"/login.html");
 
         } else  if ((session == null) & (!req.getRequestURI().equals(loginURL))&(flag==0)) {
-//            System.out.println("4"+ req.getContextPath() + "/login.html");
-            flag=1;
+            System.out.println("L"+ req.getContextPath() + "/login.html");
+            flag=0;
            chain.doFilter(request, response);
 
         }else {
-//            System.out.println("else");
+            System.out.println("else");
             flag=0;
             chain.doFilter(request, response);
         }
