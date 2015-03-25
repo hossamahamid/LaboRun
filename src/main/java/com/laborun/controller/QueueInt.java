@@ -18,7 +18,7 @@ public interface QueueInt {
     public void removeFromQueue(Trainee trainee,QueueD queue);
     // trainee will choose to remove his request from the queue
     
-      public List<UserD> getTraineeInQueue(QueueD queue);
+      public List<Integer> getTraineeInQueue(QueueD queue);
 
     public void setTraineeInQueue(QueueD queue, Set<TraineeInQueue> traineesInQueue);
 }

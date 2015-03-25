@@ -17,6 +17,6 @@ import java.util.Set;
 public interface QueueDaoInt {
     public void addNewRequest(QueueD queue); // add new request 
     public void removeFromQueue(Trainee trainee,QueueD queue); // remove sent request
-    public List<UserD> getTraineeInQueue(QueueD queue); // get all trainees in the course
+    public List<Integer> getTraineeInQueue(QueueD queue); // get all trainees in the course
     public void setTraineeInQueue(QueueD queue, Set<TraineeInQueue> traineesInQueues);
 }
