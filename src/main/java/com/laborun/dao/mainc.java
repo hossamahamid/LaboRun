@@ -7,6 +7,8 @@ package com.laborun.dao;
 
 import com.laborun.entity.AssignmentFiles;
 import com.laborun.entity.Lab;
+import com.laborun.entity.QueueD;
+import com.laborun.entity.Trainee;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -17,14 +19,16 @@ import java.util.List;
  */
 public class mainc {
     public static void main(String[] args) {
-        AssignmentDaoImp ADI = new AssignmentDaoImp();
-        Lab l = new Lab();
-        l.setId(1);
-      List <AssignmentFiles> a= ADI.getAssignments(l);
-       Iterator it = a.iterator();
+      QueueDaoImp QDI = new QueueDaoImp();
+      QueueD q = new QueueD();
+      q.setId(3);
+     List <Integer>  t= QDI.getTraineeInQueue(q);
+
+       Iterator it = t.iterator();
         
         while (it.hasNext()) {
-            System.out.println("inside");
+              
+            System.out.println(((Integer)it.next()));
         }
 
     }

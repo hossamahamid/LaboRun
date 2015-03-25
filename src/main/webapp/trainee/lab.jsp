@@ -28,8 +28,8 @@
         <![endif]-->
     </head>
 
-    <body>
-
+    <body onload="setInterval('startRequest()',1000)">
+        <input type='hidden' name='uname' value='${sessionScope.assq.id}'/>
         <section id="container" >
             <!-- **********************************************************************************************************************************************************
             TOP BAR CONTENT & NOTIFICATIONS
@@ -259,5 +259,49 @@
 
         </script>
 
+        
+         <script>
+   var request3;
+function startRequest()
+{
+
+if (window.XMLHttpRequest)
+  {
+  request3=new XMLHttpRequest();
+  }
+else if(window.ActiveXObject)
+  {
+ request3 =new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  
+request3.onreadystatechange=hadlReq3;
+
+request3.open("GET","/LaboRun/ViewQueue?",true);
+request3.send(null);
+}
+    function hadlReq3()
+  {
+  
+  if (request3.readyState == 4)
+    {
+       
+    var s = request3.responseXML;
+       var currentMessage;
+    
+      var messages= s.getElementsByTagName("Ass");
+        for(var i=0 ; i<messages.length ; i++){
+                        currentMessage = messages[i];
+                        
+                        var out2 = currentMessage.childNodes[0].childNodes[0].nodeValue;
+                                                
+                    }
+   
+        }
+    else {
+          
+       
+    }
+  }   
+      </script>
     </body>
 </html>

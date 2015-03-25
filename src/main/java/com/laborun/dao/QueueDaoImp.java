@@ -14,6 +14,7 @@ import java.util.Set;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -26,19 +27,16 @@ public class QueueDaoImp implements QueueDaoInt {
 
     
 
-    public List<UserD> getTraineeInQueue(QueueD queue) {
+    public List<Integer> getTraineeInQueue(QueueD queue) {
         Session session = Connection.getConnection();
-        List<UserD> Trainees = null;
-        Criteria cr = session.createCriteria(QueueD.class);
-        cr.add(Restrictions.eq("id", queue.getId()));
-        List results = cr.list();
-        Iterator it = results.iterator();
-        
-        while (it.hasNext()) {
-            Trainees = new ArrayList<UserD>(((QueueD) it.next()).getTraineeInQueues());
-        }
+        List<Trainee> Trainees = null;
+        String sql = "select trainee_id from trainee_in_queue where queue_id = " + queue.getId();
+        SQLQuery query = session.createSQLQuery(sql);
 
-        return Trainees;
+        List results = query.list();
+
+
+        return results;
     }
 
     @Override

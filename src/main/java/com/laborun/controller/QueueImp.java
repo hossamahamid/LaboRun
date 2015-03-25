@@ -31,7 +31,7 @@ public class QueueImp implements QueueInt{
         qdi.removeFromQueue(trainee, queue);
     }
 
-    public List<UserD> getTraineeInQueue(QueueD queue) {
+    public List<Integer> getTraineeInQueue(QueueD queue) {
         QueueDaoImp q = new QueueDaoImp();
        return q.getTraineeInQueue(queue);
     }

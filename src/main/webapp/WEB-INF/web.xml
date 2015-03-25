@@ -108,6 +108,10 @@
         <servlet-class>com.laborun.servlet.RemoveFromDeliveryQueue</servlet-class>
     </servlet>
     
+    <servlet>
+        <servlet-name>ViewQueue</servlet-name>
+        <servlet-class>com.laborun.servlet.ViewQueue</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/checklogin</url-pattern>
@@ -196,7 +200,7 @@
         <url-pattern>/staff/shiftQueue</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>      
+    <servlet-mapping>
         <servlet-name>NotificationsServ</servlet-name>
         <url-pattern>/NotificationsServ</url-pattern>
     </servlet-mapping>
@@ -217,23 +221,11 @@
         <url-pattern>/RemoveFromDeliveryQueue</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>RequestDelQueue</servlet-name>
-        <url-pattern>/RequestDelQueue</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>NotificationsServ</servlet-name>
-        <url-pattern>/NotificationsServ</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RemoveFromAssistanceQueue</servlet-name>
-        <url-pattern>/RemoveFromAssistanceQueue</url-pattern>
-    </servlet-mapping>
-  
-    
-    <servlet-mapping>
-        <servlet-name>RemoveFromDeliveryQueue</servlet-name>
-        <url-pattern>/RemoveFromDeliveryQueue</url-pattern>
-    </servlet-mapping>    
 
-</web-app>
+    <servlet-mapping>
+        <servlet-name>ViewQueue</servlet-name>
+        <url-pattern>/ViewQueue</url-pattern>
+    </servlet-mapping>
+    
+
+    </web-app>
