@@ -85,14 +85,8 @@
                                                     <input type="date" id="endDate" name="endDate"/>
                                                 </td>
                                             </tr>
-                                            <tr><td><h2>assignment deadline</h2>></td></tr> 
-                                            <tr>
-                                                <td>
-
-                                                    <label>assignment deadline </label>
-                                                    <input type="date" id="endDate" name="assignmentdeadline"/>
-                                                </td>
-                                            </tr>
+                                           
+                                           
                                         </tbody>
                                     </table>
                                 </div><!-- /table-responsive -->

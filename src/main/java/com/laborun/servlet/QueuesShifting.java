@@ -48,7 +48,8 @@ public class QueuesShifting extends javax.servlet.http.HttpServlet {
 
         for (Lab otherLab: otherLabs){
             if (otherLab.getStartTime().getTime() > lab.getStartTime().getTime()){
-                Set<QueueD> otherQueues = otherLab.getQueueDs();
+            
+            Set<QueueD> otherQueues = otherLab.getQueueDs();
                 for(QueueD queue: otherQueues){
                     if(queue.getQueueType().equals("assistance"))
                         queueController.setTraineeInQueue(queue, assistanceQueue.getTraineeInQueues());
@@ -60,7 +61,8 @@ public class QueuesShifting extends javax.servlet.http.HttpServlet {
                 dispatcher.forward(request, response);
                 break;
             }
+            
         }
-        response.sendRedirect("lab?lid="+lab.getId()+"&lname="+lab.getLabName()+"&msg=Shift");
+   //     response.sendRedirect("lab?lid="+lab.getId()+"&lname="+lab.getLabName()+"&msg=Shift");
     }
 }

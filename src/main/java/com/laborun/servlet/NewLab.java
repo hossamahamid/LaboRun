@@ -16,9 +16,14 @@ import com.laborun.entity.QueueD;
 import com.laborun.entity.Staff;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -79,39 +84,51 @@ public class NewLab extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Set Queues = new HashSet();
-        Lab lab = new Lab();
-        QueueD assistanceQ = new QueueD();
-        assistanceQ.setQueueType("assistance");
-        QueueD delivryQ = new QueueD();
-        delivryQ.setQueueType("delivery");
-       
-       lab.setLabName(request.getParameter("LabName"));
-       String[] ss = request.getParameterValues("staffn");
-      
-       Set staffMembers = new HashSet();
-       for(String n1 : ss)
-      {
-          Staff s = new Staff();
-          s.setId(Integer.parseInt(n1));
-          staffMembers.add(s);
-      }
-       lab.setStaffs(staffMembers);
-       Course c = new Course();
-       c.setId(Integer.parseInt(request.getParameter("coursen")));
-       lab.setCourse(c);
-       LabInt LI = new LabImp();
-       
-        assistanceQ.setLab(lab);
-        delivryQ.setLab(lab);
-        QueueImp q = new QueueImp();
-        
-        Queues.add(delivryQ);
-        Queues.add(assistanceQ);
-        lab.setQueueDs(Queues);
-        LI.insertLab(lab);
-        q.requestQueue(delivryQ);
-        q.requestQueue(assistanceQ);
+        try {
+            Set Queues = new HashSet();
+            Lab lab = new Lab();
+            QueueD assistanceQ = new QueueD();
+            assistanceQ.setQueueType("assistance");
+            QueueD delivryQ = new QueueD();
+            delivryQ.setQueueType("delivery");
+            
+            lab.setLabName(request.getParameter("LabName"));
+            lab.setLabActive(1);
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date startDate = df.parse(request.getParameter("startDate"));
+            lab.setStartTime(startDate);
+            
+            java.util.Date endDate = df.parse(request.getParameter("endDate"));
+            lab.setEndTime(endDate);
+            
+            String[] ss = request.getParameterValues("staffn");
+            
+            Set staffMembers = new HashSet();
+            for(String n1 : ss)
+            {
+                Staff s = new Staff();
+                s.setId(Integer.parseInt(n1));
+                staffMembers.add(s);
+            }
+            lab.setStaffs(staffMembers);
+            Course c = new Course();
+            c.setId(Integer.parseInt(request.getParameter("coursen")));
+            lab.setCourse(c);
+            LabInt LI = new LabImp();
+            
+            assistanceQ.setLab(lab);
+            delivryQ.setLab(lab);
+            QueueImp q = new QueueImp();
+            
+            Queues.add(delivryQ);
+            Queues.add(assistanceQ);
+            lab.setQueueDs(Queues);
+            LI.insertLab(lab);
+            q.requestQueue(delivryQ);
+            q.requestQueue(assistanceQ);
+        } catch (ParseException ex) {
+            Logger.getLogger(NewLab.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
        
     }
