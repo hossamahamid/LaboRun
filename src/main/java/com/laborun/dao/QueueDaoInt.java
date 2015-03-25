@@ -17,6 +17,6 @@ import java.util.List;
  */
 public interface QueueDaoInt {
     public void addNewRequest(QueueD queue); // add new request 
-    public void removeFromQueue(UserD user,String queueType); // remove sent request
+    public void removeFromQueue(Trainee trainee,QueueD queue); // remove sent request
     public List<UserD> getTraineeInQueue(QueueD queue); // get all trainees in the course
 }

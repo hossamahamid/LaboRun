@@ -37,7 +37,7 @@ public class AssignmentDaoImp implements AssignmentDaoInt{
         Session session = Connection.getConnection();
         List<AssignmentFiles> assignmentFiles = null;
         Criteria cr = session.createCriteria(Lab.class);
-        cr.add(Restrictions.eq("labName", lab.getAssignmentFileses()));
+        cr.add(Restrictions.eq("id", lab.getId()));
         List results = cr.list();
         Iterator it = results.iterator();
         

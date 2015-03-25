@@ -7,6 +7,7 @@ package com.laborun.controller;
 
 import com.laborun.dao.QueueDaoImp;
 import com.laborun.entity.QueueD;
+import com.laborun.entity.Trainee;
 import com.laborun.entity.UserD;
 import java.util.List;
 
@@ -22,8 +23,9 @@ public class QueueImp implements QueueInt{
         return true;
     }
 
-    public boolean removeFromQueue(QueueD queue) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void removeFromQueue(Trainee trainee,QueueD queue) {
+        QueueDaoImp qdi = new QueueDaoImp();
+        qdi.removeFromQueue(trainee, queue);
     }
 
     public List<UserD> getTraineeInQueue(QueueD queue) {

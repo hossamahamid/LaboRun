@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author dina
  */
-public class RequestAssistenceQueue extends HttpServlet {
+public class RemoveFromDeliveryQueue extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,7 +34,7 @@ public class RequestAssistenceQueue extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -49,15 +49,16 @@ public class RequestAssistenceQueue extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       RequestQueueImp assistance = new RequestQueueImp();
+      QueueImp i = new QueueImp();
        HttpSession session = request.getSession(true);
        Trainee t = new Trainee();
        QueueD aq = new QueueD();
-       System.out.println((Integer) session.getAttribute("userId"));
-       System.out.println((Integer) session.getAttribute("Assqueue"));
+        System.out.println("aaaa");
+      System.out.println((Integer) session.getAttribute("userId"));
+       System.out.println((Integer) session.getAttribute("Delqueue"));
        t.setId((Integer) session.getAttribute("userId"));
-       aq.setId(Integer.parseInt(request.getParameter("Assqueue")));
-       assistance.insertTraineeInQueue(t, aq);
+       aq.setId(Integer.parseInt(request.getParameter("Delqueue")));
+      i.removeFromQueue(t, aq);
     }
 
     /**
@@ -72,7 +73,6 @@ public class RequestAssistenceQueue extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
-        
     }
 
     /**

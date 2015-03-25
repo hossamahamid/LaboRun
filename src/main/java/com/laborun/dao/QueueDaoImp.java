@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -25,9 +26,7 @@ import org.hibernate.criterion.Restrictions;
 public class QueueDaoImp implements QueueDaoInt {
 
 
-    public void removeFromQueue(UserD user, String queueType) {
-
-    }
+    
 
     public List<UserD> getTraineeInQueue(QueueD queue) {
         Session session = Connection.getConnection();
@@ -51,6 +50,16 @@ public class QueueDaoImp implements QueueDaoInt {
         session.persist(queue);
         session.getTransaction().commit();
         System.out.println("data inserted"); 
+    }
+
+    public void removeFromQueue(Trainee trainee, QueueD queue) {
+        Session session = Connection.getConnection();
+        session.beginTransaction();
+        String sql = "DELETE FROM TraineeInQueue WHERE trainee_id = " + trainee.getId() +"and queue_id = " + queue.getId();
+        Query query = session.createQuery(sql);
+         int row = query.executeUpdate();
+        session.getTransaction().commit();
+        System.out.println("data removed"); 
     }
 
 }

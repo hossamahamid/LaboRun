@@ -40,6 +40,19 @@
         <servlet-name>GroupsView</servlet-name>
         <servlet-class>com.laborun.servlet.GroupsView</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadFile</servlet-name>
+        <servlet-class>com.laborun.servlet.UploadFile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetAssignmentFiles</servlet-name>
+        <servlet-class>com.laborun.servlet.GetAssignmentFiles</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NotificationsServ</servlet-name>
+        <servlet-class>com.laborun.servlet.NotificationsServ</servlet-class>
+    </servlet>
+    
     <!--<servlet>-->
     <!--<servlet-name>UploadFile</servlet-name>-->
     <!--<servlet-class>com.laborun.servlet.UploadFile</servlet-class>-->
@@ -73,8 +86,16 @@
         <servlet-class>com.laborun.servlet.RequestAssistenceQueue</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RequestAssQueue</servlet-name>
-        <servlet-class>com.laborun.servlet.RequestAssQueue</servlet-class>
+        <servlet-name>RequestDelQueue</servlet-name>
+        <servlet-class>com.laborun.servlet.RequestDelQueue</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveFromAssistanceQueue</servlet-name>
+        <servlet-class>com.laborun.servlet.RemoveFromAssistanceQueue</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveFromDeliveryQueue</servlet-name>
+        <servlet-class>com.laborun.servlet.RemoveFromDeliveryQueue</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -155,8 +176,22 @@
         <servlet-name>RequestAssistenceQueue</servlet-name>
         <url-pattern>/RequestAssistenceQueue</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RequestAssQueue</servlet-name>
-        <url-pattern>/RequestAssQueue</url-pattern>
+<servlet-mapping>
+        <servlet-name>RequestDelQueue</servlet-name>
+        <url-pattern>/RequestDelQueue</url-pattern>
     </servlet-mapping>
-</web-app>
+    <servlet-mapping>
+        <servlet-name>NotificationsServ</servlet-name>
+        <url-pattern>/NotificationsServ</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveFromAssistanceQueue</servlet-name>
+        <url-pattern>/RemoveFromAssistanceQueue</url-pattern>
+    </servlet-mapping>
+  
+    
+    <servlet-mapping>
+        <servlet-name>RemoveFromDeliveryQueue</servlet-name>
+        <url-pattern>/RemoveFromDeliveryQueue</url-pattern>
+    </servlet-mapping>
+    </web-app>

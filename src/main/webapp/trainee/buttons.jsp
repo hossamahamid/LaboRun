@@ -96,7 +96,7 @@
                                     <div class="pull-left"><h5><i class="fa fa-tasks"></i> Assistance queue</h5></div>
                                     <div class="pull-right hidden-phone">
                                         <button class="btn btn-danger btn-xs">show</button>
-                                        <button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button>                                                 
+                                       <a href="/LaboRun/RequestAssistenceQueue"> <button class="btn btn-success btn-xs"><i class=" fa fa-check"></i></button></a>                                                 
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                     </div>
                                     <br>

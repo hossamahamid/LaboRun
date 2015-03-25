@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author dina
  */
-public class RequestAssistenceQueue extends HttpServlet {
+public class RequestDelQueue extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,15 +49,16 @@ public class RequestAssistenceQueue extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       RequestQueueImp assistance = new RequestQueueImp();
+       RequestQueueImp deliv = new RequestQueueImp();
        HttpSession session = request.getSession(true);
        Trainee t = new Trainee();
        QueueD aq = new QueueD();
-       System.out.println((Integer) session.getAttribute("userId"));
-       System.out.println((Integer) session.getAttribute("Assqueue"));
+        System.out.println("aaaa");
+      System.out.println((Integer) session.getAttribute("userId"));
+       System.out.println((Integer) session.getAttribute("Delqueue"));
        t.setId((Integer) session.getAttribute("userId"));
-       aq.setId(Integer.parseInt(request.getParameter("Assqueue")));
-       assistance.insertTraineeInQueue(t, aq);
+       aq.setId(Integer.parseInt(request.getParameter("Delqueue")));
+       deliv.insertTraineeInQueue(t, aq);
     }
 
     /**

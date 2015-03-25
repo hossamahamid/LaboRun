@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Set;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Rainfall on 3/24/2015.
@@ -44,6 +45,10 @@ public class LabView extends HttpServlet {
         }
 
         request.setAttribute("lab", lab);
+        HttpSession session = request.getSession(true);
+        session.setAttribute("assq", assistanceQueue);
+        session.setAttribute("delv", deliveryQueue);
+        System.out.println(assistanceQueue.getId());
         request.setAttribute("assistanceQueue", assistanceQueue);
         request.setAttribute("deliveryQueue", deliveryQueue);
 
