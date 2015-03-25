@@ -20,5 +20,8 @@
         <property name="uploadDate" type="timestamp">
             <column name="upload_date" length="19" />
         </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
     </class>
 </hibernate-mapping>

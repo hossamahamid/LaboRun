@@ -16,6 +16,16 @@ public class AssignmentFiles  implements java.io.Serializable {
      private byte[] uploadFile;
      private Date uploadDate;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private String name;
+
     public AssignmentFiles() {
     }
 
